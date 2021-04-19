@@ -4,6 +4,10 @@ view: sales_orders {
 
 #Primary keys
 #Sum distinct?
+#what to sum for volume
+#delivery info?
+#currency?
+#SalesDocument_VBELN is a string
 
   dimension: account_assignment_category_knttp {
     type: string
@@ -1761,16 +1765,16 @@ view: sales_orders {
   measure: total_sales_orders {
     # type: sum_distinct
     type: sum
-    sql: ${sales_document_vbeln};;
+    sql: CAST(${sales_document_vbeln} AS NUMERIC);;
     filters: [document_category_vbtyp: "C"]
     value_format_name: decimal_2
   }
 
-  measure: total_volume {
-    type: sum
-    sql: ${volume_of_the_item_volum};;
-    value_format_name: decimal_2
-  }
+  # measure: total_volume {
+  #   type: sum
+  #   sql: ${volume_of_the_item_volum};;
+  #   value_format_name: decimal_2
+  # }
 
   measure: total_sales_order_org_currency {
     type: sum

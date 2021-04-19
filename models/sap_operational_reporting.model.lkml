@@ -12,6 +12,7 @@ persist_with: sap_operational_reporting_default_datagroup
 
 
 # client_mandt used for all joins?
+# what are the most common fields to use for the reports
 
 explore: sales_orders {
 
