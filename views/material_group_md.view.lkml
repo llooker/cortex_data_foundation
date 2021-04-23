@@ -12,7 +12,7 @@ view: material_group_md {
     sql: ${TABLE}.AuthorizationGroup ;;
   }
 
-  dimension: client {
+  dimension: client_mandt {
     type: string
     sql: ${TABLE}.Client ;;
   }

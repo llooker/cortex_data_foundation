@@ -9,17 +9,27 @@ view: sales_orders {
 #currency?
 #SalesDocument_VBELN is a string
 
+  dimension: sales_order_pk {
+    primary_key: yes
+    hidden: yes
+    type: string
+    sql: concat(${sales_document_vbeln},'-',${sales_orders.item_posnr},) ;;
+  }
+
   dimension: account_assignment_category_knttp {
+    hidden: yes
     type: string
     sql: ${TABLE}.Accountassignmentcategory_KNTTP ;;
   }
 
   dimension: account_assignment_group_for_this_material_ktgrm {
+    hidden: yes
     type: string
     sql: ${TABLE}.Accountassignmentgroupforthismaterial_KTGRM ;;
   }
 
   dimension: agreement_knuma {
+    hidden: yes
     type: string
     sql: ${TABLE}.Agreement_KNUMA ;;
   }
@@ -55,46 +65,55 @@ view: sales_orders {
   }
 
   dimension: allocation_indicator_vpzuo {
+    hidden: yes
     type: string
     sql: ${TABLE}.AllocationIndicator_VPZUO ;;
   }
 
   dimension: allowed_deviation_absfz {
+    hidden: yes
     type: number
     sql: ${TABLE}.AllowedDeviation_ABSFZ ;;
   }
 
-  dimension: alloweddeviation_percent_kbver {
+  dimension: allowed_deviation_percent_kbver {
+    hidden: yes
     type: number
     sql: ${TABLE}.AlloweddeviationPercent_KBVER ;;
   }
 
   dimension: alternative_for_item_grpos {
+    hidden: yes
     type: string
     sql: ${TABLE}.AlternativeForItem_GRPOS ;;
   }
 
   dimension: alternative_tax_classification_taxk1 {
+    hidden: yes
     type: string
     sql: ${TABLE}.Alternativetaxclassification_TAXK1 ;;
   }
 
   dimension: approval_block_msr_approv_block {
+    hidden: yes
     type: string
     sql: ${TABLE}.ApprovalBlock_MSR_APPROV_BLOCK ;;
   }
 
   dimension: assignment_number_zuonr {
+    hidden: yes
     type: string
     sql: ${TABLE}.Assignmentnumber_ZUONR ;;
   }
 
   dimension: assortment_module_skopf {
+    hidden: yes
     type: string
     sql: ${TABLE}.AssortmentModule_SKOPF ;;
   }
 
   dimension: base_target_conversion_factor_umziz {
+    hidden: yes
     type: number
     sql: ${TABLE}.BaseTargetConversionFactor_UMZIZ ;;
   }
@@ -110,41 +129,49 @@ view: sales_orders {
   }
 
   dimension: batch_number_charg {
+    hidden: yes
     type: string
     sql: ${TABLE}.BatchNumber_CHARG ;;
   }
 
   dimension: batch_management_indicator_xchar {
+    hidden: yes
     type: string
     sql: ${TABLE}.Batchmanagementindicator_XCHAR ;;
   }
 
   dimension: batch_management_requirement_indicator_xchpf {
+    hidden: yes
     type: string
     sql: ${TABLE}.Batchmanagementrequirementindicator_XCHPF ;;
   }
 
   dimension: batch_split_allowed_chspl {
+    hidden: yes
     type: string
     sql: ${TABLE}.Batchsplitallowed_CHSPL ;;
   }
 
   dimension: billing_block_faksk {
+    hidden: yes
     type: string
     sql: ${TABLE}.Billingblock_FAKSK ;;
   }
 
   dimension: billing_block_for_item_faksp {
+    hidden: yes
     type: string
     sql: ${TABLE}.Billingblockforitem_FAKSP ;;
   }
 
   dimension: bom_stlnr {
+    hidden: yes
     type: string
     sql: ${TABLE}.BOM_STLNR ;;
   }
 
   dimension: bom_category_stlty {
+    hidden: yes
     type: string
     sql: ${TABLE}.BOMCategory_STLTY ;;
   }
@@ -165,26 +192,31 @@ view: sales_orders {
   }
 
   dimension: bom_explosion_number_sernr {
+    hidden: yes
     type: string
     sql: ${TABLE}.BOMexplosionnumber_SERNR ;;
   }
 
   dimension: bom_item_level_uepos {
+    hidden: yes
     type: string
     sql: ${TABLE}.BOMItemLevel_UEPOS ;;
   }
 
   dimension: bomi_tem_node_number_stlkn {
+    hidden: yes
     type: string
     sql: ${TABLE}.BOMItemNodeNumber_STLKN ;;
   }
 
   dimension: bom_item_number_sposn {
+    hidden: yes
     type: string
     sql: ${TABLE}.BOMItemNumber_SPOSN ;;
   }
 
   dimension: bom_origin_stkey {
+    hidden: yes
     type: string
     sql: ${TABLE}.BOMOrigin_STKEY ;;
   }
@@ -195,11 +227,13 @@ view: sales_orders {
   }
 
   dimension: business_area_hdr_gsber {
+    hidden: yes
     type: string
     sql: ${TABLE}.BusinessAreaHdr_GSBER ;;
   }
 
   dimension: business_transaction_type_for_foreign_trade_exart {
+    hidden: yes
     type: string
     sql: ${TABLE}.BusinessTransactionTypeforForeignTrade_EXART ;;
   }
@@ -235,11 +269,13 @@ view: sales_orders {
   }
 
   dimension: collective_number_submi {
+    hidden: yes
     type: string
     sql: ${TABLE}.Collectivenumber_SUBMI ;;
   }
 
   dimension: commission_group_provg {
+    hidden: yes
     type: string
     sql: ${TABLE}.Commissiongroup_PROVG ;;
   }
@@ -255,46 +291,55 @@ view: sales_orders {
   }
 
   dimension: completion_rule_for_quotation_erlre {
+    hidden: yes
     type: string
     sql: ${TABLE}.CompletionruleforQuotation_ERLRE ;;
   }
 
   dimension: component_quantity_kmpmg {
+    hidden: yes
     type: number
     sql: ${TABLE}.ComponentQuantity_KMPMG ;;
   }
 
   dimension: condition_number_knumv {
+    hidden: yes
     type: string
     sql: ${TABLE}.ConditionNumber_KNUMV ;;
   }
 
   dimension: condition_unit_kmein {
+    hidden: yes
     type: string
     sql: ${TABLE}.ConditionUnit_KMEIN ;;
   }
 
   dimension: condition_pricing_unit_kpein {
+    hidden: yes
     type: number
     sql: ${TABLE}.Conditionpricingunit_KPEIN ;;
   }
 
   dimension: condition_record_number_nrab_knumh {
+    hidden: yes
     type: string
     sql: ${TABLE}.Conditionrecordnumber_NRAB_KNUMH ;;
   }
 
   dimension: condition_update_koupd {
+    hidden: yes
     type: string
     sql: ${TABLE}.Conditionupdate_KOUPD ;;
   }
 
   dimension: configuration_cuobj {
+    hidden: yes
     type: string
     sql: ${TABLE}.Configuration_CUOBJ ;;
   }
 
   dimension: consumption_posting_kzvbr {
+    hidden: yes
     type: string
     sql: ${TABLE}.Consumptionposting_KZVBR ;;
   }
@@ -305,31 +350,37 @@ view: sales_orders {
   }
 
   dimension: conversion_factor_umzin {
+    hidden: yes
     type: number
     sql: ${TABLE}.ConversionFactor_UMZIN ;;
   }
 
   dimension: conversion_factor_quantities_umref {
+    hidden: yes
     type: number
     sql: ${TABLE}.Conversionfactorquantities_UMREF ;;
   }
 
   dimension: cost_center_hdr_kostl {
+    hidden: yes
     type: string
     sql: ${TABLE}.CostCenterHdr_KOSTL ;;
   }
 
   dimension: cost_center_kostl {
+    hidden: yes
     type: string
     sql: ${TABLE}.CostCenter_KOSTL ;;
   }
 
   dimension: cost_ctr_business_area_gskst {
+    hidden: yes
     type: string
     sql: ${TABLE}.CostCtrBusinessArea_GSKST ;;
   }
 
   dimension: cost_estimate_number_kalnr {
+    hidden: yes
     type: string
     sql: ${TABLE}.CostEstimateNumber_KALNR ;;
   }
@@ -345,6 +396,7 @@ view: sales_orders {
   }
 
   dimension: costing_variant_kalvar {
+    hidden: yes
     type: string
     sql: ${TABLE}.CostingVariant_KALVAR ;;
   }
@@ -375,6 +427,7 @@ view: sales_orders {
   }
 
   dimension_group: creation_time_erzet {
+    hidden: yes
     type: time
     timeframes: [
       raw,
@@ -389,6 +442,7 @@ view: sales_orders {
   }
 
   dimension: credit_block_cmtfg {
+    hidden: yes
     type: string
     sql: ${TABLE}.creditblock_CMTFG ;;
   }
@@ -399,6 +453,7 @@ view: sales_orders {
   }
 
   dimension: credit_representative_group_for_credit_management_sbgrp {
+    hidden: yes
     type: string
     sql: ${TABLE}.Creditrepresentativegroupforcreditmanagement_SBGRP ;;
   }
@@ -409,16 +464,19 @@ view: sales_orders {
   }
 
   dimension: cumulative_confirmed_quantity_in_base_uo_m_klmeng {
+    hidden: yes
     type: number
     sql: ${TABLE}.CumulativeConfirmedQuantityinBaseUoM_KLMENG ;;
   }
 
   dimension: cumulative_order_quantity_kwmeng {
+    hidden: yes
     type: number
     sql: ${TABLE}.CumulativeOrderQuantity_KWMENG ;;
   }
 
   dimension: cumulative_target_delivery_qty_lsmeng {
+    hidden: yes
     type: number
     sql: ${TABLE}.CumulativeTargetDeliveryQty_LSMENG ;;
   }
@@ -439,46 +497,55 @@ view: sales_orders {
   }
 
   dimension: customer_credit_group_grupp {
+    hidden: yes
     type: string
     sql: ${TABLE}.CustomerCreditGroup_GRUPP ;;
   }
 
   dimension: customer_credit_limit_ref_knkli {
+    hidden: yes
     type: string
     sql: ${TABLE}.CustomerCreditLimitRef_KNKLI ;;
   }
 
   dimension: customer_material_number_kdmat {
+    hidden: yes
     type: string
     sql: ${TABLE}.CustomerMaterialNumber_KDMAT ;;
   }
 
   dimension: customer_group1_kvgr1 {
+    hidden: yes
     type: string
     sql: ${TABLE}.Customergroup1_KVGR1 ;;
   }
 
   dimension: customer_group2_kvgr2 {
+    hidden: yes
     type: string
     sql: ${TABLE}.Customergroup2_KVGR2 ;;
   }
 
   dimension: customer_group3_kvgr3 {
+    hidden: yes
     type: string
     sql: ${TABLE}.Customergroup3_KVGR3 ;;
   }
 
   dimension: customer_group4_kvgr4 {
+    hidden: yes
     type: string
     sql: ${TABLE}.Customergroup4_KVGR4 ;;
   }
 
   dimension: customer_group5_kvgr5 {
+    hidden: yes
     type: string
     sql: ${TABLE}.Customergroup5_KVGR5 ;;
   }
 
   dimension: customer_has_not_posted_goods_receipt_nachl {
+    hidden: yes
     type: string
     sql: ${TABLE}.Customerhasnotpostedgoodsreceipt_NACHL ;;
   }
@@ -509,11 +576,13 @@ view: sales_orders {
   }
 
   dimension: dangerous_goods_flag_cont_dg {
+    hidden: yes
     type: string
     sql: ${TABLE}.DangerousGoodsFlag_CONT_DG ;;
   }
 
   dimension: dangerous_goods_management_profile_proli {
+    hidden: yes
     type: string
     sql: ${TABLE}.DangerousGoodsManagementProfile_PROLI ;;
   }
@@ -534,6 +603,7 @@ view: sales_orders {
   }
 
   dimension: days_by_which_the_quantity_can_be_shifted_kever {
+    hidden: yes
     type: number
     sql: ${TABLE}.Daysbywhichthequantitycanbeshifted_KEVER ;;
   }
@@ -544,16 +614,19 @@ view: sales_orders {
   }
 
   dimension: delivery_block_lifsk {
+    hidden: yes
     type: string
     sql: ${TABLE}.Deliveryblock_LIFSK ;;
   }
 
   dimension: delivery_date_and_quantity_fixed_fixmg {
+    hidden: yes
     type: string
     sql: ${TABLE}.Deliverydateandquantityfixed_FIXMG ;;
   }
 
   dimension: delivery_group_grkor {
+    hidden: yes
     type: string
     sql: ${TABLE}.Deliverygroup_GRKOR ;;
   }
@@ -569,11 +642,13 @@ view: sales_orders {
   }
 
   dimension: division_hdr_spart {
+    hidden: yes
     type: string
     sql: ${TABLE}.DivisionHdr_SPART ;;
   }
 
   dimension: division_spart {
+    hidden: yes
     type: string
     sql: ${TABLE}.Division_SPART ;;
   }
@@ -599,6 +674,7 @@ view: sales_orders {
   }
 
   dimension: document_indicator_vbklt {
+    hidden: yes
     type: string
     sql: ${TABLE}.DocumentIndicator_VBKLT ;;
   }
@@ -624,36 +700,43 @@ view: sales_orders {
   }
 
   dimension: fixed_shipping_processing_time_in_days_vbeaf {
+    hidden: yes
     type: number
     sql: ${TABLE}.Fixedshippingprocessingtimeindays_VBEAF ;;
   }
 
   dimension: form_of_billing_for_co_rkfkf {
+    hidden: yes
     type: string
     sql: ${TABLE}.FormofBillingforCO_RKFKF ;;
   }
 
   dimension: form_of_payment_guarantee_abfor {
+    hidden: yes
     type: string
     sql: ${TABLE}.Formofpaymentguarantee_ABFOR ;;
   }
 
   dimension: freegoods_delivery_control_lstanr {
+    hidden: yes
     type: string
     sql: ${TABLE}.FreegoodsDeliveryControl_LSTANR ;;
   }
 
   dimension: functional_area_fkber {
+    hidden: yes
     type: string
     sql: ${TABLE}.FunctionalArea_FKBER ;;
   }
 
   dimension: fund_fonds {
+    hidden: yes
     type: string
     sql: ${TABLE}.Fund_FONDS ;;
   }
 
   dimension: funds_center_fistl {
+    hidden: yes
     type: string
     sql: ${TABLE}.FundsCenter_FISTL ;;
   }
@@ -664,11 +747,13 @@ view: sales_orders {
   }
 
   dimension: guaranteed_factor_abges {
+    hidden: yes
     type: number
     sql: ${TABLE}.GuaranteedFactor_ABGES ;;
   }
 
   dimension_group: handover_date_at_the_handover_location_handoverdate {
+    hidden: yes
     type: time
     timeframes: [
       raw,
@@ -684,6 +769,7 @@ view: sales_orders {
   }
 
   dimension_group: handover_time_at_the_handover_location_handovertime {
+    hidden: yes
     type: time
     timeframes: [
       raw,
@@ -703,36 +789,43 @@ view: sales_orders {
   }
 
   dimension: import_export_flag_prefe {
+    hidden: yes
     type: string
     sql: ${TABLE}.ImportExportFlag_PREFE ;;
   }
 
   dimension: incentive_id_fiscal_incentive_id {
+    hidden: yes
     type: string
     sql: ${TABLE}.IncentiveID_FISCAL_INCENTIVE_ID ;;
   }
 
   dimension: inconsistent_configuration_stman {
+    hidden: yes
     type: string
     sql: ${TABLE}.Inconsistentconfiguration_STMAN ;;
   }
 
   dimension: internal_class_number_clint {
+    hidden: yes
     type: string
     sql: ${TABLE}.InternalClassNumber_CLINT ;;
   }
 
   dimension: internal_counter_stpoz {
+    hidden: yes
     type: string
     sql: ${TABLE}.Internalcounter_STPOZ ;;
   }
 
   dimension: internal_object_number_of_the_batch_classification_cuobj_ch {
+    hidden: yes
     type: string
     sql: ${TABLE}.Internalobjectnumberofthebatchclassification_CUOBJ_CH ;;
   }
 
   dimension: international_article_number_ean11 {
+    hidden: yes
     type: string
     sql: ${TABLE}.InternationalArticleNumber_EAN11 ;;
   }
@@ -748,6 +841,7 @@ view: sales_orders {
   }
 
   dimension: item_number_of_the_underlying_purchase_order_posex {
+    hidden: yes
     type: string
     sql: ${TABLE}.ItemNumberoftheUnderlyingPurchaseOrder_POSEX ;;
   }
@@ -758,6 +852,7 @@ view: sales_orders {
   }
 
   dimension: item_type_posar {
+    hidden: yes
     type: string
     sql: ${TABLE}.ItemType_POSAR ;;
   }
@@ -773,6 +868,7 @@ view: sales_orders {
   }
 
   dimension: kanban_kannr {
+    hidden: yes
     type: string
     sql: ${TABLE}.KANBAN_KANNR ;;
   }
@@ -793,6 +889,7 @@ view: sales_orders {
   }
 
   dimension_group: last_customer_contact_date_mahdt {
+    hidden: yes
     type: time
     timeframes: [
       raw,
@@ -807,27 +904,32 @@ view: sales_orders {
     sql: ${TABLE}.Lastcustomercontactdate_MAHDT ;;
   }
 
-  dimension: leading_uo_m_kzfme {
+  dimension: leading_uom_kzfme {
+    hidden: yes
     type: string
     sql: ${TABLE}.LeadingUoM_KZFME ;;
   }
 
   dimension: location_for_a_physical_handover_of_goods_handoverloc {
+    hidden: yes
     type: string
     sql: ${TABLE}.Locationforaphysicalhandoverofgoods_HANDOVERLOC ;;
   }
 
   dimension: managing_location_stockloc {
+    hidden: yes
     type: string
     sql: ${TABLE}.ManagingLocation_STOCKLOC ;;
   }
 
   dimension: manual_tax_code_reason_manual_tc_reason {
+    hidden: yes
     type: string
     sql: ${TABLE}.ManualTaxCodeReason_MANUAL_TC_REASON ;;
   }
 
   dimension: material_freight_group_mfrgr {
+    hidden: yes
     type: string
     sql: ${TABLE}.MaterialFreightGroup_MFRGR ;;
   }
@@ -848,6 +950,7 @@ view: sales_orders {
   }
 
   dimension: material_pricing_group_ukonm {
+    hidden: yes
     type: string
     sql: ${TABLE}.MaterialPricingGroup_UKONM ;;
   }
@@ -858,56 +961,67 @@ view: sales_orders {
   }
 
   dimension: material_group1_mvgr1 {
+    hidden: yes
     type: string
     sql: ${TABLE}.Materialgroup1_MVGR1 ;;
   }
 
   dimension: material_group2_mvgr2 {
+    hidden: yes
     type: string
     sql: ${TABLE}.Materialgroup2_MVGR2 ;;
   }
 
   dimension: material_group3_mvgr3 {
+    hidden: yes
     type: string
     sql: ${TABLE}.Materialgroup3_MVGR3 ;;
   }
 
   dimension: material_group4_mvgr4 {
+    hidden: yes
     type: string
     sql: ${TABLE}.Materialgroup4_MVGR4 ;;
   }
 
   dimension: material_group5_mvgr5 {
+    hidden: yes
     type: string
     sql: ${TABLE}.Materialgroup5_MVGR5 ;;
   }
 
   dimension: material_group_hierarchy1_wgru1 {
+    hidden: yes
     type: string
     sql: ${TABLE}.Materialgrouphierarchy1_WGRU1 ;;
   }
 
   dimension: material_group_hierarchy2_wgru2 {
+    hidden: yes
     type: string
     sql: ${TABLE}.Materialgrouphierarchy2_WGRU2 ;;
   }
 
   dimension: maximum_partial_deliveries_antlf {
+    hidden: yes
     type: number
     sql: ${TABLE}.MaximumPartialDeliveries_ANTLF ;;
   }
 
   dimension: minimum_delivery_quantity_in_delivery_note_processing_lfmng {
+    hidden: yes
     type: number
     sql: ${TABLE}.Minimumdeliveryquantityindeliverynoteprocessing_LFMNG ;;
   }
 
   dimension: mrp_area_berid {
+    hidden: yes
     type: string
     sql: ${TABLE}.MRPArea_BERID ;;
   }
 
   dimension: mrp_for_delivery_schedule_types_abdis {
+    hidden: yes
     type: string
     sql: ${TABLE}.MRPfordeliveryscheduletypes_ABDIS ;;
   }
@@ -923,16 +1037,19 @@ view: sales_orders {
   }
 
   dimension: net_price_netwr {
+    hidden: yes
     type: number
     sql: ${TABLE}.NetPrice_NETWR ;;
   }
 
   dimension: net_value_of_the_sales_order_in_document_currency_netwr {
+    hidden: yes
     type: number
     sql: ${TABLE}.NetValueoftheSalesOrderinDocumentCurrency_NETWR ;;
   }
 
   dimension: net_price_netpr {
+    hidden: yes
     type: number
     sql: ${TABLE}.Netprice_NETPR ;;
   }
@@ -958,26 +1075,31 @@ view: sales_orders {
   }
 
   dimension: not_a_fiscal_special_case_for_cfop_determination_spcsto {
+    hidden: yes
     type: string
     sql: ${TABLE}.NotaFiscalSpecialCaseforCFOPDetermination_SPCSTO ;;
   }
 
   dimension: notification_no_qmnum {
+    hidden: yes
     type: string
     sql: ${TABLE}.NotificationNo_QMNUM ;;
   }
 
   dimension: number_of_condition_record_knumh {
+    hidden: yes
     type: string
     sql: ${TABLE}.Numberofconditionrecord_KNUMH ;;
   }
 
   dimension: number_of_contacts_from_the_customer_mahza {
+    hidden: yes
     type: number
     sql: ${TABLE}.Numberofcontactsfromthecustomer_MAHZA ;;
   }
 
   dimension: number_of_serial_numbers_anzsn {
+    hidden: yes
     type: number
     sql: ${TABLE}.Numberofserialnumbers_ANZSN ;;
   }
@@ -988,6 +1110,7 @@ view: sales_orders {
   }
 
   dimension: object_number_at_header_level_objnr {
+    hidden: yes
     type: string
     sql: ${TABLE}.Objectnumberatheaderlevel_OBJNR ;;
   }
@@ -998,71 +1121,85 @@ view: sales_orders {
   }
 
   dimension: order_number_aufnr {
+    hidden: yes
     type: string
     sql: ${TABLE}.OrderNumber_AUFNR ;;
   }
 
   dimension: order_number_hdr_aufnr {
+    hidden: yes
     type: string
     sql: ${TABLE}.OrderNumberHdr_AUFNR ;;
   }
 
   dimension: order_probability_of_the_item_awahr {
+    hidden: yes
     type: string
     sql: ${TABLE}.Orderprobabilityoftheitem_AWAHR ;;
   }
 
   dimension: original_system_vbkla {
+    hidden: yes
     type: string
     sql: ${TABLE}.OriginalSystem_VBKLA ;;
   }
 
   dimension: originating_document_vbelv {
+    hidden: yes
     type: string
     sql: ${TABLE}.Originatingdocument_VBELV ;;
   }
 
   dimension: originating_item_posnv {
+    hidden: yes
     type: string
     sql: ${TABLE}.Originatingitem_POSNV ;;
   }
 
   dimension: overdelivery_tolerance_limit_uebto {
+    hidden: yes
     type: number
     sql: ${TABLE}.OverdeliveryToleranceLimit_UEBTO ;;
   }
 
   dimension: overheadkey_zschl_k {
+    hidden: yes
     type: string
     sql: ${TABLE}.Overheadkey_ZSCHL_K ;;
   }
 
   dimension: packaging_materials_magrv {
+    hidden: yes
     type: string
     sql: ${TABLE}.PackagingMaterials_MAGRV ;;
   }
 
   dimension: parameter_variant_techs {
+    hidden: yes
     type: string
     sql: ${TABLE}.ParameterVariant_TECHS ;;
   }
 
   dimension: partial_delivery_at_item_level_kztlf {
+    hidden: yes
     type: string
     sql: ${TABLE}.Partialdeliveryatitemlevel_KZTLF ;;
   }
 
   dimension: planning_release_regulation_plavo {
+    hidden: yes
     type: string
     sql: ${TABLE}.PlanningReleaseRegulation_PLAVO ;;
   }
 
   dimension: planning_material_vpmat {
+    hidden: yes
     type: string
     sql: ${TABLE}.Planningmaterial_VPMAT ;;
   }
 
   dimension: planning_plant_vpwrk {
+    hidden: yes
     type: string
     sql: ${TABLE}.Planningplant_VPWRK ;;
   }
@@ -1073,86 +1210,103 @@ view: sales_orders {
   }
 
   dimension: pre_doc_category_vgtyp {
+    hidden: yes
     type: string
     sql: ${TABLE}.PreDocCategory_VGTYP ;;
   }
 
   dimension: preceding_doc_category_vgtyp {
+    hidden: yes
     type: string
     sql: ${TABLE}.PrecedingDocCategory_VGTYP ;;
   }
 
   dimension: preceding_document_has_resulted_from_reference_vgref {
+    hidden: yes
     type: string
     sql: ${TABLE}.Precedingdocumenthasresultedfromreference_VGREF ;;
   }
 
   dimension: pricing_procedure_kalsm {
+    hidden: yes
     type: string
     sql: ${TABLE}.PricingProcedure_KALSM ;;
   }
 
   dimension: pricing_reference_material_pmatn {
+    hidden: yes
     type: string
     sql: ${TABLE}.PricingReferenceMaterial_PMATN ;;
   }
 
   dimension: pricing_reference_material_upmat {
+    hidden: yes
     type: string
     sql: ${TABLE}.PricingReferenceMaterial_UPMAT ;;
   }
 
   dimension: pricing_is_ok_prsok {
+    hidden: yes
     type: string
     sql: ${TABLE}.PricingisOK_PRSOK ;;
   }
 
   dimension: product_hierarchy_prodh {
+    hidden: yes
     type: string
     sql: ${TABLE}.ProductHierarchy_PRODH ;;
   }
 
   dimension: product_allocation_kosch {
+    hidden: yes
     type: string
     sql: ${TABLE}.Productallocation_KOSCH ;;
   }
 
   dimension: profit_center_prctr {
+    hidden: yes
     type: string
     sql: ${TABLE}.ProfitCenter_PRCTR ;;
   }
 
   dimension: profit_center_for_billing_pctrf {
+    hidden: yes
     type: string
     sql: ${TABLE}.ProfitCenterforBilling_PCTRF ;;
   }
 
   dimension: profitability_segment_number_paobjnr {
+    hidden: yes
     type: string
     sql: ${TABLE}.ProfitabilitySegmentNumber_PAOBJNR ;;
   }
 
   dimension: promotion_knuma_pi {
+    hidden: yes
     type: string
     sql: ${TABLE}.Promotion_KNUMA_PI ;;
   }
 
   dimension: proposed_billing_type_fkara {
+    hidden: yes
     type: string
     sql: ${TABLE}.Proposedbillingtype_FKARA ;;
   }
 
   dimension: proposed_date_type_vprgr {
+    hidden: yes
     type: string
     sql: ${TABLE}.Proposeddatetype_VPRGR ;;
   }
 
   dimension: purchase_order_number_supplement_bstzd {
+    hidden: yes
     type: string
     sql: ${TABLE}.Purchaseordernumbersupplement_BSTZD ;;
   }
 
   dimension: quantity_is_fixed_fmeng {
+    hidden: yes
     type: string
     sql: ${TABLE}.Quantityisfixed_FMENG ;;
   }
@@ -1188,16 +1342,19 @@ view: sales_orders {
   }
 
   dimension: reason_augru {
+    hidden: yes
     type: string
     sql: ${TABLE}.Reason_AUGRU ;;
   }
 
   dimension: reason_for_material_substitution_sugrd {
+    hidden: yes
     type: string
     sql: ${TABLE}.Reasonformaterialsubstitution_SUGRD ;;
   }
 
   dimension_group: reconciliation_date_abdat {
+    hidden: yes
     type: time
     timeframes: [
       raw,
@@ -1213,6 +1370,7 @@ view: sales_orders {
   }
 
   dimension: reference_document_number_xblnr {
+    hidden: yes
     type: string
     sql: ${TABLE}.ReferenceDocumentNumber_XBLNR ;;
   }
@@ -1223,21 +1381,25 @@ view: sales_orders {
   }
 
   dimension: reference_indicator_voref {
+    hidden: yes
     type: string
     sql: ${TABLE}.ReferenceIndicator_VOREF ;;
   }
 
   dimension: reference_item_vgpos {
+    hidden: yes
     type: string
     sql: ${TABLE}.ReferenceItem_VGPOS ;;
   }
 
   dimension: rejection_reason_abgru {
+    hidden: yes
     type: string
     sql: ${TABLE}.RejectionReason_ABGRU ;;
   }
 
   dimension_group: release_date_of_the_document_determined_by_credit_management_cmfre {
+    hidden: yes
     type: time
     timeframes: [
       raw,
@@ -1253,31 +1415,37 @@ view: sales_orders {
   }
 
   dimension: released_credit_value_of_the_document_amtbl {
+    hidden: yes
     type: number
     sql: ${TABLE}.Releasedcreditvalueofthedocument_AMTBL ;;
   }
 
   dimension: relevant_for_billing_fkrel {
+    hidden: yes
     type: string
     sql: ${TABLE}.RelevantforBilling_FKREL ;;
   }
 
   dimension: relevant_for_delivery_lfrel {
+    hidden: yes
     type: string
     sql: ${TABLE}.RelevantforDelivery_LFREL ;;
   }
 
   dimension: relevant_for_credit_cmpnt {
+    hidden: yes
     type: string
     sql: ${TABLE}.Relevantforcredit_CMPNT ;;
   }
 
   dimension: repair_processing_vkgru {
+    hidden: yes
     type: string
     sql: ${TABLE}.Repairprocessing_VKGRU ;;
   }
 
   dimension: replacement_part_atpkz {
+    hidden: yes
     type: string
     sql: ${TABLE}.Replacementpart_ATPKZ ;;
   }
@@ -1298,11 +1466,13 @@ view: sales_orders {
   }
 
   dimension: requirements_type_bedae {
+    hidden: yes
     type: string
     sql: ${TABLE}.Requirementstype_BEDAE ;;
   }
 
   dimension: results_analysis_key_abgrs {
+    hidden: yes
     type: string
     sql: ${TABLE}.ResultsAnalysisKey_ABGRS ;;
   }
@@ -1318,21 +1488,25 @@ view: sales_orders {
   }
 
   dimension: returns_refund_code_msr_refund_code {
+    hidden: yes
     type: string
     sql: ${TABLE}.ReturnsRefundCode_MSR_REFUND_CODE ;;
   }
 
   dimension: risk_relevancy_in_sales_trmrisk_relevant {
+    hidden: yes
     type: string
     sql: ${TABLE}.RiskRelevancyinSales_TRMRISK_RELEVANT ;;
   }
 
   dimension: risk_category_ctlpc {
+    hidden: yes
     type: string
     sql: ${TABLE}.Riskcategory_CTLPC ;;
   }
 
   dimension: rounding_quantity_for_delivery_ablfz {
+    hidden: yes
     type: number
     sql: ${TABLE}.Roundingquantityfordelivery_ABLFZ ;;
   }
@@ -1518,6 +1692,7 @@ view: sales_orders {
   }
 
   dimension: tax_classification4_taxk4 {
+    hidden: yes
     type: string
     sql: ${TABLE}.TaxClassification4_TAXK4 ;;
   }
@@ -1543,11 +1718,13 @@ view: sales_orders {
   }
 
   dimension: tax_classification1_taxm1 {
+    hidden: yes
     type: string
     sql: ${TABLE}.Taxclassification1_TAXM1 ;;
   }
 
   dimension: tax_classification2_taxk2 {
+    hidden: yes
     type: string
     sql: ${TABLE}.Taxclassification2_TAXK2 ;;
   }
@@ -1563,61 +1740,73 @@ view: sales_orders {
   }
 
   dimension: tax_classification3_taxm3 {
+    hidden: yes
     type: string
     sql: ${TABLE}.Taxclassification3_TAXM3 ;;
   }
 
   dimension: tax_classification4_taxm4 {
+    hidden: yes
     type: string
     sql: ${TABLE}.Taxclassification4_TAXM4 ;;
   }
 
   dimension: tax_classification5_taxk5 {
+    hidden: yes
     type: string
     sql: ${TABLE}.Taxclassification5_TAXK5 ;;
   }
 
   dimension: tax_classification5_taxm5 {
+    hidden: yes
     type: string
     sql: ${TABLE}.Taxclassification5_TAXM5 ;;
   }
 
   dimension: tax_classification6_taxk6 {
+    hidden: yes
     type: string
     sql: ${TABLE}.Taxclassification6_TAXK6 ;;
   }
 
   dimension: tax_classification6_taxm6 {
+    hidden: yes
     type: string
     sql: ${TABLE}.Taxclassification6_TAXM6 ;;
   }
 
   dimension: tax_classification7_taxk7 {
+    hidden: yes
     type: string
     sql: ${TABLE}.Taxclassification7_TAXK7 ;;
   }
 
   dimension: tax_classification7_taxm7 {
+    hidden: yes
     type: string
     sql: ${TABLE}.Taxclassification7_TAXM7 ;;
   }
 
   dimension: tax_classification8_taxk8 {
+    hidden: yes
     type: string
     sql: ${TABLE}.Taxclassification8_TAXK8 ;;
   }
 
   dimension: tax_classification8_taxm8 {
+    hidden: yes
     type: string
     sql: ${TABLE}.Taxclassification8_TAXM8 ;;
   }
 
   dimension: tax_classification9_taxk9 {
+    hidden: yes
     type: string
     sql: ${TABLE}.Taxclassification9_TAXK9 ;;
   }
 
   dimension: tax_classification9_taxm9 {
+    hidden: yes
     type: string
     sql: ${TABLE}.Taxclassification9_TAXM9 ;;
   }
@@ -1764,17 +1953,17 @@ view: sales_orders {
 
   measure: total_sales_orders {
     # type: sum_distinct
-    type: sum
-    sql: CAST(${sales_document_vbeln} AS NUMERIC);;
+    type: count_distinct
+    sql: ${sales_document_vbeln};;
     filters: [document_category_vbtyp: "C"]
     value_format_name: decimal_2
   }
 
-  # measure: total_volume {
-  #   type: sum
-  #   sql: ${volume_of_the_item_volum};;
-  #   value_format_name: decimal_2
-  # }
+  measure: total_volume {
+    type: sum
+    sql: ${volume_unit_voleh};;
+    value_format_name: decimal_2
+  }
 
   measure: total_sales_order_org_currency {
     type: sum

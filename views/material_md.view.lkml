@@ -39,7 +39,7 @@ view: material_md {
     sql: ${TABLE}.CADIndicator ;;
   }
 
-  dimension: client {
+  dimension: client_mandt {
     type: string
     sql: ${TABLE}.Client ;;
   }
