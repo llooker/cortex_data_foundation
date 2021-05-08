@@ -29,7 +29,7 @@ explore: sales_orders {
 
   join: material_md {
     type: left_outer
-    sql_on: ${sales_orders.material_number_matnr}=${material_md.material_number} AND ${sales_orders.client_mandt}=${material_md.client_mandt} and ${material_md.language}="E" ;;
+    sql_on: ${sales_orders.material_number_matnr}=${material_md.material_number_matnr} AND ${sales_orders.client_mandt}=${material_md.client_mandt} and ${material_md.language_spras}="E" ;;
     relationship: many_to_one
   }
 
