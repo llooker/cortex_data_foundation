@@ -47,47 +47,15 @@ explore: sales_orders {
 
 }
 
-# VGBEL  = SalesOrdes VBELN and VGPOS = SalesOrders POSNR
+explore: sales_fullfillment {
+  sql_always_where: ${material_number} is NOT NULL ;;
+  # join: sales_status_items {
+  #   type: left_outer
+  #   sql_on: ${sales_fullfillment.currency}=${sales_status_items.currency}
+  #       AND ${sales_fullfillment.delivered_uom}=${sales_status_items.delivered_uom}
+  #       AND ${sales_fullfillment.sales_unit}=${sales_status_items.sales_unit}
+  #       AND ${sales_fullfillment.material_number}=${sales_status_items.material_number};;
+  # }
+}
 
-
-# explore: company {}
-
-# explore: currency {}
-
-# explore: currency_conv_util {}
-
-# explore: currency_md {}
-
-# explore: customers_md {}
-
-# explore: deliveries {}
-
-# explore: deliveries_status {}
-
-# explore: glaccounting_hdr_r3 {}
-
-# explore: ledger_md {}
-
-# explore: material_group_md {}
-
-# explore: material_md {}
-
-# explore: material_valuation_stock_changes {}
-
-# explore: materials {}
-
-# explore: product_hierarchy_flattened {}
-
-# explore: profit_ctr {}
-
-# explore: purchase_documents_hdr {}
-
-# explore: purchase_documents_items {}
-
-# explore: sales_organizations {}
-
-# explore: sdstatus {}
-
-# explore: time_dim {}
-
-# explore: vendors {}
+explore: sales_status_items {}
