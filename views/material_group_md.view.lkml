@@ -9,11 +9,13 @@ view: material_group_md {
   }
 
   dimension: authorization_group {
+    hidden: yes
     type: string
     sql: ${TABLE}.AuthorizationGroup ;;
   }
 
   dimension: client_mandt {
+    hidden: yes
     type: string
     sql: ${TABLE}.Client ;;
   }
@@ -39,6 +41,7 @@ view: material_group_md {
   }
 
   dimension: language {
+    hidden: yes
     type: string
     sql: ${TABLE}.Language ;;
   }
@@ -54,21 +57,25 @@ view: material_group_md {
   }
 
   dimension: price_level_group {
+    hidden: yes
     type: string
     sql: ${TABLE}.PriceLevelGroup ;;
   }
 
   dimension: purchasing_value_key {
+    hidden: yes
     type: string
     sql: ${TABLE}.PurchasingValueKey ;;
   }
 
   dimension: reference_group_ref_material_wwgda {
+    hidden: yes
     type: string
     sql: ${TABLE}.ReferenceGroupRefMaterial_WWGDA ;;
   }
 
   dimension: valuation_class_bklas {
+    hidden: yes
     type: string
     sql: ${TABLE}.ValuationClass_BKLAS ;;
   }
