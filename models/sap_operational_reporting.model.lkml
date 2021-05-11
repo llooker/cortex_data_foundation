@@ -46,14 +46,14 @@ explore: sales_orders {
   }
 
   join: t005t {
-    view_label: "Sales Order"
+    view_label: "Sales Orders"
     type: left_outer
     sql_on: ${t005t.land1}=${customers_md.country_key_land1} AND ${t005t.spras}="E" ;;
     relationship: many_to_one
   }
 
   join: t005u {
-    view_label: "Sales Order"
+    view_label: "Sales Orders"
     type: left_outer
     sql_on: ${t005u.land1}=${customers_md.country_key_land1} AND ${customers_md.region_regio}=${t005u.bland} AND ${t005u.spras}="E" ;;
     relationship: many_to_one
