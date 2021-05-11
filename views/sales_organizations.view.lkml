@@ -3,41 +3,49 @@ view: sales_organizations {
     ;;
 
   dimension: client_mandt {
+    hidden: yes
     type: string
     sql: ${TABLE}.Client_MANDT ;;
   }
 
   dimension: co_co_currency_waers {
+    hidden: yes
     type: string
     sql: ${TABLE}.CoCoCurrency_WAERS ;;
   }
 
   dimension: company_butxt {
+    hidden: yes
     type: string
     sql: ${TABLE}.Company_BUTXT ;;
   }
 
   dimension: company_code_bukrs {
+    hidden: yes
     type: string
     sql: ${TABLE}.CompanyCode_BUKRS ;;
   }
 
   dimension: country_land1 {
+    hidden: yes
     type: string
     sql: ${TABLE}.Country_LAND1 ;;
   }
 
   dimension: fiscal_yr_variant_periv {
+    hidden: yes
     type: string
     sql: ${TABLE}.FiscalYrVariant_PERIV ;;
   }
 
   dimension: language_spras {
+    hidden: yes
     type: string
     sql: ${TABLE}.Language_SPRAS ;;
   }
 
   dimension: sales_org_currency_waers {
+    hidden: yes
     type: string
     sql: ${TABLE}.SalesOrgCurrency_WAERS ;;
   }
