@@ -1,6 +1,7 @@
 view: customers_md {
   sql_table_name: `SAP_REPORTING.CustomersMD`
     ;;
+  view_label: "Customers"
 
   dimension: account_number_fiscal_address_fiskn {
     type: string

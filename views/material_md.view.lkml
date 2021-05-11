@@ -1,6 +1,7 @@
 view: material_md {
   sql_table_name: `lucias-rabia.SAP_REPORTING.MaterialMD`
     ;;
+    view_label: "Material"
 
   dimension: acceptance_at_origin_weora {
     type: string
