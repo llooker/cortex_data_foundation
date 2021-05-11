@@ -45,7 +45,22 @@ explore: sales_orders {
     relationship: many_to_one
   }
 
+  join: t005t {
+    view_label: "Sales Order"
+    type: left_outer
+    sql_on: ${t005t.land1}=${customers_md.country_key_land1} AND ${t005t.spras}="E" ;;
+    relationship: many_to_one
+  }
+
+  join: t005u {
+    view_label: "Sales Order"
+    type: left_outer
+    sql_on: ${t005u.land1}=${customers_md.country_key_land1} AND ${customers_md.region_regio}=${t005u.bland} AND ${t005u.spras}="E" ;;
+    relationship: many_to_one
+  }
+
 }
+
 
 explore: sales_fullfillment {
   sql_always_where: ${material_number} is NOT NULL ;;

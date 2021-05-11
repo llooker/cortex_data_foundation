@@ -156,11 +156,11 @@ view: sales_status_items {
     value_format_name: decimal_0
   }
 
-  # measure: total_pending_delivery_quantity {
-  #   type: sum
-  #   sql: ${pending_delivery} ;;
-  #   value_format_name: decimal_0
-  # }
+  measure: total_pending_delivery_quantity {
+    type: sum
+    sql: ${sales_qty}-${delivered_qty};;
+    value_format_name: decimal_0
+  }
 
   # measure: total_delivered_pending_billing {
   #   type: sum

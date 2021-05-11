@@ -1,23 +1,11 @@
-view: t005u {
-  sql_table_name: `lucias-rabia.SAP_ECC.t005u`
+view: t005t {
+  sql_table_name: `lucias-rabia.SAP_DEMO.t005t`
     ;;
 
-  dimension: t005u_pk {
+  dimension: t005t_pk {
     primary_key: yes
     type: string
     sql: CONCAT(${land1}, " - ",${spras} ;;
-  }
-
-  dimension: bezei {
-    label: "Customer Region"
-    type: string
-    sql: ${TABLE}.bezei ;;
-  }
-
-  dimension: bland {
-    hidden: yes
-    type: string
-    sql: ${TABLE}.bland ;;
   }
 
   dimension: is_deleted {
@@ -32,16 +20,46 @@ view: t005u {
     sql: ${TABLE}.land1 ;;
   }
 
+  dimension: landx {
+    label: "Customer Country"
+    type: string
+    sql: ${TABLE}.landx ;;
+  }
+
+  dimension: landx50 {
+    hidden: yes
+    type: string
+    sql: ${TABLE}.landx50 ;;
+  }
+
   dimension: mandt {
     hidden: yes
     type: string
     sql: ${TABLE}.mandt ;;
   }
 
+  dimension: natio {
+    hidden: yes
+    type: string
+    sql: ${TABLE}.natio ;;
+  }
+
+  dimension: natio50 {
+    hidden: yes
+    type: string
+    sql: ${TABLE}.natio50 ;;
+  }
+
   dimension: operation_flag {
     hidden: yes
     type: string
     sql: ${TABLE}.operation_flag ;;
+  }
+
+  dimension: prq_spregt {
+    hidden: yes
+    type: string
+    sql: ${TABLE}.prq_spregt ;;
   }
 
   dimension_group: recordstamp {
