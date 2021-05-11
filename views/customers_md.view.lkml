@@ -448,6 +448,7 @@ view: customers_md {
   }
 
   dimension: first_name_psovn {
+    hidden: yes
     type: string
     sql: ${TABLE}.FirstName_PSOVN ;;
   }
@@ -662,6 +663,7 @@ view: customers_md {
   }
 
   dimension: name1_pson1 {
+    hidden: yes
     type: string
     sql: ${TABLE}.Name1_PSON1 ;;
   }
