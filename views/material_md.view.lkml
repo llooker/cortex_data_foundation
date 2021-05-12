@@ -553,6 +553,11 @@ view: material_md {
   dimension: material_number_matnr {
     type: string
     sql: ${TABLE}.MaterialNumber_MATNR ;;
+    link: {
+      label: "Material Details"
+      url: "/dashboards-next/42?Material%20Number%20Matnr={{ filterable_value }}"
+      icon_url: "http://www.looker.com/favicon.ico"
+    }
   }
 
   dimension: material_number_of_the_generic_material_in_prepack_materials_gennr {
@@ -570,6 +575,11 @@ view: material_md {
   dimension: material_text_maktx {
     type: string
     sql: ${TABLE}.MaterialText_MAKTX ;;
+    link: {
+      label: "Material Details"
+      url: "/dashboards-next/42?Material%20Text%20Maktx={{ filterable_value }}"
+      icon_url: "http://www.looker.com/favicon.ico"
+    }
   }
 
   dimension: material_type_mtart {
