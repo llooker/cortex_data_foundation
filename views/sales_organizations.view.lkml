@@ -51,6 +51,7 @@ view: sales_organizations {
   }
 
   dimension: sales_org_customer_kunnr {
+    hidden: yes
     type: string
     sql: ${TABLE}.SalesOrgCustomer_KUNNR ;;
   }
@@ -61,6 +62,7 @@ view: sales_organizations {
   }
 
   dimension: sales_org_vkorg {
+    hidden: yes
     type: string
     sql: ${TABLE}.SalesOrg_VKORG ;;
   }

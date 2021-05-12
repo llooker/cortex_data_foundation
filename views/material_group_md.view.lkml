@@ -4,6 +4,7 @@ view: material_group_md {
     view_label: "Material Group"
 
   dimension: asset_class {
+    hidden: yes
     type: string
     sql: ${TABLE}.AssetClass ;;
   }
@@ -21,21 +22,25 @@ view: material_group_md {
   }
 
   dimension: default_unit_of_weight_gewei {
+    hidden: yes
     type: string
     sql: ${TABLE}.DefaultUnitofWeight_GEWEI ;;
   }
 
   dimension: department_number_abtnr {
+    hidden: yes
     type: string
     sql: ${TABLE}.DepartmentNumber_ABTNR ;;
   }
 
   dimension: division_spart {
+    hidden: yes
     type: string
     sql: ${TABLE}.Division_SPART ;;
   }
 
   dimension: group_material_wwgpa {
+    hidden: yes
     type: string
     sql: ${TABLE}.GroupMaterial_WWGPA ;;
   }

@@ -3,6 +3,12 @@ view: customers_md {
     ;;
   view_label: "Customers"
 
+  dimension: customers_pk {
+    hidden: yes
+    primary_key: yes
+    sql: CONCAT(${client_mandt}, " - ",${customer_number_kunnr}) ;;
+  }
+
   dimension: account_number_fiscal_address_fiskn {
     hidden: yes
     type: string

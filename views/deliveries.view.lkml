@@ -9,7 +9,7 @@ view: deliveries {
   }
 
   dimension_group: actual_goods_movement_date_wadat_ist {
-    hidden: yes
+    # hidden: yes
     type: time
     timeframes: [
       raw,
@@ -759,7 +759,7 @@ view: deliveries {
   }
 
   dimension: delivery_delay {
-    hidden: yes
+    # hidden: yes
     type: number
     sql: ${TABLE}.delivery_delay ;;
   }
@@ -2009,7 +2009,7 @@ view: deliveries {
   }
 
   dimension_group: planned_goods_movement_date_wadat {
-    hidden: yes
+    # hidden: yes
     type: time
     timeframes: [
       raw,

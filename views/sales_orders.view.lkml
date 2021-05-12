@@ -679,7 +679,8 @@ view: sales_orders {
       week,
       month,
       quarter,
-      year
+      year,
+      month_name
     ]
     convert_tz: no
     datatype: date
@@ -1547,7 +1548,7 @@ view: sales_orders {
 
   dimension: sales_document_vbeln {
     type: number
-    sql: CAST( ${TABLE}.SalesDocument_VBELN AS NUMERIC) ;;
+    sql: ${TABLE}.SalesDocument_VBELN;;
   }
 
   dimension: sales_group_vkgrp {
@@ -2022,10 +2023,10 @@ view: sales_orders {
     sql: ${TABLE}.YourReference_IHREZ ;;
   }
 
-  measure: count {
-    type: count
-    drill_fields: [name_of_orderer_bname]
-  }
+  # measure: count {
+  #   type: count
+  #   drill_fields: [name_of_orderer_bname]
+  # }
 
   measure: total_sales_orders {
     # type: sum_distinct
@@ -2045,6 +2046,20 @@ view: sales_orders {
 
   measure: total_sales_order_org_currency {
     type: sum
+    sql: ${net_value_of_the_sales_order_in_document_currency_netwr};;
+    value_format_name: decimal_2
+  }
+
+  measure: average_volume {
+    description: "Automatically includes Volume Unit in the request."
+    type: average
+    sql: ${volume_of_the_item_volum};;
+    value_format_name: decimal_2
+    required_fields: [volume_unit_voleh]
+  }
+
+  measure: average_sales_order_org_currency {
+    type: average
     sql: ${net_value_of_the_sales_order_in_document_currency_netwr};;
     value_format_name: decimal_2
   }
