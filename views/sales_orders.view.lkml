@@ -2033,7 +2033,7 @@ view: sales_orders {
     type: count_distinct
     sql: ${sales_document_vbeln};;
     filters: [document_category_vbtyp: "C"]
-    value_format_name: decimal_2
+    value_format_name: decimal_0
   }
 
   measure: total_volume {
@@ -2047,7 +2047,7 @@ view: sales_orders {
   measure: total_sales_order_org_currency {
     type: sum
     sql: ${net_value_of_the_sales_order_in_document_currency_netwr};;
-    value_format_name: decimal_2
+    value_format_name: decimal_0
   }
 
   measure: average_volume {
