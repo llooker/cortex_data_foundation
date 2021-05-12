@@ -12,6 +12,7 @@ view: t005u {
     label: "Customer Region"
     type: string
     sql: ${TABLE}.bezei ;;
+    map_layer_name: us_states
   }
 
   dimension: bland {

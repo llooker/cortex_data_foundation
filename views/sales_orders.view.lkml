@@ -1,13 +1,10 @@
+include: "custom_navigation.view.lkml"
+
 view: sales_orders {
   sql_table_name: `SAP_REPORTING.SalesOrders`
     ;;
 
-#Primary keys
-#Sum distinct?
-#what to sum for volume
-#delivery info?
-#currency?
-#SalesDocument_VBELN is a string
+  extends: [custom_navigation_buttons]
 
   dimension: sales_order_pk {
     primary_key: yes

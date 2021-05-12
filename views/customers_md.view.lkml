@@ -790,6 +790,7 @@ view: customers_md {
   dimension: region_regio {
     type: string
     sql: ${TABLE}.Region_REGIO ;;
+    map_layer_name: us_states
   }
 
   dimension: regional_market_rpmkr {

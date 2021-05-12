@@ -24,6 +24,7 @@ view: t005t {
     label: "Customer Country"
     type: string
     sql: ${TABLE}.landx ;;
+    map_layer_name: countries
   }
 
   dimension: landx50 {
