@@ -254,7 +254,7 @@
     listen: {}
     row: 15
     col: 16
-    width: 7
+    width: 8
     height: 9
   - title: Late Deliveries
     name: Late Deliveries (2)
