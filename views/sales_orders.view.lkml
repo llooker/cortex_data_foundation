@@ -670,7 +670,7 @@ view: sales_orders {
     sql: ${TABLE}.DocumentCategory_VBTYP ;;
   }
 
-  dimension_group: document_date {
+  dimension_group: document {
     type: time
     timeframes: [
       raw,
