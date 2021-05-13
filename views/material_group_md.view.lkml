@@ -15,31 +15,31 @@ view: material_group_md {
     sql: ${TABLE}.AuthorizationGroup ;;
   }
 
-  dimension: client_mandt {
+  dimension: client {
     hidden: yes
     type: string
     sql: ${TABLE}.Client ;;
   }
 
-  dimension: default_unit_of_weight_gewei {
+  dimension: default_unit_of_weight {
     hidden: yes
     type: string
     sql: ${TABLE}.DefaultUnitofWeight_GEWEI ;;
   }
 
-  dimension: department_number_abtnr {
+  dimension: department_number {
     hidden: yes
     type: string
     sql: ${TABLE}.DepartmentNumber_ABTNR ;;
   }
 
-  dimension: division_spart {
+  dimension: division {
     hidden: yes
     type: string
     sql: ${TABLE}.Division_SPART ;;
   }
 
-  dimension: group_material_wwgpa {
+  dimension: group_material {
     hidden: yes
     type: string
     sql: ${TABLE}.GroupMaterial_WWGPA ;;
@@ -51,12 +51,12 @@ view: material_group_md {
     sql: ${TABLE}.Language ;;
   }
 
-  dimension: material_group_matkl {
+  dimension: material_group {
     type: string
     sql: ${TABLE}.MaterialGroup_MATKL ;;
   }
 
-  dimension: material_group_name_wgbez {
+  dimension: material_group_name {
     type: string
     sql: ${TABLE}.MaterialGroupName_WGBEZ ;;
   }
@@ -73,13 +73,13 @@ view: material_group_md {
     sql: ${TABLE}.PurchasingValueKey ;;
   }
 
-  dimension: reference_group_ref_material_wwgda {
+  dimension: reference_group_ref_material {
     hidden: yes
     type: string
     sql: ${TABLE}.ReferenceGroupRefMaterial_WWGDA ;;
   }
 
-  dimension: valuation_class_bklas {
+  dimension: valuation_class {
     hidden: yes
     type: string
     sql: ${TABLE}.ValuationClass_BKLAS ;;

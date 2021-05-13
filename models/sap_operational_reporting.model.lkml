@@ -24,7 +24,7 @@ explore: sales_orders {
 
   join: customers_md {
     type: left_outer
-    sql_on: ${sales_orders.sold_to_party}=${customers_md.customer_number_kunnr} AND ${sales_orders.client}=${customers_md.client_mandt};;
+    sql_on: ${sales_orders.sold_to_party}=${customers_md.customer_number} AND ${sales_orders.client}=${customers_md.client};;
     relationship: many_to_one
   }
 
@@ -36,7 +36,7 @@ explore: sales_orders {
 
   join: material_group_md {
     type: left_outer
-    sql_on: ${sales_orders.material_group}=${material_group_md.material_group_matkl} AND ${sales_orders.client}=${material_group_md.client_mandt} and ${material_group_md.language}="E" ;;
+    sql_on: ${sales_orders.material_group}=${material_group_md.material_group} AND ${sales_orders.client}=${material_group_md.client} and ${material_group_md.language}="E" ;;
     relationship: many_to_one
   }
 
@@ -49,14 +49,14 @@ explore: sales_orders {
   join: t005t {
     view_label: "Sales Orders"
     type: left_outer
-    sql_on: ${t005t.land1}=${customers_md.country_key_land1} AND ${t005t.spras}="E" ;;
+    sql_on: ${t005t.land1}=${customers_md.country_key} AND ${t005t.spras}="E" ;;
     relationship: many_to_one
   }
 
   join: t005u {
     view_label: "Sales Orders"
     type: left_outer
-    sql_on: ${t005u.land1}=${customers_md.country_key_land1} AND ${customers_md.region_regio}=${t005u.bland} AND ${t005u.spras}="E" ;;
+    sql_on: ${t005u.land1}=${customers_md.country_key} AND ${customers_md.region}=${t005u.bland} AND ${t005u.spras}="E" ;;
     relationship: many_to_one
   }
 
