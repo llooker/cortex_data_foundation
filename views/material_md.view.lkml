@@ -6,6 +6,7 @@ view: material_md {
   dimension: material_pk {
     primary_key: yes
     hidden: yes
+    type: string
     sql: CONCAT(${client}," - ", ${material_number}," - ", ${language}) ;;
   }
 

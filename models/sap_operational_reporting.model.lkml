@@ -10,10 +10,6 @@ datagroup: sap_operational_reporting_default_datagroup {
 
 persist_with: sap_operational_reporting_default_datagroup
 
-
-# client_mandt used for all joins?
-# what are the most common fields to use for the reports
-
 explore: sales_orders {
   join: sales_organizations {
     view_label: "Sales Orders"
@@ -42,7 +38,7 @@ explore: sales_orders {
 
   join: deliveries {
     type: left_outer
-    sql_on: ${deliveries.sales_order_number_vgbel}=${sales_orders.document} AND ${deliveries.sales_order_item_vgpos}=${sales_orders.item} ;;
+    sql_on: ${deliveries.sales_order_number}=${sales_orders.document} AND ${deliveries.sales_order_item}=${sales_orders.item} ;;
     relationship: many_to_one
   }
 
@@ -62,16 +58,8 @@ explore: sales_orders {
 
 }
 
-
 explore: sales_fullfillment {
   sql_always_where: ${material_number} is NOT NULL ;;
-  # join: sales_status_items {
-  #   type: left_outer
-  #   sql_on: ${sales_fullfillment.currency}=${sales_status_items.currency}
-  #       AND ${sales_fullfillment.delivered_uom}=${sales_status_items.delivered_uom}
-  #       AND ${sales_fullfillment.sales_unit}=${sales_status_items.sales_unit}
-  #       AND ${sales_fullfillment.material_number}=${sales_status_items.material_number};;
-  # }
 }
 
-explore: sales_status_items {}
+# explore: sales_status_items {}
