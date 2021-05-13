@@ -38,7 +38,7 @@ explore: sales_orders {
 
   join: deliveries {
     type: left_outer
-    sql_on: ${deliveries.sales_order_number}=${sales_orders.document} AND ${deliveries.sales_order_item}=${sales_orders.item} ;;
+    sql_on: ${deliveries.sales_order_number}=${sales_orders.document_vbeln} AND ${deliveries.sales_order_item}=${sales_orders.item} ;;
     relationship: many_to_one
   }
 

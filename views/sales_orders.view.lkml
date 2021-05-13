@@ -692,7 +692,7 @@ view: sales_orders {
     sql: ${TABLE}.DocumentIndicator_VBKLT ;;
   }
 
-  dimension: document {
+  dimension: document_vbeln {
     type: string
     sql: ${TABLE}.Document_VBELN ;;
   }
