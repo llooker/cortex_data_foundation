@@ -417,7 +417,7 @@ view: sales_orders {
     sql: ${TABLE}.CreatedBy_ERNAM ;;
   }
 
-  dimension_group: creation_date {
+  dimension_group: creation {
     type: time
     timeframes: [
       raw,
