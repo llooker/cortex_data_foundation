@@ -30,7 +30,7 @@ view: sales_fullfillment {
     sql: ${TABLE}.MaterialNumber_MATNR ;;
     link: {
       label: "Material Details"
-      url: "/dashboards-next/42?Material%20Number%20Matnr={{ filterable_value }}"
+      url: "/dashboards-next/sap_operational_reporting::2_material_details?Material%20Number%20Matnr={{ filterable_value }}"
       icon_url: "http://www.looker.com/favicon.ico"
     }
   }
@@ -40,7 +40,7 @@ view: sales_fullfillment {
     sql: ${TABLE}.MaterialText_MAKTX ;;
     link: {
       label: "Material Details"
-      url: "/dashboards-next/42?Material%20Text%20Maktx={{ filterable_value }}"
+      url: "/dashboards-next/sap_operational_reporting::2_material_details?Material%20Text%20Maktx={{ filterable_value }}"
       icon_url: "http://www.looker.com/favicon.ico"
     }
   }

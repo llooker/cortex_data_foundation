@@ -2,6 +2,7 @@ connection: "lucias-sap-bq"
 
 # include all the views
 include: "/views/**/*.view"
+include: "/dashboards/**/*.dashboard"
 
 datagroup: sap_operational_reporting_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
