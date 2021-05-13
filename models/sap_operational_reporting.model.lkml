@@ -16,8 +16,9 @@ persist_with: sap_operational_reporting_default_datagroup
 
 explore: sales_orders {
   join: sales_organizations {
+    view_label: "Sales Orders"
     type: left_outer
-    sql_on: ${sales_orders.sales_organization}=${sales_organizations.sales_org_vkorg} ;;
+    sql_on: ${sales_orders.sales_organization}=${sales_organizations.sales_org} ;;
     relationship: many_to_one
   }
 
