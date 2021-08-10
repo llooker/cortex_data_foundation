@@ -37,6 +37,13 @@ explore: sales_orders {
     relationship: many_to_one
   }
 
+  join: material_types_md {
+    view_label: "Material"
+    type: left_outer
+    sql_on: ${material_md.material_type}=${material_types_md.material_type} AND ${sales_orders.client}=${material_group_md.client} and ${material_group_md.language}="E" ;;
+    relationship: many_to_one
+  }
+
   join: deliveries {
     type: left_outer
     sql_on: ${deliveries.sales_order_number}=${sales_orders.document_vbeln} AND ${deliveries.sales_order_item}=${sales_orders.item} ;;
