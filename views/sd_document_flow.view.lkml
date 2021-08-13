@@ -1,5 +1,5 @@
 # The name of this view in Looker is "Sddocument Flow"
-view: sddocument_flow {
+view: sd_document_flow {
   # The sql_table_name parameter indicates the underlying database table
   # to be used for all fields in this view.
   sql_table_name: `lucias-rabia.SAP_REPORTING.SDDocumentFlow`

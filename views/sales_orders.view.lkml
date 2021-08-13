@@ -2064,6 +2064,13 @@ view: sales_orders {
     value_format_name: decimal_2
   }
 
+  measure: total_cumulative_order_quantity {
+    hidden: no
+    type: sum
+    sql: ${cumulative_order_quantity} ;;
+    value_format_name: decimal_2
+  }
+
   # measure: total_fulfilled {
   #   type: sum_distinct
   #   sql: ${sales_document_vbeln};;

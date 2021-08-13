@@ -71,13 +71,13 @@ view: uom_md {
   }
 
   dimension: unit_of_measurement_text_maximum10_characters {
-    hidden: yes
+    hidden: no
     type: string
     sql: ${TABLE}.UnitOfMeasurementText__maximum10Characters___MSEHT ;;
   }
 
   dimension: unit_of_measurement_text_maximum30_characters {
-    hidden: yes
+    hidden: no
     type: string
     sql: ${TABLE}.UnitOfMeasurementText__maximum30Characters___MSEHL ;;
   }

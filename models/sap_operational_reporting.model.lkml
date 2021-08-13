@@ -40,7 +40,9 @@ explore: sales_orders {
   join: material_types_md {
     view_label: "Material"
     type: left_outer
-    sql_on: ${material_md.material_type}=${material_types_md.material_type} AND ${sales_orders.client}=${material_group_md.client} and ${material_group_md.language}="E" ;;
+    sql_on: ${material_md.material_type}=${material_types_md.material_type}
+    AND ${sales_orders.client}=${material_types_md.client}
+    AND ${material_types_md.language_key}="E" ;;
     relationship: many_to_one
   }
 
@@ -50,19 +52,29 @@ explore: sales_orders {
     relationship: many_to_one
   }
 
-  join: t005t {
-    view_label: "Sales Orders"
+  join: uom_md {
+    # view_label: "Sales Orders"
     type: left_outer
-    sql_on: ${t005t.land1}=${customers_md.country_key} AND ${t005t.spras}="E" ;;
+    # sql_on: ${uom_md.unit_of_measurement}=${sales_orders.volume_unit} AND ${sales_orders.client}=${uom_md.client} and ${uom_md.language_key}="E" ;;
+    sql_on: ${uom_md.unit_of_measurement}=${sales_orders.base_unit_of_measure} AND ${sales_orders.client}=${uom_md.client} and ${uom_md.language_key}="E" ;;
     relationship: many_to_one
   }
 
-  join: t005u {
-    view_label: "Sales Orders"
+  join: sd_document_flow {
     type: left_outer
-    sql_on: ${t005u.land1}=${customers_md.country_key} AND ${customers_md.region}=${t005u.bland} AND ${t005u.spras}="E" ;;
+    sql_on: 1=1 and ${sales_orders.item}=${sd_document_flow.sales_item} ;;
+    # sql_on: ${sd_document_flow.sales_order}=${sales_orders.sales_document} and ${sales_orders.item}=${sd_document_flow.sales_item} ;;
+    # A join with SalesOrders  on SalesOrders.SalesOrder =  SDDocumentFlow.SalesOrder and SalesOrders.Item_POSNR = SDDocumentFlow.SalesItem
     relationship: many_to_one
   }
+
+  join: countries_t005 {
+    view_label: "Sales Orders"
+    type: left_outer
+    sql_on: ${countries_t005.country_key}=${customers_md.country_key} AND ${sales_orders.client}=${countries_t005.client} AND ${countries_t005.language_key}="E" ;;
+    relationship: many_to_one
+  }
+
 
 }
 

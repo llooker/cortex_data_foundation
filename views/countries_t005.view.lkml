@@ -73,6 +73,13 @@ view: countries_t005 {
     sql: ${TABLE}.CountryKey_LAND1 ;;
   }
 
+  dimension: country_name {
+    hidden: no
+    type: string
+    sql: ${TABLE}.CountryName_LANDX ;;
+    map_layer_name: countries
+  }
+
   dimension: country_version_flag {
     hidden: yes
     type: string
@@ -220,7 +227,7 @@ view: countries_t005 {
   dimension: language_key {
     hidden: yes
     type: string
-    sql: ${TABLE}.LanguageKey_SPRAS ;;
+    sql: ${TABLE}.Language_SPRAS ;;
   }
 
   dimension: length_of_bank_key {
