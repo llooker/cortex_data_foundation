@@ -57,6 +57,7 @@ view: sales_organizations {
   }
 
   dimension: sales_org_name {
+    label: "Sales Organization Name"
     type: string
     sql: ${TABLE}.SalesOrgName_VTEXT ;;
   }

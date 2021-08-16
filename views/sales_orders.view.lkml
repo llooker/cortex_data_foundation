@@ -1562,6 +1562,7 @@ view: sales_orders {
   }
 
   dimension: sales_organization {
+    label: "Sales Organization ID"
     type: string
     sql: ${TABLE}.SalesOrganization_VKORG ;;
   }
@@ -2040,14 +2041,14 @@ view: sales_orders {
     description: "Automatically includes Volume Unit in the request."
     type: sum
     sql: ${volume_of_the_item};;
-    value_format_name: decimal_2
+    value_format_name: dynamic_format
     required_fields: [volume_unit]
   }
 
   measure: total_sales_order_org_currency {
     type: sum
     sql: ${net_value_of_the_sales_order_in_document_currency};;
-    value_format_name: decimal_0
+    value_format_name: dynamic_format
   }
 
   measure: average_volume {

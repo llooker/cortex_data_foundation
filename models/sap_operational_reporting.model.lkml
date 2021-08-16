@@ -9,31 +9,43 @@ datagroup: sap_operational_reporting_default_datagroup {
   max_cache_age: "1 hour"
 }
 
+named_value_format: dynamic_format {
+  value_format: "[>=1000000000]0.00,,,\"B\";[>=1000000]0.00,,\"M\";[>=1000]0.00,\"K\";0.00"
+}
+
 persist_with: sap_operational_reporting_default_datagroup
 
 explore: sales_orders {
   join: sales_organizations {
     view_label: "Sales Orders"
     type: left_outer
-    sql_on: ${sales_orders.sales_organization}=${sales_organizations.sales_org} ;;
+    sql_on: ${sales_orders.sales_organization}=${sales_organizations.sales_org}
+            AND ${sales_orders.client}=${sales_organizations.client}
+            AND ${sales_organizations.language}="E";;
     relationship: many_to_one
   }
 
   join: customers_md {
     type: left_outer
-    sql_on: ${sales_orders.sold_to_party}=${customers_md.customer_number} AND ${sales_orders.client}=${customers_md.client};;
+    sql_on: ${sales_orders.sold_to_party}=${customers_md.customer_number}
+            AND ${sales_orders.client}=${customers_md.client}
+            AND ${customers_md.language_key}="E";;
     relationship: many_to_one
   }
 
   join: material_md {
     type: left_outer
-    sql_on: ${sales_orders.material_number}=${material_md.material_number} AND ${sales_orders.client}=${material_md.client} and ${material_md.language}="E" ;;
+    sql_on: ${sales_orders.material_number}=${material_md.material_number}
+            AND ${sales_orders.client}=${material_md.client}
+            and ${material_md.language}="E" ;;
     relationship: many_to_one
   }
 
   join: material_group_md {
     type: left_outer
-    sql_on: ${sales_orders.material_group}=${material_group_md.material_group} AND ${sales_orders.client}=${material_group_md.client} and ${material_group_md.language}="E" ;;
+    sql_on: ${sales_orders.material_group}=${material_group_md.material_group}
+            AND ${sales_orders.client}=${material_group_md.client}
+            AND ${material_group_md.language}="E" ;;
     relationship: many_to_one
   }
 
@@ -48,15 +60,17 @@ explore: sales_orders {
 
   join: deliveries {
     type: left_outer
-    sql_on: ${deliveries.sales_order_number}=${sales_orders.document_vbeln} AND ${deliveries.sales_order_item}=${sales_orders.item} ;;
+    sql_on: ${deliveries.sales_order_number}=${sales_orders.document_vbeln}
+            AND ${deliveries.sales_order_item}=${sales_orders.item} ;;
     relationship: many_to_one
   }
 
   join: uom_md {
     # view_label: "Sales Orders"
     type: left_outer
-    # sql_on: ${uom_md.unit_of_measurement}=${sales_orders.volume_unit} AND ${sales_orders.client}=${uom_md.client} and ${uom_md.language_key}="E" ;;
-    sql_on: ${uom_md.unit_of_measurement}=${sales_orders.base_unit_of_measure} AND ${sales_orders.client}=${uom_md.client} and ${uom_md.language_key}="E" ;;
+    sql_on: ${uom_md.unit_of_measurement}=${sales_orders.base_unit_of_measure}
+            AND ${sales_orders.client}=${uom_md.client}
+            AND ${uom_md.language_key}="E" ;;
     relationship: many_to_one
   }
 
@@ -71,7 +85,9 @@ explore: sales_orders {
   join: countries_t005 {
     view_label: "Sales Orders"
     type: left_outer
-    sql_on: ${countries_t005.country_key}=${customers_md.country_key} AND ${sales_orders.client}=${countries_t005.client} AND ${countries_t005.language_key}="E" ;;
+    sql_on: ${countries_t005.country_key}=${customers_md.country_key}
+            AND ${sales_orders.client}=${countries_t005.client}
+            AND ${countries_t005.language_key}="E" ;;
     relationship: many_to_one
   }
 
