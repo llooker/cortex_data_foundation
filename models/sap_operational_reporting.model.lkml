@@ -76,9 +76,9 @@ explore: sales_orders {
 
   join: sd_document_flow {
     type: left_outer
-    sql_on: 1=1 and ${sales_orders.item}=${sd_document_flow.sales_item} ;;
-    # sql_on: ${sd_document_flow.sales_order}=${sales_orders.sales_document} and ${sales_orders.item}=${sd_document_flow.sales_item} ;;
-    # A join with SalesOrders  on SalesOrders.SalesOrder =  SDDocumentFlow.SalesOrder and SalesOrders.Item_POSNR = SDDocumentFlow.SalesItem
+    sql_on: ${sd_document_flow.sales_order}=${sales_orders.sales_document}
+            AND ${sd_document_flow.sales_item}=${sales_orders.item}
+            AND ${sd_document_flow.client}=${sales_orders.client};;
     relationship: many_to_one
   }
 

@@ -11,7 +11,7 @@ view: sd_document_flow {
   # A dimension is a groupable field that can be used to filter query results.
   # This dimension will be called "Client Mandt" in Explore.
 
-  dimension: client_mandt {
+  dimension: client {
     type: string
     sql: ${TABLE}.Client_MANDT ;;
   }
@@ -21,7 +21,7 @@ view: sd_document_flow {
     sql: ${TABLE}.DeliveredQty ;;
   }
 
-  dimension: delivered_uo_m {
+  dimension: delivered_uom {
     type: string
     sql: ${TABLE}.DeliveredUoM ;;
   }
@@ -56,7 +56,7 @@ view: sd_document_flow {
     sql: ${TABLE}.InvoiceQty ;;
   }
 
-  dimension: invoice_uo_m {
+  dimension: invoice_uom {
     type: string
     sql: ${TABLE}.InvoiceUoM ;;
   }

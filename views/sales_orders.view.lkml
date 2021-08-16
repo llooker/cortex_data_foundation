@@ -1549,6 +1549,7 @@ view: sales_orders {
   dimension: sales_document {
     type: number
     sql: ${TABLE}.SalesDocument_VBELN;;
+    value_format_name: id
   }
 
   dimension: sales_group {
