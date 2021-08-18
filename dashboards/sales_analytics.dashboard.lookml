@@ -370,7 +370,7 @@
     model: sap_operational_reporting
     explore: sales_orders
     type: looker_map
-    fields: [customers_md.count, countries_t005.country_name]
+    fields: [customers_md.count, countries_t005_customer.country_name]
     sorts: [customers_md.count desc]
     limit: 500
     map_plot_mode: points

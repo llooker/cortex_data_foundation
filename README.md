@@ -1,7 +1,7 @@
 <h1><span style="color:#2d7eea">README - Your LookML Project</span></h1>
-</br>
 
-<h2><span style="color:#2d7eea">LookML Overview</span><h2>
+
+<h2><span style="color:#2d7eea">LookML Overview</span></h2>
 
 LookML is a data modeling language for describing dimensions, fields, aggregates and relationships based on SQL.
 
@@ -19,10 +19,9 @@ to row-level detail, and accessing complex metrics &mdash; without having to wor
 credible single source of truth.
 
 The Looker application uses a model written in LookML to construct SQL queries against a particular database that
-business analysts can [Explore](https://docs.looker.com/r/exploring-data) on. For an overview on the basics of LookML, see
-[What is LookML?](https://docs.looker.com/r/what-is-lookml)
+business analysts can [Explore](https://docs.looker.com/r/exploring-data) on. For an overview on the basics of LookML, see [What is LookML?](https://docs.looker.com/r/what-is-lookml)
 
-<h2><span style="color:#2d7eea">Learn to Speak Looker</span><h2>
+<h2><span style="color:#2d7eea">Learn to Speak Looker</span></h2>
 
 A LookML project is a collection of LookML files that describes a set of related [views](https://docs.looker.com/r/terms/view-file),
 [models](https://docs.looker.com/r/terms/model-file), and [Explores](https://docs.looker.com/r/terms/explore).
@@ -33,20 +32,20 @@ Here you’ll typically define the model, its Explores, and its joins.
 - An [Explore](https://docs.looker.com/r/terms/explore) is the starting point for business users to query data, and it is the end result of the LookML you are
 writing. To see the Explores in this project, select an Explore from the Explore menu.
 
-<h2><span style="color:#2d7eea">Exploring Data</span><h2>
+<h2><span style="color:#2d7eea">Exploring Data</span></h2>
 
 Ad-hoc data discovery is one of Looker’s most powerful and unique features. As you evaluate use cases for your trial,
 consider what business areas you would like to explore. Open the Explore menu in the main navigation to see the
 Explores you are building.
 
-<h2><span style="color:#2d7eea">The Development Workflow</span><h2>
+<h2><span style="color:#2d7eea">The Development Workflow</span></h2>
 
 To support a multi-developer environment, Looker is integrated with Git for version control. Follow [these directions](https://docs.looker.com/r/develop/git-setup) to
 set up Git for your project. To edit LookML, expand the Develop drop-down and toggle on [Development Mode](https://docs.looker.com/r/terms/dev-mode). In
 Development Mode, changes you make to the LookML model exist only in your account until you commit the changes
 and push them to your production model.
 
-<h2><span style="color:#2d7eea">Additional Resources</span><h2>
+<h2><span style="color:#2d7eea">Additional Resources</span></h2>
 
 To learn more about LookML and how to develop visit:
 - [Looker User Guide](https://looker.com/guide)

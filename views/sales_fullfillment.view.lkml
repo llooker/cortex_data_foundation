@@ -1,6 +1,11 @@
 view: sales_fullfillment {
-  sql_table_name: `lucias-rabia.SAP_REPORTING.SalesFullfillment`
+  sql_table_name: `lucias-rabia.SAP_REPORTING.SalesFulfillment`
     ;;
+
+  dimension: client {
+    type: string
+    sql: ${TABLE}.Client_MANDT ;;
+  }
 
   dimension: currency {
     type: string

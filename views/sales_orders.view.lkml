@@ -2031,7 +2031,6 @@ view: sales_orders {
   # }
 
   measure: total_sales_orders {
-    # type: sum_distinct
     type: count_distinct
     sql: ${sales_document};;
     filters: [document_category: "C"]
@@ -2070,7 +2069,7 @@ view: sales_orders {
     hidden: no
     type: sum
     sql: ${cumulative_order_quantity} ;;
-    value_format_name: decimal_2
+    value_format_name: dynamic_format
   }
 
   # measure: total_fulfilled {
