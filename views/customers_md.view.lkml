@@ -330,6 +330,12 @@ view: customers_md {
   dimension: customer_number {
     type: string
     sql: ${TABLE}.CustomerNumber_KUNNR ;;
+    link: {
+      label: "Customer Details"
+      # url: "/dashboards-next/sap_operational_reporting::3_customer_details?Customer%20Details={{ filterable_value }}"
+      url: "/dashboards-next/44?Customer%20Number={{ filterable_value }}"
+      icon_url: "http://www.looker.com/favicon.ico"
+    }
   }
 
   dimension: customer_type4 {
@@ -666,6 +672,12 @@ view: customers_md {
   dimension: customer_name {
     type: string
     sql: ${TABLE}.Name1_NAME1 ;;
+    link: {
+      label: "Customer Details"
+      # url: "/dashboards-next/sap_operational_reporting::3_customer_details?Customer%20Details={{ filterable_value }}"
+      url: "/dashboards-next/44?Customer%20Name={{ filterable_value }}"
+      icon_url: "http://www.looker.com/favicon.ico"
+    }
   }
 
   dimension: name1_pson1 {
