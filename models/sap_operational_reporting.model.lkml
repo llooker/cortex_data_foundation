@@ -74,7 +74,7 @@ explore: sales_orders {
   }
 
   join: uom_md {
-    # view_label: "Sales Orders"
+    view_label: "Materials"
     type: left_outer
     sql_on: ${uom_md.unit_of_measurement}=${sales_orders.base_unit_of_measure}
             AND ${uom_md.client}=${sales_orders.client}

@@ -23,7 +23,7 @@ view: uom_md {
   }
 
   dimension: dimension_text {
-    hidden: no
+    hidden: yes
     type: string
     sql: ${TABLE}.DimensionText_TXDIM ;;
   }
