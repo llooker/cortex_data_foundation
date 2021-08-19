@@ -3110,4 +3110,16 @@ view: deliveries {
     type: count
     drill_fields: []
   }
+
+  measure: return_count {
+    type: count
+    filters: [is_return: "Yes"]
+  }
+
+  measure: delivery_return_percentage {
+    type: number
+    sql: ${return_count}/NULLIF(${count}-${return_count},0) ;;
+    value_format_name: percent_2
+  }
+
 }
