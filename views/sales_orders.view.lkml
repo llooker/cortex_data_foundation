@@ -2028,118 +2028,43 @@ view: sales_orders {
     type: count_distinct
     sql: ${sales_document};;
     filters: [document_category: "C"]
-    value_format_name: decimal_0
+    html: <a href="#drillmenu" target="_self"> @{BigNumbers_format};;
   }
 
   measure: total_volume {
     description: "Automatically includes Volume Unit in the request."
     type: sum
     sql: ${volume_of_the_item};;
-    html: <a href="#drillmenu" target="_self">
-    {% if value > 1000000000 %}
-    ${{value | divided_by: 1000000000 | round:2 }}B
-    {% elsif value >= 1000000 and value < 1000000000 %}
-    ${{value | divided_by: 1000000 | round:2 }}M
-    {% elsif value >= 1000 and value < 1000000 %}
-    ${{value | divided_by: 1000 | round:2 }}K
-    {% elsif value >= 0 and value < 1000 %}
-    ${{value | round:2 }}
-    {% elsif value > -1000 and value < 0 %}
-    ${{value | round:2 }}
-    {% elsif value > -1000000 and value <= -1000 %}
-    ${{value | divided_by: 1000 | round:2 }}k
-    {% elsif value > -1000000000 and value <= -1000000 %}
-    ${{value | divided_by: 1000000 | round:2 }}M
-    {% elsif value <= -1000000000 %}
-    ${{value | divided_by: 1000000000 | round:2 }}B
-    {% else %}
-    'fail'
-    {% endif %} ;;
+    html: <a href="#drillmenu" target="_self"> @{BigNumbers_format};;
     required_fields: [volume_unit]
   }
 
   measure: total_sales_order_org_currency {
     type: sum
     sql: ${net_value_of_the_sales_order_in_document_currency};;
-    html: <a href="#drillmenu" target="_self">
-                  {% if value > 1000000000 %}
-                    ${{value | divided_by: 1000000000 | round:2 }}B
-                  {% elsif value >= 1000000 and value < 1000000000 %}
-                    ${{value | divided_by: 1000000 | round:2 }}M
-                  {% elsif value >= 1000 and value < 1000000 %}
-                    ${{value | divided_by: 1000 | round:2 }}K
-                  {% elsif value >= 0 and value < 1000 %}
-                    ${{value | round:2 }}
-                  {% elsif value > -1000 and value < 0 %}
-                      ${{value | round:2 }}
-                  {% elsif value > -1000000 and value <= -1000 %}
-                      ${{value | divided_by: 1000 | round:2 }}k
-                  {% elsif value > -1000000000 and value <= -1000000 %}
-                      ${{value | divided_by: 1000000 | round:2 }}M
-                  {% elsif value <= -1000000000 %}
-                      ${{value | divided_by: 1000000000 | round:2 }}B
-                  {% else %}
-                    'fail'
-                  {% endif %} ;;
+    drill_fields: [document_date, customers_md.customer_name,total_sales_order_org_currency]
+    html: <a href="#drillmenu" target="_self"> @{BigNumbers_format};;
   }
 
   measure: average_volume {
     description: "Automatically includes Volume Unit in the request."
     type: average
     sql: ${volume_of_the_item};;
-    value_format_name: decimal_2
+    html: <a href="#drillmenu" target="_self"> @{BigNumbers_format};;
     required_fields: [volume_unit]
   }
 
   measure: average_sales_order_org_currency {
     type: average
     sql: ${net_value_of_the_sales_order_in_document_currency};;
-    html: <a href="#drillmenu" target="_self">
-    {% if value > 1000000000 %}
-    ${{value | divided_by: 1000000000 | round:2 }}B
-    {% elsif value >= 1000000 and value < 1000000000 %}
-    ${{value | divided_by: 1000000 | round:2 }}M
-    {% elsif value >= 1000 and value < 1000000 %}
-    ${{value | divided_by: 1000 | round:2 }}K
-    {% elsif value >= 0 and value < 1000 %}
-    ${{value | round:2 }}
-    {% elsif value > -1000 and value < 0 %}
-    ${{value | round:2 }}
-    {% elsif value > -1000000 and value <= -1000 %}
-    ${{value | divided_by: 1000 | round:2 }}k
-    {% elsif value > -1000000000 and value <= -1000000 %}
-    ${{value | divided_by: 1000000 | round:2 }}M
-    {% elsif value <= -1000000000 %}
-    ${{value | divided_by: 1000000000 | round:2 }}B
-    {% else %}
-    'fail'
-    {% endif %} ;;
+    html: <a href="#drillmenu" target="_self"> @{BigNumbers_format};;
   }
 
   measure: total_cumulative_order_quantity {
     hidden: no
     type: sum
     sql: ${cumulative_order_quantity} ;;
-    html: <a href="#drillmenu" target="_self">
-    {% if value > 1000000000 %}
-    ${{value | divided_by: 1000000000 | round:2 }}B
-    {% elsif value >= 1000000 and value < 1000000000 %}
-    ${{value | divided_by: 1000000 | round:2 }}M
-    {% elsif value >= 1000 and value < 1000000 %}
-    ${{value | divided_by: 1000 | round:2 }}K
-    {% elsif value >= 0 and value < 1000 %}
-    ${{value | round:2 }}
-    {% elsif value > -1000 and value < 0 %}
-    ${{value | round:2 }}
-    {% elsif value > -1000000 and value <= -1000 %}
-    ${{value | divided_by: 1000 | round:2 }}k
-    {% elsif value > -1000000000 and value <= -1000000 %}
-    ${{value | divided_by: 1000000 | round:2 }}M
-    {% elsif value <= -1000000000 %}
-    ${{value | divided_by: 1000000000 | round:2 }}B
-    {% else %}
-    'fail'
-    {% endif %} ;;
+    html: <a href="#drillmenu" target="_self"> @{BigNumbers_format};;
   }
 
   # measure: total_fulfilled {

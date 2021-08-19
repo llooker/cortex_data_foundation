@@ -129,26 +129,7 @@ view: stock_unrestricted_vs_sales {
   measure: total_delivered_qty {
     type: sum
     sql: ${delivered_qty} ;;
-    html: <a href="#drillmenu" target="_self">
-    {% if value > 1000000000 %}
-    ${{value | divided_by: 1000000000 | round:2 }}B
-    {% elsif value >= 1000000 and value < 1000000000 %}
-    ${{value | divided_by: 1000000 | round:2 }}M
-    {% elsif value >= 1000 and value < 1000000 %}
-    ${{value | divided_by: 1000 | round:2 }}K
-    {% elsif value >= 0 and value < 1000 %}
-    ${{value | round:2 }}
-    {% elsif value > -1000 and value < 0 %}
-    ${{value | round:2 }}
-    {% elsif value > -1000000 and value <= -1000 %}
-    ${{value | divided_by: 1000 | round:2 }}k
-    {% elsif value > -1000000000 and value <= -1000000 %}
-    ${{value | divided_by: 1000000 | round:2 }}M
-    {% elsif value <= -1000000000 %}
-    ${{value | divided_by: 1000000000 | round:2 }}B
-    {% else %}
-    'fail'
-    {% endif %} ;;
+    html: <a href="#drillmenu" target="_self"> @{BigNumbers_format};;
   }
 
   measure: average_delivered_qty {
@@ -160,26 +141,7 @@ view: stock_unrestricted_vs_sales {
   measure: total_pending_delivery {
     type: sum
     sql: ${pending_delivery} ;;
-    html: <a href="#drillmenu" target="_self">
-    {% if value > 1000000000 %}
-    ${{value | divided_by: 1000000000 | round:2 }}B
-    {% elsif value >= 1000000 and value < 1000000000 %}
-    ${{value | divided_by: 1000000 | round:2 }}M
-    {% elsif value >= 1000 and value < 1000000 %}
-    ${{value | divided_by: 1000 | round:2 }}K
-    {% elsif value >= 0 and value < 1000 %}
-    ${{value | round:2 }}
-    {% elsif value > -1000 and value < 0 %}
-    ${{value | round:2 }}
-    {% elsif value > -1000000 and value <= -1000 %}
-    ${{value | divided_by: 1000 | round:2 }}k
-    {% elsif value > -1000000000 and value <= -1000000 %}
-    ${{value | divided_by: 1000000 | round:2 }}M
-    {% elsif value <= -1000000000 %}
-    ${{value | divided_by: 1000000000 | round:2 }}B
-    {% else %}
-    'fail'
-    {% endif %} ;;
+    html: <a href="#drillmenu" target="_self"> @{BigNumbers_format};;
   }
 
   measure: average_pending_delivery {
@@ -191,26 +153,7 @@ view: stock_unrestricted_vs_sales {
   measure: total_sales_qty {
     type: sum
     sql: ${sales_qty} ;;
-    html: <a href="#drillmenu" target="_self">
-    {% if value > 1000000000 %}
-    ${{value | divided_by: 1000000000 | round:2 }}B
-    {% elsif value >= 1000000 and value < 1000000000 %}
-    ${{value | divided_by: 1000000 | round:2 }}M
-    {% elsif value >= 1000 and value < 1000000 %}
-    ${{value | divided_by: 1000 | round:2 }}K
-    {% elsif value >= 0 and value < 1000 %}
-    ${{value | round:2 }}
-    {% elsif value > -1000 and value < 0 %}
-    ${{value | round:2 }}
-    {% elsif value > -1000000 and value <= -1000 %}
-    ${{value | divided_by: 1000 | round:2 }}k
-    {% elsif value > -1000000000 and value <= -1000000 %}
-    ${{value | divided_by: 1000000 | round:2 }}M
-    {% elsif value <= -1000000000 %}
-    ${{value | divided_by: 1000000000 | round:2 }}B
-    {% else %}
-    'fail'
-    {% endif %} ;;
+    html: <a href="#drillmenu" target="_self"> @{BigNumbers_format};;
   }
 
   measure: average_sales_qty {
@@ -222,26 +165,7 @@ view: stock_unrestricted_vs_sales {
   measure: total_unrestricted_stock {
     type: sum
     sql: ${unrestricted_stock} ;;
-    html: <a href="#drillmenu" target="_self">
-    {% if value > 1000000000 %}
-    ${{value | divided_by: 1000000000 | round:2 }}B
-    {% elsif value >= 1000000 and value < 1000000000 %}
-    ${{value | divided_by: 1000000 | round:2 }}M
-    {% elsif value >= 1000 and value < 1000000 %}
-    ${{value | divided_by: 1000 | round:2 }}K
-    {% elsif value >= 0 and value < 1000 %}
-    ${{value | round:2 }}
-    {% elsif value > -1000 and value < 0 %}
-    ${{value | round:2 }}
-    {% elsif value > -1000000 and value <= -1000 %}
-    ${{value | divided_by: 1000 | round:2 }}k
-    {% elsif value > -1000000000 and value <= -1000000 %}
-    ${{value | divided_by: 1000000 | round:2 }}M
-    {% elsif value <= -1000000000 %}
-    ${{value | divided_by: 1000000000 | round:2 }}B
-    {% else %}
-    'fail'
-    {% endif %} ;;
+    html: <a href="#drillmenu" target="_self"> @{BigNumbers_format};;
   }
 
   measure: average_unrestricted_stock {
@@ -253,25 +177,6 @@ view: stock_unrestricted_vs_sales {
   measure: stock_vs_pending_deliveries {
     type: number
     sql: ${total_unrestricted_stock}-${total_pending_delivery} ;;
-    html: <a href="#drillmenu" target="_self">
-    {% if value > 1000000000 %}
-    ${{value | divided_by: 1000000000 | round:2 }}B
-    {% elsif value >= 1000000 and value < 1000000000 %}
-    ${{value | divided_by: 1000000 | round:2 }}M
-    {% elsif value >= 1000 and value < 1000000 %}
-    ${{value | divided_by: 1000 | round:2 }}K
-    {% elsif value >= 0 and value < 1000 %}
-    ${{value | round:2 }}
-    {% elsif value > -1000 and value < 0 %}
-    ${{value | round:2 }}
-    {% elsif value > -1000000 and value <= -1000 %}
-    ${{value | divided_by: 1000 | round:2 }}k
-    {% elsif value > -1000000000 and value <= -1000000 %}
-    ${{value | divided_by: 1000000 | round:2 }}M
-    {% elsif value <= -1000000000 %}
-    ${{value | divided_by: 1000000000 | round:2 }}B
-    {% else %}
-    'fail'
-    {% endif %} ;;
+    html: <a href="#drillmenu" target="_self"> @{BigNumbers_format};;
   }
 }
