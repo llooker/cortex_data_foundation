@@ -66,8 +66,9 @@ explore: sales_orders {
 
   join: deliveries {
     type: left_outer
-    sql_on: ${deliveries.sales_order_number}=${sales_orders.document_vbeln}
-            AND ${deliveries.sales_order_item}=${sales_orders.item} ;;
+    sql_on: ${deliveries.sales_order_number}=${sales_orders.sales_document}
+            AND ${deliveries.sales_order_item}=${sales_orders.item}
+            AND ${deliveries.client}=${sales_orders.client};;
     relationship: many_to_one
   }
 
@@ -75,7 +76,7 @@ explore: sales_orders {
     # view_label: "Sales Orders"
     type: left_outer
     sql_on: ${uom_md.unit_of_measurement}=${sales_orders.base_unit_of_measure}
-            AND ${sales_orders.client}=${uom_md.client}
+            AND ${uom_md.client}=${sales_orders.client}
             AND ${uom_md.language_key}=${language_map_pdt.language_key} ;;
     relationship: many_to_one
   }
@@ -88,15 +89,6 @@ explore: sales_orders {
     relationship: many_to_one
   }
 
-  join: countries_t005_order {
-    from: countries_t005
-    view_label: "Sales Orders"
-    type: left_outer
-    sql_on: ${countries_t005_order.country_key}=${customers_md.country_key}
-            AND ${countries_t005_order.client}=${sales_orders.client}
-            AND ${countries_t005_order.language_key}=${language_map_pdt.language_key} ;;
-    relationship: many_to_one
-  }
   join: countries_t005_customer {
     from: countries_t005
     view_label: "Customers"
@@ -106,6 +98,28 @@ explore: sales_orders {
             AND ${countries_t005_customer.language_key}=${language_map_pdt.language_key} ;;
     relationship: many_to_one
   }
+
+  join: customers_md_ship_to {
+    from: customers_md
+    view_label: "Deliveries"
+    fields: []
+    type: left_outer
+    sql_on: ${customers_md.customer_number}=${deliveries.ship_to_party}
+            AND ${customers_md.client}=${deliveries.client}
+            AND ${customers_md.language_key}=${language_map_pdt.language_key};;
+    relationship: many_to_one
+  }
+
+  join: countries_t005_delivery {
+    from: countries_t005
+    view_label: "Deliveries"
+    type: left_outer
+    sql_on: ${countries_t005_delivery.country_key}=${customers_md.country_key}
+            AND ${countries_t005_delivery.client}=${sales_orders.client}
+            AND ${countries_t005_delivery.language_key}=${language_map_pdt.language_key} ;;
+    relationship: many_to_one
+  }
+
 
 
 }

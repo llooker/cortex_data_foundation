@@ -1414,8 +1414,8 @@ view: deliveries {
   }
 
   dimension: is_return {
-    type: string
-    sql: ${TABLE}.IS_RETURN ;;
+    type: yesno
+    sql: ${TABLE}.IS_RETURN='x' ;;
   }
 
   dimension: iss_tax_law {

@@ -227,7 +227,7 @@ view: countries_t005 {
   dimension: language_key {
     hidden: yes
     type: string
-    sql: ${TABLE}.LanguageKey_SPRAS ;;
+    sql: ${TABLE}.Language_SPRAS ;;
   }
 
   dimension: length_of_bank_key {

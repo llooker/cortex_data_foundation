@@ -692,9 +692,9 @@ view: sales_orders {
     sql: ${TABLE}.DocumentIndicator_VBKLT ;;
   }
 
-  dimension: document_vbeln {
+  dimension: sales_document {
     type: string
-    sql: ${TABLE}.Document_VBELN ;;
+    sql: ${TABLE}.SalesDocument_VBELN ;;
   }
 
   dimension: document_number_of_the_reference_document {
@@ -1544,12 +1544,6 @@ view: sales_orders {
     hidden: yes
     type: string
     sql: ${TABLE}.SalesDocumentType_AUART ;;
-  }
-
-  dimension: sales_document {
-    type: number
-    sql: ${TABLE}.SalesDocument_VBELN;;
-    value_format_name: id
   }
 
   dimension: sales_group {
