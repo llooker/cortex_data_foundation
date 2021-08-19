@@ -28,7 +28,7 @@ view: language_map_pdt {
             FROM `lucias-rabia.SAP_REPORTING.Languages_T002` as t002
             LEFT JOIN temp on temp.TwoCharacterSapLanguageCode_LAISO=t002.TwoCharacterSapLanguageCode_LAISO
        ;;
-      # sql_trigger_value: SELECT 1 ;;
+      sql_trigger_value: SELECT 1 ;;
   }
 
   dimension: language_key {

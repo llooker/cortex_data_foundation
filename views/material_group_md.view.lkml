@@ -1,7 +1,7 @@
 view: material_group_md {
   sql_table_name: `SAP_REPORTING.MaterialGroupMD`
     ;;
-    view_label: "Material Group"
+    view_label: "Material"
 
   dimension: asset_class {
     hidden: yes
@@ -52,11 +52,13 @@ view: material_group_md {
   }
 
   dimension: material_group {
+    group_item_label: "Material Group"
     type: string
     sql: ${TABLE}.MaterialGroup_MATKL ;;
   }
 
   dimension: material_group_name {
+    group_item_label: "Material Group"
     type: string
     sql: ${TABLE}.MaterialGroupName_WGBEZ ;;
   }

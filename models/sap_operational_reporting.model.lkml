@@ -9,11 +9,6 @@ datagroup: sap_operational_reporting_default_datagroup {
   max_cache_age: "1 hour"
 }
 
-named_value_format: dynamic_format {
-  value_format: "[<0]-0.00;[>=1000000]0.00,,\"M\";[>=1000]0.00,\"K\";0.00"
-  # value_format: "[<0]-0.00;[<100]0.0;[<999950]0.0,\"K\";[<999950000]0.0,,\"M\";0.0,,,\"B\""
-}
-
 persist_with: sap_operational_reporting_default_datagroup
 
 explore: sales_orders {
@@ -74,7 +69,7 @@ explore: sales_orders {
   }
 
   join: uom_md {
-    view_label: "Materials"
+    view_label: "Material"
     type: left_outer
     sql_on: ${uom_md.unit_of_measurement}=${sales_orders.base_unit_of_measure}
             AND ${uom_md.client}=${sales_orders.client}

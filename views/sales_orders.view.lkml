@@ -2035,14 +2035,52 @@ view: sales_orders {
     description: "Automatically includes Volume Unit in the request."
     type: sum
     sql: ${volume_of_the_item};;
-    value_format_name: dynamic_format
+    html: <a href="#drillmenu" target="_self">
+    {% if value > 1000000000 %}
+    ${{value | divided_by: 1000000000 | round:2 }}B
+    {% elsif value >= 1000000 and value < 1000000000 %}
+    ${{value | divided_by: 1000000 | round:2 }}M
+    {% elsif value >= 1000 and value < 1000000 %}
+    ${{value | divided_by: 1000 | round:2 }}K
+    {% elsif value >= 0 and value < 1000 %}
+    ${{value | round:2 }}
+    {% elsif value > -1000 and value < 0 %}
+    ${{value | round:2 }}
+    {% elsif value > -1000000 and value <= -1000 %}
+    ${{value | divided_by: 1000 | round:2 }}k
+    {% elsif value > -1000000000 and value <= -1000000 %}
+    ${{value | divided_by: 1000000 | round:2 }}M
+    {% elsif value <= -1000000000 %}
+    ${{value | divided_by: 1000000000 | round:2 }}B
+    {% else %}
+    'fail'
+    {% endif %} ;;
     required_fields: [volume_unit]
   }
 
   measure: total_sales_order_org_currency {
     type: sum
     sql: ${net_value_of_the_sales_order_in_document_currency};;
-    value_format_name: dynamic_format
+    html: <a href="#drillmenu" target="_self">
+                  {% if value > 1000000000 %}
+                    ${{value | divided_by: 1000000000 | round:2 }}B
+                  {% elsif value >= 1000000 and value < 1000000000 %}
+                    ${{value | divided_by: 1000000 | round:2 }}M
+                  {% elsif value >= 1000 and value < 1000000 %}
+                    ${{value | divided_by: 1000 | round:2 }}K
+                  {% elsif value >= 0 and value < 1000 %}
+                    ${{value | round:2 }}
+                  {% elsif value > -1000 and value < 0 %}
+                      ${{value | round:2 }}
+                  {% elsif value > -1000000 and value <= -1000 %}
+                      ${{value | divided_by: 1000 | round:2 }}k
+                  {% elsif value > -1000000000 and value <= -1000000 %}
+                      ${{value | divided_by: 1000000 | round:2 }}M
+                  {% elsif value <= -1000000000 %}
+                      ${{value | divided_by: 1000000000 | round:2 }}B
+                  {% else %}
+                    'fail'
+                  {% endif %} ;;
   }
 
   measure: average_volume {
@@ -2063,7 +2101,26 @@ view: sales_orders {
     hidden: no
     type: sum
     sql: ${cumulative_order_quantity} ;;
-    value_format_name: dynamic_format
+    html: <a href="#drillmenu" target="_self">
+    {% if value > 1000000000 %}
+    ${{value | divided_by: 1000000000 | round:2 }}B
+    {% elsif value >= 1000000 and value < 1000000000 %}
+    ${{value | divided_by: 1000000 | round:2 }}M
+    {% elsif value >= 1000 and value < 1000000 %}
+    ${{value | divided_by: 1000 | round:2 }}K
+    {% elsif value >= 0 and value < 1000 %}
+    ${{value | round:2 }}
+    {% elsif value > -1000 and value < 0 %}
+    ${{value | round:2 }}
+    {% elsif value > -1000000 and value <= -1000 %}
+    ${{value | divided_by: 1000 | round:2 }}k
+    {% elsif value > -1000000000 and value <= -1000000 %}
+    ${{value | divided_by: 1000000 | round:2 }}M
+    {% elsif value <= -1000000000 %}
+    ${{value | divided_by: 1000000000 | round:2 }}B
+    {% else %}
+    'fail'
+    {% endif %} ;;
   }
 
   # measure: total_fulfilled {
