@@ -11,52 +11,69 @@ view: stock_unrestricted_vs_sales {
   # A dimension is a groupable field that can be used to filter query results.
   # This dimension will be called "Base Unit of Measure Meins" in Explore.
 
-  dimension: base_unit_of_measure_meins {
+
+  dimension: stock_unrestricted_vs_sales_pk {
+    primary_key: yes
+    hidden: yes
+    sql: CONCAT(${client}," - ", ${material_number}," - ", ${plant}," - ", ${storage_location}," - ", ${language}) ;;
+  }
+
+  dimension: base_unit_of_measure {
+    hidden: yes
     type: string
     sql: ${TABLE}.BaseUnitOfMeasure_MEINS ;;
   }
 
-  dimension: client_mandt {
+  dimension: client {
+    hidden: yes
     type: string
     sql: ${TABLE}.Client_MANDT ;;
   }
 
   dimension: delivered_qty {
+    hidden: yes
     type: number
     sql: ${TABLE}.DeliveredQty ;;
   }
 
-  dimension: delivered_uo_m_meins {
+  dimension: delivered_uom {
+    hidden: yes
     type: string
     sql: ${TABLE}.DeliveredUoM_MEINS ;;
   }
 
-  dimension: language_spras {
+  dimension: language {
+    hidden: yes
     type: string
     sql: ${TABLE}.Language_SPRAS ;;
   }
 
-  dimension: material_number_matnr {
+  dimension: material_number {
+    hidden: yes
     type: string
     sql: ${TABLE}.MaterialNumber_MATNR ;;
   }
 
-  dimension: material_text_maktx {
+  dimension: material_text {
+    hidden: yes
     type: string
     sql: ${TABLE}.MaterialText_MAKTX ;;
   }
 
   dimension: pending_delivery {
+    hidden: yes
     type: number
     sql: ${TABLE}.PendingDelivery ;;
   }
 
   dimension: plant_country {
+    hidden: yes
     type: string
     sql: ${TABLE}.Plant_Country ;;
   }
 
   dimension: plant_name {
+    hidden: yes
     type: string
     sql: ${TABLE}.Plant_Name ;;
   }
@@ -66,37 +83,32 @@ view: stock_unrestricted_vs_sales {
     sql: ${TABLE}.Plant_Region ;;
   }
 
-  dimension: plant_werks {
+  dimension: plant {
+    hidden: yes
     type: string
     sql: ${TABLE}.Plant_WERKS ;;
   }
 
-  dimension: plant_werks_1 {
-    type: string
-    sql: ${TABLE}.Plant_WERKS_1 ;;
-  }
-
-  dimension: product_hierarchy_prdha {
+  dimension: product_hierarchy {
+    hidden: yes
     type: string
     sql: ${TABLE}.ProductHierarchy_PRDHA ;;
   }
 
   dimension: sales_qty {
+    hidden: yes
     type: number
     sql: ${TABLE}.SalesQty ;;
   }
 
-  dimension: storage_location_lgort {
+  dimension: storage_location {
+    hidden: yes
     type: string
     sql: ${TABLE}.StorageLocation_LGORT ;;
   }
 
-  dimension: storage_location_lgort_1 {
-    type: string
-    sql: ${TABLE}.StorageLocation_LGORT_1 ;;
-  }
-
   dimension: unrestricted_stock {
+    hidden: yes
     type: number
     sql: ${TABLE}.UnrestrictedStock ;;
   }
@@ -106,6 +118,7 @@ view: stock_unrestricted_vs_sales {
   # Click on the type parameter to see all the options in the Quick Help panel on the right.
 
   measure: count {
+    hidden: yes
     type: count
     drill_fields: [plant_name]
   }
@@ -115,8 +128,8 @@ view: stock_unrestricted_vs_sales {
 
   measure: total_delivered_qty {
     type: sum
-    hidden: yes
     sql: ${delivered_qty} ;;
+    value_format_name: dynamic_format
   }
 
   measure: average_delivered_qty {
@@ -127,8 +140,8 @@ view: stock_unrestricted_vs_sales {
 
   measure: total_pending_delivery {
     type: sum
-    hidden: yes
     sql: ${pending_delivery} ;;
+    value_format_name: dynamic_format
   }
 
   measure: average_pending_delivery {
@@ -139,8 +152,8 @@ view: stock_unrestricted_vs_sales {
 
   measure: total_sales_qty {
     type: sum
-    hidden: yes
     sql: ${sales_qty} ;;
+    value_format_name: dynamic_format
   }
 
   measure: average_sales_qty {
@@ -151,13 +164,19 @@ view: stock_unrestricted_vs_sales {
 
   measure: total_unrestricted_stock {
     type: sum
-    hidden: yes
     sql: ${unrestricted_stock} ;;
+    value_format_name: dynamic_format
   }
 
   measure: average_unrestricted_stock {
     type: average
     hidden: yes
     sql: ${unrestricted_stock} ;;
+  }
+
+  measure: stock_vs_pending_deliveries {
+    type: number
+    sql: ${total_unrestricted_stock}-${total_pending_delivery} ;;
+    value_format_name: dynamic_format
   }
 }

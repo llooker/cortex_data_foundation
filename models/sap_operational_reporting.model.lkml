@@ -33,17 +33,17 @@ explore: sales_orders {
 
   join: customers_md {
     type: left_outer
-    sql_on: ${sales_orders.sold_to_party}=${customers_md.customer_number}
-            AND ${sales_orders.client}=${customers_md.client}
+    sql_on: ${customers_md.customer_number}=${sales_orders.sold_to_party}
+            AND ${customers_md.client}=${sales_orders.client}
             AND ${customers_md.language_key}=${language_map_pdt.language_key};;
     relationship: many_to_one
   }
 
   join: material_md {
     type: left_outer
-    sql_on: ${sales_orders.material_number}=${material_md.material_number}
-            AND ${sales_orders.client}=${material_md.client}
-            and ${material_md.language}=${language_map_pdt.language_key} ;;
+    sql_on: ${material_md.material_number}=${sales_orders.material_number}
+            AND ${material_md.client}=${sales_orders.client}
+            AND ${material_md.language}=${language_map_pdt.language_key} ;;
     relationship: many_to_one
   }
 
@@ -59,8 +59,8 @@ explore: sales_orders {
     view_label: "Material"
     type: left_outer
     sql_on: ${material_md.material_type}=${material_types_md.material_type}
-    AND ${sales_orders.client}=${material_types_md.client}
-    AND ${material_types_md.language_key}=${language_map_pdt.language_key} ;;
+            AND ${sales_orders.client}=${material_types_md.client}
+            AND ${material_types_md.language_key}=${language_map_pdt.language_key} ;;
     relationship: many_to_one
   }
 
@@ -120,7 +120,15 @@ explore: sales_orders {
     relationship: many_to_one
   }
 
-
+  join: stock_unrestricted_vs_sales {
+    type: left_outer
+    sql_on: ${stock_unrestricted_vs_sales.material_number}=${sales_orders.material_number}
+            AND ${stock_unrestricted_vs_sales.client}=${sales_orders.client}
+            AND ${stock_unrestricted_vs_sales.plant}=${sales_orders.plant}
+            AND ${stock_unrestricted_vs_sales.storage_location}=${sales_orders.storage_location}
+            AND ${stock_unrestricted_vs_sales.language}=${language_map_pdt.language_key} ;;
+    relationship: many_to_one
+  }
 
 }
 
