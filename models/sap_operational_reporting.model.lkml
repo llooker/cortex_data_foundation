@@ -10,7 +10,8 @@ datagroup: sap_operational_reporting_default_datagroup {
 }
 
 named_value_format: dynamic_format {
-  value_format: "[>=1000000000]0.00,,,\"B\";[>=1000000]0.00,,\"M\";[>=1000]0.00,\"K\";0.00"
+  value_format: "[<0]-0.00;[>=1000000]0.00,,\"M\";[>=1000]0.00,\"K\";0.00"
+  # value_format: "[<0]-0.00;[<100]0.0;[<999950]0.0,\"K\";[<999950000]0.0,,\"M\";0.0,,,\"B\""
 }
 
 persist_with: sap_operational_reporting_default_datagroup
@@ -130,10 +131,18 @@ explore: sales_orders {
     relationship: many_to_one
   }
 
+  join: sales_fulfillment_per_order {
+    type: left_outer
+    sql_on: ${sales_fulfillment_per_order.client}=${sales_orders.client}
+            AND ${sales_fulfillment_per_order.sales_order}=${sales_orders.sales_document}
+            AND ${sales_fulfillment_per_order.sales_item}=${sales_orders.item}
+            AND ${sales_fulfillment_per_order.language}=${language_map_pdt.language_key} ;;
+    relationship: many_to_one
+  }
+
+
+
 }
 
-explore: sales_fullfillment {
-  sql_always_where: ${material_number} is NOT NULL ;;
-}
 
 # explore: sales_status_items {}

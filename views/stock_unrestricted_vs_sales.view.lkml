@@ -37,7 +37,7 @@ view: stock_unrestricted_vs_sales {
   }
 
   dimension: delivered_uom {
-    hidden: yes
+    # hidden: yes
     type: string
     sql: ${TABLE}.DeliveredUoM_MEINS ;;
   }

@@ -11,12 +11,12 @@ view: sales_fulfillment_per_order {
   # A dimension is a groupable field that can be used to filter query results.
   # This dimension will be called "Client Mandt" in Explore.
 
-  dimension: client_mandt {
+  dimension: client {
     type: string
     sql: ${TABLE}.Client_MANDT ;;
   }
 
-  dimension: currency_waerk {
+  dimension: currency {
     type: string
     sql: ${TABLE}.Currency_WAERK ;;
   }
@@ -31,22 +31,22 @@ view: sales_fulfillment_per_order {
     sql: ${TABLE}.DeliveredQty ;;
   }
 
-  dimension: delivered_uo_m_meins {
+  dimension: delivered_uom {
     type: string
     sql: ${TABLE}.DeliveredUoM_MEINS ;;
   }
 
-  dimension: language_spras {
+  dimension: language {
     type: string
     sql: ${TABLE}.Language_SPRAS ;;
   }
 
-  dimension: material_number_matnr {
+  dimension: material_number {
     type: string
     sql: ${TABLE}.MaterialNumber_MATNR ;;
   }
 
-  dimension: material_text_maktx {
+  dimension: material_text {
     type: string
     sql: ${TABLE}.MaterialText_MAKTX ;;
   }
@@ -61,22 +61,22 @@ view: sales_fulfillment_per_order {
     sql: ${TABLE}.PendingDelivery ;;
   }
 
-  dimension: plant_werks {
+  dimension: plant {
     type: string
     sql: ${TABLE}.Plant_WERKS ;;
   }
 
-  dimension: sales_item_posnv {
+  dimension: sales_item {
     type: string
     sql: ${TABLE}.SalesItem_POSNV ;;
   }
 
-  dimension: sales_order_vbelv {
+  dimension: sales_order {
     type: string
     sql: ${TABLE}.SalesOrder_VBELV ;;
   }
 
-  dimension: sales_organization_vkorg {
+  dimension: sales_organization {
     type: string
     sql: ${TABLE}.SalesOrganization_VKORG ;;
   }
@@ -86,12 +86,12 @@ view: sales_fulfillment_per_order {
     sql: ${TABLE}.SalesQty ;;
   }
 
-  dimension: sales_unit_vrkme {
+  dimension: sales_unit {
     type: string
     sql: ${TABLE}.SalesUnit_VRKME ;;
   }
 
-  dimension: storage_location_lgort {
+  dimension: storage_location {
     type: string
     sql: ${TABLE}.StorageLocation_LGORT ;;
   }
