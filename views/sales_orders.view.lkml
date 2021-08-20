@@ -2032,8 +2032,6 @@ view: sales_orders {
   #   drill_fields: [name_of_orderer_bname]
   # }
 
-
-
   measure: total_sales_orders {
     type: count_distinct
     sql: ${sales_document};;
