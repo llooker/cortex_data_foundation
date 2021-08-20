@@ -2019,10 +2019,20 @@ view: sales_orders {
     sql: ${TABLE}.YourReference_IHREZ ;;
   }
 
+  #New dimensions
+  dimension: is_before_ytd {
+    type: yesno
+    sql:  EXTRACT(DAYOFYEAR FROM ${document_raw}) <= EXTRACT(DAYOFYEAR FROM CURRENT_DATE);;
+  }
+
+  #Measures
+
   # measure: count {
   #   type: count
   #   drill_fields: [name_of_orderer_bname]
   # }
+
+
 
   measure: total_sales_orders {
     type: count_distinct
