@@ -18,62 +18,62 @@ view: sd_document_flow {
 
   dimension: delivered_qty {
     type: number
-    sql: ${TABLE}.DeliveredQty ;;
+    sql: ${TABLE}.DeliveredQty_RFMNG ;;
   }
 
   dimension: delivered_uom {
     type: string
-    sql: ${TABLE}.DeliveredUoM ;;
+    sql: ${TABLE}.DeliveredUoM_MEINS ;;
   }
 
   dimension: delivery_item {
     type: string
-    sql: ${TABLE}.DeliveryItem ;;
+    sql: ${TABLE}.DeliveryItem_POSNV ;;
   }
 
-  dimension: delivery_number {
+  dimension: delivery_number_VBELV {
     type: string
     sql: ${TABLE}.DeliveryNumber ;;
   }
 
   dimension: invoice_currency {
     type: string
-    sql: ${TABLE}.InvoiceCurrency ;;
+    sql: ${TABLE}.InvoiceCurrency_WAERS ;;
   }
 
   dimension: invoice_item {
     type: string
-    sql: ${TABLE}.InvoiceItem ;;
+    sql: ${TABLE}.InvoiceItem_POSNN ;;
   }
 
   dimension: invoice_number {
     type: string
-    sql: ${TABLE}.InvoiceNumber ;;
+    sql: ${TABLE}.InvoiceNumber_VBELN ;;
   }
 
   dimension: invoice_qty {
     type: number
-    sql: ${TABLE}.InvoiceQty ;;
+    sql: ${TABLE}.InvoiceQty_RFMNG ;;
   }
 
   dimension: invoice_uom {
     type: string
-    sql: ${TABLE}.InvoiceUoM ;;
+    sql: ${TABLE}.InvoiceUoM_MEINS ;;
   }
 
   dimension: invoice_value {
     type: number
-    sql: ${TABLE}.InvoiceValue ;;
+    sql: ${TABLE}.InvoiceValue_RFWRT ;;
   }
 
   dimension: sales_item {
     type: string
-    sql: ${TABLE}.SalesItem ;;
+    sql: ${TABLE}.SalesItem_POSNV ;;
   }
 
   dimension: sales_order {
     type: string
-    sql: ${TABLE}.SalesOrder ;;
+    sql: ${TABLE}.SalesOrder_VBELV ;;
   }
 
   # A measure is a field that uses a SQL aggregate function. Here are count, sum, and average

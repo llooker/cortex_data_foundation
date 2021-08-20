@@ -350,7 +350,7 @@ view: deliveries {
   }
 
   dimension_group: confirmation {
-    hidden: yes
+    # hidden: yes
     type: time
     timeframes: [
       raw,
@@ -412,6 +412,7 @@ view: deliveries {
   }
 
   dimension_group: create {
+    hidden: yes
     type: time
     timeframes: [
       raw,
@@ -622,6 +623,7 @@ view: deliveries {
   }
 
   dimension_group: proof_of_delivery {
+    hidden: yes
     type: time
     timeframes: [
       raw,
@@ -637,6 +639,7 @@ view: deliveries {
   }
 
   dimension_group: created {
+    hidden: yes
     type: time
     timeframes: [
       raw,
@@ -739,13 +742,13 @@ view: deliveries {
   }
 
   dimension: delivery_completed {
-    hidden: yes
+    # hidden: yes
     type: string
     sql: ${TABLE}.deliveryCompleted_SPE_GEN_ELIKZ ;;
   }
 
   dimension: delivery_confirmation_status {
-    hidden: yes
+    # hidden: yes
     type: string
     sql: ${TABLE}.DeliveryConfirmationStatus_SPE_ACC_APP_STS ;;
   }
@@ -1189,6 +1192,7 @@ view: deliveries {
   }
 
   dimension_group: handover_at_the_handover_location {
+    hidden: yes
     type: time
     timeframes: [
       raw,
@@ -1500,6 +1504,7 @@ view: deliveries {
   }
 
   dimension_group: loading {
+    hidden: yes
     type: time
     timeframes: [
       raw,

@@ -98,7 +98,7 @@ explore: sales_orders {
   join: customers_md_ship_to {
     from: customers_md
     view_label: "Deliveries"
-    fields: []
+    fields: [customers_md_ship_to.city,customers_md_ship_to.address,customers_md_ship_to.postal_code]
     type: left_outer
     sql_on: ${customers_md.customer_number}=${deliveries.ship_to_party}
             AND ${customers_md.client}=${deliveries.client}

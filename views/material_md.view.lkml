@@ -542,6 +542,7 @@ view: material_md {
   }
 
   dimension: material_group {
+    group_label: "Material Group"
     type: string
     sql: ${TABLE}.MaterialGroup_MATKL ;;
   }

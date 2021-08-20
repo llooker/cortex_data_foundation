@@ -52,13 +52,14 @@ view: material_group_md {
   }
 
   dimension: material_group {
-    group_item_label: "Material Group"
+    hidden: yes
+    group_label: "Material Group"
     type: string
     sql: ${TABLE}.MaterialGroup_MATKL ;;
   }
 
   dimension: material_group_name {
-    group_item_label: "Material Group"
+    group_label: "Material Group"
     type: string
     sql: ${TABLE}.MaterialGroupName_WGBEZ ;;
   }
