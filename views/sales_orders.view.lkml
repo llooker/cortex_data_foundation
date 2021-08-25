@@ -116,6 +116,7 @@ view: sales_orders {
   }
 
   dimension: base_unit_of_measure {
+    hidden: yes
     type: string
     sql: ${TABLE}.BaseUnitofMeasure_MEINS ;;
   }

@@ -1,4 +1,4 @@
-view: language_map_pdt {
+view: language_map {
   derived_table: {
     sql: WITH temp as (
             SELECT 'CS' as TwoCharacterSapLanguageCode_LAISO, 'cs_CZ' as Looker_Locale UNION ALL

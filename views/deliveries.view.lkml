@@ -97,6 +97,7 @@ view: deliveries {
   }
 
   dimension: base_unit_of_measure {
+    hidden: yes
     type: string
     sql: ${TABLE}.BaseUnitOfMeasure_MEINS ;;
   }
@@ -345,12 +346,13 @@ view: deliveries {
   }
 
   dimension: confirmation_number {
+    hidden: yes
     type: string
     sql: ${TABLE}.ConfirmationNumber_PRTNR ;;
   }
 
   dimension_group: confirmation {
-    # hidden: yes
+    hidden: yes
     type: time
     timeframes: [
       raw,
@@ -742,18 +744,19 @@ view: deliveries {
   }
 
   dimension: delivery_completed {
-    # hidden: yes
+    hidden: yes
     type: string
     sql: ${TABLE}.deliveryCompleted_SPE_GEN_ELIKZ ;;
   }
 
   dimension: delivery_confirmation_status {
-    # hidden: yes
+    hidden: yes
     type: string
     sql: ${TABLE}.DeliveryConfirmationStatus_SPE_ACC_APP_STS ;;
   }
 
   dimension_group: delivery {
+    hidden: yes
     type: time
     timeframes: [
       raw,
@@ -2930,6 +2933,7 @@ view: deliveries {
   }
 
   dimension: units_of_measure_usage {
+    hidden: yes
     type: string
     sql: ${TABLE}.UnitsOfMeasureUsage_KZWSO ;;
   }

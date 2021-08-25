@@ -146,7 +146,7 @@ view: sales_fulfillment_per_order {
 
   measure: total_pending_delivery {
     type: sum
-    hidden: yes
+    # hidden: yes
     sql: ${pending_delivery} ;;
   }
 

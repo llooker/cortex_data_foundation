@@ -30,18 +30,6 @@ view: stock_unrestricted_vs_sales {
     sql: ${TABLE}.Client_MANDT ;;
   }
 
-  dimension: delivered_qty {
-    hidden: yes
-    type: number
-    sql: ${TABLE}.DeliveredQty ;;
-  }
-
-  dimension: delivered_uom {
-    # hidden: yes
-    type: string
-    sql: ${TABLE}.DeliveredUoM_MEINS ;;
-  }
-
   dimension: language {
     hidden: yes
     type: string
@@ -95,12 +83,6 @@ view: stock_unrestricted_vs_sales {
     sql: ${TABLE}.ProductHierarchy_PRDHA ;;
   }
 
-  dimension: sales_qty {
-    hidden: yes
-    type: number
-    sql: ${TABLE}.SalesQty ;;
-  }
-
   dimension: storage_location {
     hidden: yes
     type: string
@@ -126,17 +108,6 @@ view: stock_unrestricted_vs_sales {
   # These sum and average measures are hidden by default.
   # If you want them to show up in your explore, remove hidden: yes.
 
-  measure: total_delivered_qty {
-    type: sum
-    sql: ${delivered_qty} ;;
-    html: <a href="#drillmenu" target="_self"> @{BigNumbers_format};;
-  }
-
-  measure: average_delivered_qty {
-    type: average
-    hidden: yes
-    sql: ${delivered_qty} ;;
-  }
 
   measure: total_pending_delivery {
     type: sum
@@ -148,18 +119,6 @@ view: stock_unrestricted_vs_sales {
     type: average
     hidden: yes
     sql: ${pending_delivery} ;;
-  }
-
-  measure: total_sales_qty {
-    type: sum
-    sql: ${sales_qty} ;;
-    html: <a href="#drillmenu" target="_self"> @{BigNumbers_format};;
-  }
-
-  measure: average_sales_qty {
-    type: average
-    hidden: yes
-    sql: ${sales_qty} ;;
   }
 
   measure: total_unrestricted_stock {
