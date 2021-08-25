@@ -110,6 +110,7 @@ view: stock_unrestricted_vs_sales {
 
 
   measure: total_pending_delivery {
+    hidden: yes
     type: sum
     sql: ${pending_delivery} ;;
     html: <a href="#drillmenu" target="_self"> @{BigNumbers_format};;

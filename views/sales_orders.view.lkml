@@ -178,6 +178,7 @@ view: sales_orders {
   }
 
   dimension_group: bom_date {
+    hidden: yes
     type: time
     timeframes: [
       raw,
