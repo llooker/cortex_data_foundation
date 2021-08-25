@@ -10,7 +10,7 @@ view: sales_orders {
     primary_key: yes
     hidden: yes
     type: string
-    sql: concat(${sales_document},'-',${sales_orders.item},) ;;
+    sql: concat(${client},' - ', ${sales_document},' - ',${sales_orders.item},) ;;
   }
 
   dimension: account_assignment_category {
