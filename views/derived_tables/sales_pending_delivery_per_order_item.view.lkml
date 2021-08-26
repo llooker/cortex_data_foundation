@@ -44,14 +44,14 @@ view: sales_pending_delivery_per_order_item {
   }
 
   dimension: pending_delivery {
-    hidden: yes
+    # hidden: yes
     type: number
     sql: ${TABLE}.pending_delivery ;;
   }
 
   dimension: is_order_item_delivery_completed {
     type: yesno
-    sql: ${pending_delivery}=0 ;;
+    sql: ${pending_delivery}=0 OR ${pending_delivery} is null ;;
   }
 
 

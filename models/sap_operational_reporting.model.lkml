@@ -136,6 +136,16 @@ explore: sales_orders {
     relationship: many_to_one
   }
 
+  join: sales_pending_delivery_per_order_item {
+    view_label: "Sales Orders"
+    type: left_outer
+    sql_on: ${sales_pending_delivery_per_order_item.client}=${sales_orders.client}
+            AND ${sales_pending_delivery_per_order_item.sales_order}=${sales_orders.sales_document}
+            AND ${sales_pending_delivery_per_order_item.sales_item}=${sales_orders.item}
+            AND ${sales_pending_delivery_per_order_item.language}=${language_map.language_key} ;;
+    relationship: many_to_one
+  }
+
   # join: sales_fulfillment_per_order {
   #   type: left_outer
   #   sql_on: ${sales_fulfillment_per_order.client}=${sales_orders.client}

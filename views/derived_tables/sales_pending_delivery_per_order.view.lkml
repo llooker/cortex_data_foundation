@@ -44,10 +44,11 @@ view: sales_pending_delivery_per_order {
 
   dimension: is_order_delivery_completed {
     type: yesno
-    sql: ${pending_delivery}=0 ;;
+    sql: ${pending_delivery}=0 OR ${pending_delivery} is null ;;
   }
 
   measure: total_pending_delivery {
+    hidden: yes
     type: sum
     sql: ${pending_delivery} ;;
     html: <a href="#drillmenu" target="_self"> @{BigNumbers_format};;
