@@ -1,7 +1,6 @@
 view: material_group_md {
   sql_table_name: `SAP_REPORTING.MaterialGroupMD`
     ;;
-    view_label: "Material"
 
   dimension: asset_class {
     hidden: yes

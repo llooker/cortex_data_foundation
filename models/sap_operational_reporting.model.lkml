@@ -35,6 +35,16 @@ explore: sales_orders {
     relationship: many_to_one
   }
 
+  join: countries_t005_customer {
+    from: countries_t005
+    view_label: "Customers"
+    type: left_outer
+    sql_on: ${countries_t005_customer.country_key}=${customers_md.country_key}
+            AND ${countries_t005_customer.client}=${customers_md.client}
+            AND ${countries_t005_customer.language_key}=${language_map.language_key} ;;
+    relationship: many_to_one
+  }
+
   join: material_md {
     type: left_outer
     sql_on: ${material_md.material_number}=${sales_orders.material_number}
@@ -44,6 +54,7 @@ explore: sales_orders {
   }
 
   join: material_group_md {
+    view_label: "Material"
     type: left_outer
     sql_on: ${sales_orders.material_group}=${material_group_md.material_group}
             AND ${sales_orders.client}=${material_group_md.client}
@@ -60,59 +71,12 @@ explore: sales_orders {
     relationship: many_to_one
   }
 
-  join: deliveries {
-    type: left_outer
-    sql_on: ${deliveries.sales_order_number}=${sales_orders.sales_document}
-            AND ${deliveries.sales_order_item}=${sales_orders.item}
-            AND ${deliveries.client}=${sales_orders.client};;
-    relationship: many_to_one
-  }
-
   join: uom_md {
     view_label: "Material"
     type: left_outer
     sql_on: ${uom_md.unit_of_measurement}=${sales_orders.base_unit_of_measure}
             AND ${uom_md.client}=${sales_orders.client}
             AND ${uom_md.language_key}=${language_map.language_key} ;;
-    relationship: many_to_one
-  }
-
-  join: sd_document_flow {
-    type: left_outer
-    sql_on: ${sd_document_flow.sales_order}=${sales_orders.sales_document}
-            AND ${sd_document_flow.sales_item}=${sales_orders.item}
-            AND ${sd_document_flow.client}=${sales_orders.client};;
-    relationship: many_to_one
-  }
-
-  join: countries_t005_customer {
-    from: countries_t005
-    view_label: "Customers"
-    type: left_outer
-    sql_on: ${countries_t005_customer.country_key}=${customers_md.country_key}
-            AND ${countries_t005_customer.client}=${sales_orders.client}
-            AND ${countries_t005_customer.language_key}=${language_map.language_key} ;;
-    relationship: many_to_one
-  }
-
-  join: customers_md_ship_to {
-    from: customers_md
-    view_label: "Deliveries"
-    fields: [customers_md_ship_to.city,customers_md_ship_to.address,customers_md_ship_to.postal_code]
-    type: left_outer
-    sql_on: ${customers_md.customer_number}=${deliveries.ship_to_party}
-            AND ${customers_md.client}=${deliveries.client}
-            AND ${customers_md.language_key}=${language_map.language_key};;
-    relationship: many_to_one
-  }
-
-  join: countries_t005_delivery {
-    from: countries_t005
-    view_label: "Deliveries"
-    type: left_outer
-    sql_on: ${countries_t005_delivery.country_key}=${customers_md.country_key}
-            AND ${countries_t005_delivery.client}=${sales_orders.client}
-            AND ${countries_t005_delivery.language_key}=${language_map.language_key} ;;
     relationship: many_to_one
   }
 
@@ -124,6 +88,43 @@ explore: sales_orders {
             AND ${stock_unrestricted_vs_sales.plant}=${sales_orders.plant}
             AND ${stock_unrestricted_vs_sales.storage_location}=${sales_orders.storage_location}
             AND ${stock_unrestricted_vs_sales.language}=${language_map.language_key} ;;
+    relationship: many_to_one
+  }
+
+  join: deliveries {
+    type: left_outer
+    sql_on: ${deliveries.sales_order_number}=${sales_orders.sales_document}
+            AND ${deliveries.sales_order_item}=${sales_orders.item}
+            AND ${deliveries.client}=${sales_orders.client};;
+    relationship: many_to_one
+  }
+
+  join: customers_md_ship_to {
+    from: customers_md
+    view_label: "Deliveries"
+    fields: [customers_md_ship_to.city,customers_md_ship_to.address,customers_md_ship_to.postal_code]
+    type: left_outer
+    sql_on: ${customers_md_ship_to.customer_number}=${deliveries.ship_to_party}
+            AND ${customers_md_ship_to.client}=${deliveries.client}
+            AND ${customers_md_ship_to.language_key}=${language_map.language_key};;
+    relationship: many_to_one
+  }
+
+  join: countries_t005_delivery {
+    from: countries_t005
+    view_label: "Deliveries"
+    type: left_outer
+    sql_on: ${countries_t005_delivery.country_key}=${customers_md_ship_to.country_key}
+            AND ${countries_t005_delivery.client}=${customers_md_ship_to.client}
+            AND ${countries_t005_delivery.language_key}=${language_map.language_key} ;;
+    relationship: many_to_one
+  }
+
+  join: sd_document_flow {
+    type: left_outer
+    sql_on: ${sd_document_flow.sales_order}=${sales_orders.sales_document}
+            AND ${sd_document_flow.sales_item}=${sales_orders.item}
+            AND ${sd_document_flow.client}=${sales_orders.client};;
     relationship: many_to_one
   }
 
@@ -160,4 +161,6 @@ explore: sales_orders {
 }
 
 
-explore: sales_fulfillment_per_order {}
+explore: sales_fulfillment_per_order {
+  hidden: yes
+}
