@@ -51,7 +51,7 @@ view: sales_pending_delivery_per_order_item {
 
   dimension: is_order_item_delivery_completed {
     type: yesno
-    sql: ${pending_delivery}=0 OR ${pending_delivery} is null ;;
+    sql: ${pending_delivery}=0 ;;
   }
 
 
