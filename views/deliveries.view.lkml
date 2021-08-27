@@ -3139,8 +3139,15 @@ view: deliveries {
     drill_fields: [deliveries_details*]
   }
 
+  measure: total_actual_quantity_delivered {
+    type: sum
+    sql: ${actual_quantity_delivered_in_stockkeeping_units} ;;
+    html: <a href="#drillmenu" target="_self"> @{BigNumbers_format};;
+    drill_fields: [deliveries_details*]
+  }
+
   set: deliveries_details {
-    fields: [sales_orders.sales_document,customers_md.customer_name,planned_goods_movement_date,actual_goods_movement_date, material_md.material_name, is_return ]
+    fields: [sales_orders.sales_document,customers_md.customer_name,planned_goods_movement_date,actual_goods_movement_date, material_md.material_name, is_return,total_actual_quantity_delivered ]
   }
 
 }
