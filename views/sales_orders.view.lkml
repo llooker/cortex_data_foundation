@@ -1,4 +1,4 @@
-include: "custom_navigation.view.lkml"
+include: "/views/derived_tables/custom_navigation.view.lkml"
 
 view: sales_orders {
   sql_table_name: `SAP_REPORTING.SalesOrders`
@@ -697,6 +697,12 @@ view: sales_orders {
   dimension: sales_document {
     type: string
     sql: ${TABLE}.SalesDocument_VBELN ;;
+    link: {
+      label: "Order Details"
+      # url: "/dashboards-next/sap_operational_reporting::3_customer_details?Customer%20Details={{ filterable_value }}"
+      url: "/dashboards-next/45?Sales%20Document={{ filterable_value | url_encode }}"
+      icon_url: "http://www.looker.com/favicon.ico"
+    }
   }
 
   dimension: document_number_of_the_reference_document {

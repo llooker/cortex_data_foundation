@@ -124,13 +124,13 @@ explore: sales_orders {
     relationship: many_to_one
   }
 
-  join: sd_document_flow {
-    type: left_outer
-    sql_on: ${sd_document_flow.sales_order}=${sales_orders.sales_document}
-            AND ${sd_document_flow.sales_item}=${sales_orders.item}
-            AND ${sd_document_flow.client}=${sales_orders.client};;
-    relationship: many_to_one
-  }
+  # join: sd_document_flow {
+  #   type: left_outer
+  #   sql_on: ${sd_document_flow.sales_order}=${sales_orders.sales_document}
+  #           AND ${sd_document_flow.sales_item}=${sales_orders.item}
+  #           AND ${sd_document_flow.client}=${sales_orders.client};;
+  #   relationship: many_to_one
+  # }
 
   join: sales_pending_delivery_per_order {
     view_label: "Sales Orders"
@@ -150,17 +150,6 @@ explore: sales_orders {
             AND ${sales_pending_delivery_per_order_item.language}=${language_map.language_key} ;;
     relationship: many_to_one
   }
-
-  # join: sales_fulfillment_per_order {
-  #   type: left_outer
-  #   sql_on: ${sales_fulfillment_per_order.client}=${sales_orders.client}
-  #           AND ${sales_fulfillment_per_order.sales_order}=${sales_orders.sales_document}
-  #           AND ${sales_fulfillment_per_order.sales_item}=${sales_orders.item}
-  #           AND ${sales_fulfillment_per_order.language}=${language_map.language_key} ;;
-  #   relationship: many_to_one
-  # }
-
-
 
 }
 

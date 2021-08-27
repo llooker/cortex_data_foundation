@@ -1643,6 +1643,12 @@ view: deliveries {
   dimension: material_number {
     type: string
     sql: ${TABLE}.MaterialNumber_MATNR ;;
+    link: {
+      label: "Material Details"
+      # url: "/dashboards-next/sap_operational_reporting::2_material_details?Material%20Number%20Matnr={{ filterable_value }}"
+      url: "/dashboards-next/42?Material%20Number={{ filterable_value | url_encode }}"
+      icon_url: "http://www.looker.com/favicon.ico"
+    }
   }
 
   dimension: material_staging_indicator_for_production_supply {

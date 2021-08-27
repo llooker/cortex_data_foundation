@@ -129,6 +129,7 @@ view: stock_unrestricted_vs_sales {
   }
 
   measure: total_unrestricted_stock {
+    description: "This is the current snapshot of the unrestricted stock available. It is not assigned to a specific order."
     type: sum
     sql: ${unrestricted_stock} ;;
     html: <a href="#drillmenu" target="_self"> @{BigNumbers_format};;
@@ -141,6 +142,7 @@ view: stock_unrestricted_vs_sales {
   }
 
   measure: stock_vs_pending_deliveries {
+    description: "This is the current snapshot of the unrestricted stock available compared to all the pending orders. It is not assigned to a specific order."
     type: number
     sql: ${total_unrestricted_stock}-${total_pending_delivery} ;;
     html: <a href="#drillmenu" target="_self"> @{BigNumbers_format};;
