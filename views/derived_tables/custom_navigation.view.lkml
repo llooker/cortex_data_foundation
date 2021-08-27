@@ -2,6 +2,7 @@ view: custom_navigation_buttons {
   extension: required
 
   measure: dash_nav {
+    hidden: yes
     label: "Navigation Bar"
     type: string
     sql: "";;

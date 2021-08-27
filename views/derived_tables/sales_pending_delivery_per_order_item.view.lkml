@@ -59,5 +59,7 @@ view: sales_pending_delivery_per_order_item {
     type: sum
     sql: ${pending_delivery} ;;
     html: <a href="#drillmenu" target="_self"> @{BigNumbers_format};;
+    drill_fields: [sales_orders.sales_document_detail*,total_pending_delivery]
   }
+
 }

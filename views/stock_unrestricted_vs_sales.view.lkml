@@ -133,6 +133,7 @@ view: stock_unrestricted_vs_sales {
     type: sum
     sql: ${unrestricted_stock} ;;
     html: <a href="#drillmenu" target="_self"> @{BigNumbers_format};;
+    drill_fields: [material_md.material_number, material_md.material_text,total_unrestricted_stock]
   }
 
   measure: average_unrestricted_stock {
@@ -146,5 +147,6 @@ view: stock_unrestricted_vs_sales {
     type: number
     sql: ${total_unrestricted_stock}-${total_pending_delivery} ;;
     html: <a href="#drillmenu" target="_self"> @{BigNumbers_format};;
+    drill_fields: [material_md.material_number, material_md.material_text,stock_vs_pending_deliveries]
   }
 }

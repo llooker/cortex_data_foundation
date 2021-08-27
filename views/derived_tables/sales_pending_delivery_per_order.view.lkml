@@ -53,4 +53,5 @@ view: sales_pending_delivery_per_order {
     sql: ${pending_delivery} ;;
     html: <a href="#drillmenu" target="_self"> @{BigNumbers_format};;
   }
+
 }

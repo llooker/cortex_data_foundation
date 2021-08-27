@@ -1123,6 +1123,6 @@ view: customers_md {
 
   measure: count {
     type: count
-    drill_fields: []
+    drill_fields: [customer_number, customer_name, countries_t005_customer.country_name]
   }
 }

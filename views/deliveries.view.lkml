@@ -3123,18 +3123,24 @@ view: deliveries {
 
   measure: count {
     type: count
-    drill_fields: []
+    drill_fields: [deliveries_details*]
   }
 
   measure: return_count {
     type: count
     filters: [is_return: "Yes"]
+    drill_fields: [deliveries_details*]
   }
 
   measure: delivery_return_percentage {
     type: number
     sql: ${return_count}/NULLIF(${count}-${return_count},0) ;;
     value_format_name: percent_2
+    drill_fields: [deliveries_details*]
+  }
+
+  set: deliveries_details {
+    fields: [sales_orders.sales_document,customers_md.customer_name,planned_goods_movement_date,actual_goods_movement_date, material_md.material_name, is_return ]
   }
 
 }

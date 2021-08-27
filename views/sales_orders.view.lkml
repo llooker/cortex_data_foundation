@@ -2045,6 +2045,7 @@ view: sales_orders {
     sql: ${sales_document};;
     filters: [document_category: "C"]
     html: <a href="#drillmenu" target="_self"> @{BigNumbers_format};;
+    drill_fields: [sales_document_detail*]
   }
 
   measure: total_volume {
@@ -2058,8 +2059,8 @@ view: sales_orders {
   measure: total_sales_order_org_currency {
     type: sum
     sql: ${net_value_of_the_sales_order_in_document_currency};;
-    drill_fields: [document_date, customers_md.customer_name,total_sales_order_org_currency]
     html: <a href="#drillmenu" target="_self"> @{BigNumbers_format};;
+    drill_fields: [sales_document_detail*]
   }
 
   measure: average_volume {
@@ -2074,20 +2075,18 @@ view: sales_orders {
     type: average
     sql: ${net_value_of_the_sales_order_in_document_currency};;
     html: <a href="#drillmenu" target="_self"> @{BigNumbers_format};;
+    drill_fields: [sales_document_detail*]
   }
 
   measure: total_cumulative_order_quantity {
-    hidden: no
     type: sum
     sql: ${cumulative_order_quantity} ;;
     html: <a href="#drillmenu" target="_self"> @{BigNumbers_format};;
+    drill_fields: [sales_document_detail*,total_cumulative_order_quantity]
   }
 
-  # measure: total_fulfilled {
-  #   type: sum_distinct
-  #   sql: ${sales_document_vbeln};;
-  #   filters: [document_category_vbtyp: "C",]
-  #   value_format_name: decimal_2
-  # }
+  set: sales_document_detail {
+    fields: [document_date, sales_document, customers_md.customer_name, sales_pending_delivery_per_order.is_order_delivery_completed, total_sales_order_org_currency]
+  }
 
 }
