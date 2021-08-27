@@ -1,4 +1,4 @@
-<h1><span style="color:#2d7eea">README - Your LookML Project</span></h1>
+<h1><span style="color:#2d7eea">README - NEEDS TO BE COMPLETELY RE-WRITTEN</span></h1>
 
 
 <h2><span style="color:#2d7eea">LookML Overview</span></h2>

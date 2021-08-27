@@ -12,12 +12,16 @@ datagroup: sap_operational_reporting_default_datagroup {
 persist_with: sap_operational_reporting_default_datagroup
 
 explore: sales_orders {
+
+  sql_always_where: ${sales_orders.client}='{{ _user_attributes['sap_client_mandt'] }}' ;;
+
   join: language_map {
     fields: []
     type: left_outer
     sql_on: ${language_map.looker_locale}='{{ _user_attributes['locale'] }}' ;;
     relationship: many_to_one
   }
+
   join: sales_organizations {
     view_label: "Sales Orders"
     type: left_outer
@@ -163,4 +167,5 @@ explore: sales_orders {
 
 explore: sales_fulfillment_per_order {
   hidden: yes
+  sql_always_where: ${sales_fulfillment_per_order.client}='{{ _user_attributes['sap_client_mandt'] }}' ;;
 }
