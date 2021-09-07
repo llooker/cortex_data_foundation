@@ -559,6 +559,7 @@ view: material_md {
   }
 
   dimension: material_number {
+    label: "Product Number"
     type: string
     sql: ${TABLE}.MaterialNumber_MATNR ;;
     link: {

@@ -331,7 +331,7 @@ view: customers_md {
     type: string
     sql: ${TABLE}.CustomerNumber_KUNNR ;;
     link: {
-      label: "Customer Details"
+      label: "Customer Snapshot"
       # url: "/dashboards-next/sap_operational_reporting::3_customer_details?Customer%20Details={{ filterable_value }}"
       url: "/dashboards-next/44?Customer%20Number={{ filterable_value | url_encode }}"
       icon_url: "http://www.looker.com/favicon.ico"
@@ -673,7 +673,7 @@ view: customers_md {
     type: string
     sql: ${TABLE}.Name1_NAME1 ;;
     link: {
-      label: "Customer Details"
+      label: "Customer Snapshot"
       # url: "/dashboards-next/sap_operational_reporting::3_customer_details?Customer%20Details={{ filterable_value }}"
       url: "/dashboards-next/44?Customer%20Name={{ filterable_value | url_encode }}"
       icon_url: "http://www.looker.com/favicon.ico"

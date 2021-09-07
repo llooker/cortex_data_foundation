@@ -695,12 +695,13 @@ view: sales_orders {
   }
 
   dimension: sales_document {
+    label: "Sales Order"
     type: string
     sql: ${TABLE}.SalesDocument_VBELN ;;
     link: {
       label: "Order Details"
       # url: "/dashboards-next/sap_operational_reporting::3_customer_details?Customer%20Details={{ filterable_value }}"
-      url: "/dashboards-next/45?Sales%20Document={{ filterable_value | url_encode }}"
+      url: "/dashboards-next/45?Sales%20Order={{ filterable_value | url_encode }}"
       icon_url: "http://www.looker.com/favicon.ico"
     }
   }
@@ -2073,6 +2074,7 @@ view: sales_orders {
   }
 
   measure: average_sales_order_org_currency {
+    label: "Average Revenue"
     type: average
     sql: ${net_value_of_the_sales_order_in_document_currency};;
     html: <a href="#drillmenu" target="_self"> @{BigNumbers_format};;
@@ -2080,6 +2082,7 @@ view: sales_orders {
   }
 
   measure: total_cumulative_order_quantity {
+    label: "Total Quantity"
     type: sum
     sql: ${cumulative_order_quantity} ;;
     html: <a href="#drillmenu" target="_self"> @{BigNumbers_format};;

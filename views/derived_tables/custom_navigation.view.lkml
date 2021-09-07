@@ -25,7 +25,7 @@ view: custom_navigation_buttons {
     <a style="padding: 5px; float: center; line-height: 40px; margin-left: 8px; color: #4285F4" href="/dashboards-next/40">Sales Analytics</a>
     <a style="padding: 5px; float: center; line-height: 40px; margin-left: 8px; color: #4285F4" href="/dashboards-next/41">Orders Fulfillment</a>
     <a style="padding: 5px; float: center; line-height: 40px; margin-left: 8px; color: #4285F4" href="/dashboards-next/42">Product Details</a>
-    <a style="padding: 5px; float: center; line-height: 40px; margin-left: 8px; color: #4285F4" href="/dashboards-next/44">Customer Details</a>
+    <a style="padding: 5px; float: center; line-height: 40px; margin-left: 8px; color: #4285F4" href="/dashboards-next/44">Customer Snapshot</a>
     <a style="padding: 5px; float: center; line-height: 40px; margin-left: 8px; color: #4285F4" href="/dashboards-next/45">Orders Details</a>
     </nav>
     </div>
