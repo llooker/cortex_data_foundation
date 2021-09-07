@@ -65,12 +65,21 @@ explore: sales_orders {
     relationship: many_to_one
   }
 
-  join: material_types_md {
+  # join: material_types_md {
+  #   view_label: "Material"
+  #   type: left_outer
+  #   sql_on: ${material_md.material_type}=${material_types_md.material_type}
+  #           AND ${sales_orders.client}=${material_types_md.client}
+  #           AND ${material_types_md.language_key}=${language_map.language_key} ;;
+  #   relationship: many_to_one
+  # }
+
+  join: product_hierarchy_md {
     view_label: "Material"
     type: left_outer
-    sql_on: ${material_md.material_type}=${material_types_md.material_type}
-            AND ${sales_orders.client}=${material_types_md.client}
-            AND ${material_types_md.language_key}=${language_map.language_key} ;;
+    sql_on: ${product_hierarchy_md.client}=${sales_orders.client}
+            AND ${product_hierarchy_md.hierarchy}=${sales_orders.product_hierarchy}
+            AND ${product_hierarchy_md.language}=${language_map.language_key};;
     relationship: many_to_one
   }
 

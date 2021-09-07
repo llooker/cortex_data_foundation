@@ -186,12 +186,12 @@
     model: sap_operational_reporting
     explore: sales_orders
     type: looker_line
-    fields: [sales_orders.total_sales_orders, sales_orders.document_date, material_types_md.material_type_description]
-    pivots: [material_types_md.material_type_description]
+    fields: [sales_orders.total_sales_orders, sales_orders.document_date, product_hierarchy_md.product_description]
+    pivots: [product_hierarchy_md.product_description]
     fill_fields: [sales_orders.document_date]
     filters:
-      material_types_md.material_type_description: "-NULL"
-    sorts: [sales_orders.total_sales_orders desc 0, material_types_md.material_type_description]
+      product_hierarchy_md.product_description: "-NULL"
+    sorts: [sales_orders.total_sales_orders desc 0, product_hierarchy_md.product_description]
     limit: 500
     x_axis_gridlines: false
     y_axis_gridlines: false
