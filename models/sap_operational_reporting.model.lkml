@@ -57,7 +57,7 @@ explore: sales_orders {
   }
 
   join: material_group_md {
-    view_label: "Material"
+    view_label: "Product"
     type: left_outer
     sql_on: ${sales_orders.material_group}=${material_group_md.material_group}
             AND ${sales_orders.client}=${material_group_md.client}
@@ -66,7 +66,7 @@ explore: sales_orders {
   }
 
   # join: material_types_md {
-  #   view_label: "Material"
+  #   view_label: "Product"
   #   type: left_outer
   #   sql_on: ${material_md.material_type}=${material_types_md.material_type}
   #           AND ${sales_orders.client}=${material_types_md.client}
@@ -75,7 +75,7 @@ explore: sales_orders {
   # }
 
   join: product_hierarchy_md {
-    view_label: "Material"
+    view_label: "Product"
     type: left_outer
     sql_on: ${product_hierarchy_md.client}=${sales_orders.client}
             AND ${product_hierarchy_md.hierarchy}=${sales_orders.product_hierarchy}
@@ -85,7 +85,7 @@ explore: sales_orders {
   }
 
   join: uom_md {
-    view_label: "Material"
+    view_label: "Product"
     type: left_outer
     sql_on: ${uom_md.unit_of_measurement}=${sales_orders.base_unit_of_measure}
             AND ${uom_md.client}=${sales_orders.client}
@@ -94,7 +94,7 @@ explore: sales_orders {
   }
 
   join: stock_unrestricted_vs_sales {
-    view_label: "Material"
+    view_label: "Product"
     type: left_outer
     sql_on: ${stock_unrestricted_vs_sales.material_number}=${sales_orders.material_number}
             AND ${stock_unrestricted_vs_sales.client}=${sales_orders.client}

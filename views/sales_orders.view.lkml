@@ -699,7 +699,7 @@ view: sales_orders {
     type: string
     sql: ${TABLE}.SalesDocument_VBELN ;;
     link: {
-      label: "Order Details"
+      label: "Order Snapshot"
       # url: "/dashboards-next/sap_operational_reporting::3_customer_details?Customer%20Details={{ filterable_value }}"
       url: "/dashboards-next/45?Sales%20Order={{ filterable_value | url_encode }}"
       icon_url: "http://www.looker.com/favicon.ico"

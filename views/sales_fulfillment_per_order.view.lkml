@@ -145,6 +145,7 @@ view: sales_fulfillment_per_order {
   }
 
   measure: total_pending_delivery {
+    label: "Total Quantity Pending Delivery"
     type: sum
     # hidden: yes
     sql: ${pending_delivery} ;;
