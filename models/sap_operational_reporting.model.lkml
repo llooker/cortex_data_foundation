@@ -79,7 +79,8 @@ explore: sales_orders {
     type: left_outer
     sql_on: ${product_hierarchy_md.client}=${sales_orders.client}
             AND ${product_hierarchy_md.hierarchy}=${sales_orders.product_hierarchy}
-            AND ${product_hierarchy_md.language}=${language_map.language_key};;
+            AND ${product_hierarchy_md.language}=${language_map.language_key}
+            AND ${product_hierarchy_md.level}='3';;
     relationship: many_to_one
   }
 
