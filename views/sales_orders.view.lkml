@@ -2057,6 +2057,7 @@ view: sales_orders {
   }
 
   measure: total_sales_order_org_currency {
+    label: "Total Revenue"
     type: sum
     sql: ${net_value_of_the_sales_order_in_document_currency};;
     html: <a href="#drillmenu" target="_self"> @{BigNumbers_format};;
