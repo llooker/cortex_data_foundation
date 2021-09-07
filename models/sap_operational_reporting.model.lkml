@@ -65,15 +65,6 @@ explore: sales_orders {
     relationship: many_to_one
   }
 
-  # join: material_types_md {
-  #   view_label: "Product"
-  #   type: left_outer
-  #   sql_on: ${material_md.material_type}=${material_types_md.material_type}
-  #           AND ${sales_orders.client}=${material_types_md.client}
-  #           AND ${material_types_md.language_key}=${language_map.language_key} ;;
-  #   relationship: many_to_one
-  # }
-
   join: product_hierarchy_md {
     view_label: "Product"
     type: left_outer
@@ -133,14 +124,6 @@ explore: sales_orders {
     relationship: many_to_one
   }
 
-  # join: sd_document_flow {
-  #   type: left_outer
-  #   sql_on: ${sd_document_flow.sales_order}=${sales_orders.sales_document}
-  #           AND ${sd_document_flow.sales_item}=${sales_orders.item}
-  #           AND ${sd_document_flow.client}=${sales_orders.client};;
-  #   relationship: many_to_one
-  # }
-
   join: sales_pending_delivery_per_order {
     view_label: "Sales Orders"
     type: left_outer
@@ -159,6 +142,23 @@ explore: sales_orders {
             AND ${sales_pending_delivery_per_order_item.language}=${language_map.language_key} ;;
     relationship: many_to_one
   }
+
+  # join: material_types_md {
+  #   view_label: "Product"
+  #   type: left_outer
+  #   sql_on: ${material_md.material_type}=${material_types_md.material_type}
+  #           AND ${sales_orders.client}=${material_types_md.client}
+  #           AND ${material_types_md.language_key}=${language_map.language_key} ;;
+  #   relationship: many_to_one
+  # }
+
+  # join: sd_document_flow {
+  #   type: left_outer
+  #   sql_on: ${sd_document_flow.sales_order}=${sales_orders.sales_document}
+  #           AND ${sd_document_flow.sales_item}=${sales_orders.item}
+  #           AND ${sd_document_flow.client}=${sales_orders.client};;
+  #   relationship: many_to_one
+  # }
 
 }
 
