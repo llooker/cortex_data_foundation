@@ -23,7 +23,7 @@ view: product_hierarchy_md {
     sql: ${TABLE}.Client_MANDT ;;
   }
 
-  dimension: product_description {
+  dimension: product_category {
     # hidden: yes
     type: string
     sql: ${TABLE}.Description_VTEXT ;;
