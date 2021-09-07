@@ -71,8 +71,8 @@
     model: sap_operational_reporting
     explore: sales_orders
     type: looker_line
-    fields: [sales_orders.total_sales_orders, sales_orders.document_date]
-    fill_fields: [sales_orders.document_date]
+    fields: [sales_orders.total_sales_orders, sales_orders.order_date]
+    fill_fields: [sales_orders.order_date]
     sorts: [sales_orders.total_sales_orders desc]
     limit: 500
     column_limit: 50
@@ -121,8 +121,8 @@
     model: sap_operational_reporting
     explore: sales_orders
     type: looker_line
-    fields: [sales_orders.document_date, sales_orders.total_cumulative_order_quantity]
-    sorts: [sales_orders.document_date desc]
+    fields: [sales_orders.order_date, sales_orders.total_cumulative_order_quantity]
+    sorts: [sales_orders.order_date desc]
     limit: 5000
     x_axis_gridlines: false
     y_axis_gridlines: true
@@ -169,12 +169,12 @@
     model: sap_operational_reporting
     explore: sales_orders
     type: single_value
-    fields: [sales_orders.total_sales_order_org_currency, sales_orders.document_year]
-    fill_fields: [sales_orders.document_year]
+    fields: [sales_orders.total_sales_order_org_currency, sales_orders.order_year]
+    fill_fields: [sales_orders.order_year]
     filters:
-      sales_orders.document_date: 2 years
+      sales_orders.order_date: 2 years
       sales_orders.is_before_ytd: 'Yes'
-    sorts: [sales_orders.document_year desc]
+    sorts: [sales_orders.order_year desc]
     limit: 500
     column_limit: 50
     dynamic_fields: [{category: table_calculation, expression: "(${sales_orders.total_sales_order_org_currency}-offset(${sales_orders.total_sales_order_org_currency},1))/offset(${sales_orders.total_sales_order_org_currency},1)",
@@ -279,12 +279,12 @@
     model: sap_operational_reporting
     explore: sales_orders
     type: single_value
-    fields: [sales_orders.total_sales_orders, sales_orders.document_year]
-    fill_fields: [sales_orders.document_year]
+    fields: [sales_orders.total_sales_orders, sales_orders.order_year]
+    fill_fields: [sales_orders.order_year]
     filters:
-      sales_orders.document_date: 2 years
+      sales_orders.order_date: 2 years
       sales_orders.is_before_ytd: 'Yes'
-    sorts: [sales_orders.document_year desc]
+    sorts: [sales_orders.order_year desc]
     limit: 500
     column_limit: 50
     dynamic_fields: [{category: table_calculation, expression: "(${sales_orders.total_sales_orders}-offset(${sales_orders.total_sales_orders},1))/offset(${sales_orders.total_sales_orders},1)",
@@ -395,7 +395,7 @@
     type: single_value
     fields: [deliveries.delivery_return_percentage]
     filters:
-      sales_orders.document_date: 7 years
+      sales_orders.order_date: 7 years
       material_group_md.material_group_name: ''
       sales_organizations.sales_org_name: ''
       customers_md.customer_name: ''

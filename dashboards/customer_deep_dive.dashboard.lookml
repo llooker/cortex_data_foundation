@@ -327,12 +327,12 @@
     model: sap_operational_reporting
     explore: sales_orders
     type: looker_grid
-    fields: [sales_orders.document_date, sales_orders.sales_document, material_md.material_number,
+    fields: [sales_orders.order_date, sales_orders.sales_document, material_md.material_number,
       material_md.material_text, customers_md.customer_name, uom_md.unit_of_measurement_text_maximum10_characters,
       sales_orders.total_sales_order_org_currency, sales_orders.total_cumulative_order_quantity]
     filters:
       sales_pending_delivery_per_order.is_order_delivery_completed: 'Yes'
-    sorts: [sales_orders.document_date desc]
+    sorts: [sales_orders.order_date desc]
     limit: 500
     show_view_names: false
     show_row_numbers: true
@@ -401,12 +401,12 @@
     model: sap_operational_reporting
     explore: sales_orders
     type: looker_grid
-    fields: [sales_orders.document_date, sales_orders.sales_document, material_md.material_number,
+    fields: [sales_orders.order_date, sales_orders.sales_document, material_md.material_number,
       material_md.material_text, customers_md.customer_name, uom_md.unit_of_measurement_text_maximum10_characters,
       sales_orders.total_sales_order_org_currency, sales_orders.total_cumulative_order_quantity]
     filters:
       sales_pending_delivery_per_order.is_order_delivery_completed: 'No'
-    sorts: [sales_orders.document_date desc]
+    sorts: [sales_orders.order_date desc]
     limit: 500
     show_view_names: false
     show_row_numbers: true
@@ -475,14 +475,14 @@
     model: sap_operational_reporting
     explore: sales_orders
     type: single_value
-    fields: [sales_orders.total_sales_order_org_currency, sales_orders.document_year]
-    fill_fields: [sales_orders.document_year]
+    fields: [sales_orders.total_sales_order_org_currency, sales_orders.order_year]
+    fill_fields: [sales_orders.order_year]
     filters:
-      sales_orders.document_date: 2 years
+      sales_orders.order_date: 2 years
       material_group_md.material_group_name: ''
       sales_organizations.sales_org_name: ''
       sales_orders.is_before_ytd: 'Yes'
-    sorts: [sales_orders.document_year desc]
+    sorts: [sales_orders.order_year desc]
     limit: 500
     column_limit: 50
     dynamic_fields: [{category: table_calculation, expression: "(${sales_orders.total_sales_order_org_currency}-offset(${sales_orders.total_sales_order_org_currency},1))/offset(${sales_orders.total_sales_order_org_currency},1)",
@@ -515,14 +515,14 @@
     model: sap_operational_reporting
     explore: sales_orders
     type: single_value
-    fields: [sales_orders.total_sales_orders, sales_orders.document_year]
-    fill_fields: [sales_orders.document_year]
+    fields: [sales_orders.total_sales_orders, sales_orders.order_year]
+    fill_fields: [sales_orders.order_year]
     filters:
       sales_organizations.sales_org_name: ''
       material_group_md.material_group_name: ''
-      sales_orders.document_date: 2 years
+      sales_orders.order_date: 2 years
       sales_orders.is_before_ytd: 'Yes'
-    sorts: [sales_orders.document_year desc]
+    sorts: [sales_orders.order_year desc]
     limit: 500
     dynamic_fields: [{category: table_calculation, expression: "(${sales_orders.total_sales_orders}-offset(${sales_orders.total_sales_orders},1))/offset(${sales_orders.total_sales_orders},1)",
         label: vs last year, value_format: !!null '', value_format_name: !!null '',
@@ -591,7 +591,7 @@
     type: single_value
     fields: [sales_orders.average_sales_order_org_currency]
     filters:
-      sales_orders.document_date: this year
+      sales_orders.order_date: this year
       material_group_md.material_group_name: ''
       sales_organizations.sales_org_name: ''
     limit: 500

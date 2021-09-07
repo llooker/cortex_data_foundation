@@ -68,7 +68,7 @@
       Sales Org Name: sales_organizations.sales_org_name
       Material Group Name: material_group_md.material_group_name
       Customer Name: customers_md.customer_name
-      Document Date: sales_orders.document_date
+      Order Date: sales_orders.order_date
       Material Text: material_md.material_text
     row: 4
     col: 10
@@ -114,7 +114,7 @@
       Sales Org Name: sales_organizations.sales_org_name
       Material Group Name: material_group_md.material_group_name
       Customer Name: customers_md.customer_name
-      Document Date: sales_orders.document_date
+      Order Date: sales_orders.order_date
       Material Text: material_md.material_text
     row: 22
     col: 0
@@ -144,7 +144,7 @@
       Sales Org Name: sales_organizations.sales_org_name
       Material Group Name: material_group_md.material_group_name
       Customer Name: customers_md.customer_name
-      Document Date: sales_orders.document_date
+      Order Date: sales_orders.order_date
       Material Text: material_md.material_text
     row: 4
     col: 0
@@ -175,7 +175,7 @@
       Sales Org Name: sales_organizations.sales_org_name
       Material Group Name: material_group_md.material_group_name
       Customer Name: customers_md.customer_name
-      Document Date: sales_orders.document_date
+      Order Date: sales_orders.order_date
       Material Text: material_md.material_text
     row: 4
     col: 5
@@ -186,9 +186,9 @@
     model: sap_operational_reporting
     explore: sales_orders
     type: looker_line
-    fields: [sales_orders.total_sales_orders, sales_orders.document_date, product_hierarchy_md.product_description]
+    fields: [sales_orders.total_sales_orders, sales_orders.order_date, product_hierarchy_md.product_description]
     pivots: [product_hierarchy_md.product_description]
-    fill_fields: [sales_orders.document_date]
+    fill_fields: [sales_orders.order_date]
     filters:
       product_hierarchy_md.product_description: "-NULL"
     sorts: [sales_orders.total_sales_orders desc 0, product_hierarchy_md.product_description]
@@ -230,7 +230,7 @@
       Sales Org Name: sales_organizations.sales_org_name
       Material Group Name: material_group_md.material_group_name
       Customer Name: customers_md.customer_name
-      Document Date: sales_orders.document_date
+      Order Date: sales_orders.order_date
       Material Text: material_md.material_text
     row: 6
     col: 0
@@ -241,13 +241,13 @@
     model: sap_operational_reporting
     explore: sales_orders
     type: looker_line
-    fields: [sales_orders.total_sales_order_org_currency, sales_orders.document_year,
-      sales_orders.document_month_name]
-    pivots: [sales_orders.document_year]
-    fill_fields: [sales_orders.document_year, sales_orders.document_month_name]
+    fields: [sales_orders.total_sales_order_org_currency, sales_orders.order_year,
+      sales_orders.order_month_name]
+    pivots: [sales_orders.order_year]
+    fill_fields: [sales_orders.order_year, sales_orders.order_month_name]
     filters:
-      sales_orders.document_date: 3 years
-    sorts: [sales_orders.document_year desc, sales_orders.document_month_name]
+      sales_orders.order_date: 3 years
+    sorts: [sales_orders.order_year desc, sales_orders.order_month_name]
     limit: 500
     x_axis_gridlines: false
     y_axis_gridlines: false
@@ -311,7 +311,7 @@
             name: '1996'}, {axisId: sales_orders.total_sales_order_org_currency, id: 1995
               - sales_orders.total_sales_order_org_currency, name: '1995'}, {axisId: sales_orders.total_sales_order_org_currency,
             id: 1994 - sales_orders.total_sales_order_org_currency, name: '1994'},
-          {axisId: sales_orders.total_sales_order_org_currency, id: sales_orders.document_year___null
+          {axisId: sales_orders.total_sales_order_org_currency, id: sales_orders.order_year___null
               - sales_orders.total_sales_order_org_currency, name: "∅"}], showLabels: false,
         showValues: true, unpinAxis: false, tickDensity: default, tickDensityCustom: 5,
         type: linear}]
@@ -388,7 +388,7 @@
       Sales Org Name: sales_organizations.sales_org_name
       Material Group Name: material_group_md.material_group_name
       Customer Name: customers_md.customer_name
-      Document Date: sales_orders.document_date
+      Order Date: sales_orders.order_date
       Material Text: material_md.material_text
     row: 15
     col: 16
@@ -464,7 +464,7 @@
       Sales Org Name: sales_organizations.sales_org_name
       Material Group Name: material_group_md.material_group_name
       Customer Name: customers_md.customer_name
-      Document Date: sales_orders.document_date
+      Order Date: sales_orders.order_date
       Material Text: material_md.material_text
     row: 15
     col: 0
@@ -531,7 +531,7 @@
       Sales Org Name: sales_organizations.sales_org_name
       Material Group Name: material_group_md.material_group_name
       Customer Name: customers_md.customer_name
-      Document Date: sales_orders.document_date
+      Order Date: sales_orders.order_date
       Material Text: material_md.material_text
     row: 22
     col: 16
@@ -560,7 +560,7 @@
       Sales Org Name: sales_organizations.sales_org_name
       Material Group Name: material_group_md.material_group_name
       Customer Name: customers_md.customer_name
-      Document Date: sales_orders.document_date
+      Order Date: sales_orders.order_date
       Material Text: material_md.material_text
     row: 4
     col: 14
@@ -634,7 +634,7 @@
       Sales Org Name: sales_organizations.sales_org_name
       Material Group Name: material_group_md.material_group_name
       Customer Name: customers_md.customer_name
-      Document Date: sales_orders.document_date
+      Order Date: sales_orders.order_date
       Material Text: material_md.material_text
     row: 31
     col: 0
@@ -692,7 +692,7 @@
       Sales Org Name: sales_organizations.sales_org_name
       Material Group Name: material_group_md.material_group_name
       Customer Name: customers_md.customer_name
-      Document Date: sales_orders.document_date
+      Order Date: sales_orders.order_date
       Material Text: material_md.material_text
     row: 4
     col: 19
@@ -766,7 +766,7 @@
       Sales Org Name: sales_organizations.sales_org_name
       Material Group Name: material_group_md.material_group_name
       Customer Name: customers_md.customer_name
-      Document Date: sales_orders.document_date
+      Order Date: sales_orders.order_date
       Material Text: material_md.material_text
     row: 31
     col: 12
@@ -841,7 +841,7 @@
       Sales Org Name: sales_organizations.sales_org_name
       Material Group Name: material_group_md.material_group_name
       Customer Name: customers_md.customer_name
-      Document Date: sales_orders.document_date
+      Order Date: sales_orders.order_date
       Material Text: material_md.material_text
     row: 42
     col: 0
@@ -883,8 +883,8 @@
     width: 24
     height: 2
   filters:
-  - name: Document Date
-    title: Document Date
+  - name: Order Date
+    title: Order Date
     type: field_filter
     default_value: 7 year
     allow_multiple_values: true
@@ -896,7 +896,7 @@
     model: sap_operational_reporting
     explore: sales_orders
     listens_to_filters: []
-    field: sales_orders.document_date
+    field: sales_orders.order_date
   - name: Customer Name
     title: Customer Name
     type: field_filter

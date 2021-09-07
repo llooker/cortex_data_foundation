@@ -126,7 +126,7 @@
     explore: sales_orders
     type: looker_grid
     fields: [sales_orders.client, sales_orders.sales_document, sales_orders.item,
-      sales_orders.document_date, deliveries.planned_goods_movement_date, deliveries.actual_goods_movement_date,
+      sales_orders.order_date, deliveries.planned_goods_movement_date, deliveries.actual_goods_movement_date,
       material_md.material_number, material_md.material_text, sales_pending_delivery_per_order_item.is_order_item_delivery_completed,
       stock_unrestricted_vs_sales.total_pending_delivery, sales_orders.total_cumulative_order_quantity]
     filters:
@@ -254,7 +254,7 @@
     explore: sales_orders
     type: looker_grid
     fields: [sales_orders.client, sales_orders.sales_document, sales_orders.item,
-      sales_orders.document_date, deliveries.planned_goods_movement_date, deliveries.actual_goods_movement_date,
+      sales_orders.order_date, deliveries.planned_goods_movement_date, deliveries.actual_goods_movement_date,
       material_md.material_number, material_md.material_text, sales_pending_delivery_per_order_item.is_order_item_delivery_completed,
       stock_unrestricted_vs_sales.total_pending_delivery, sales_orders.total_cumulative_order_quantity]
     filters:

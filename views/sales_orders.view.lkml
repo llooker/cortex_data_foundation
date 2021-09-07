@@ -672,7 +672,7 @@ view: sales_orders {
     sql: ${TABLE}.DocumentCategory_VBTYP ;;
   }
 
-  dimension_group: document {
+  dimension_group: order {
     type: time
     timeframes: [
       raw,
@@ -2030,7 +2030,7 @@ view: sales_orders {
   #New dimensions
   dimension: is_before_ytd {
     type: yesno
-    sql:  EXTRACT(DAYOFYEAR FROM ${document_raw}) <= EXTRACT(DAYOFYEAR FROM CURRENT_DATE);;
+    sql:  EXTRACT(DAYOFYEAR FROM ${order_raw}) <= EXTRACT(DAYOFYEAR FROM CURRENT_DATE);;
   }
 
   #Measures
@@ -2087,7 +2087,7 @@ view: sales_orders {
   }
 
   set: sales_document_detail {
-    fields: [document_date, sales_document, customers_md.customer_name, sales_pending_delivery_per_order.is_order_delivery_completed, total_sales_order_org_currency]
+    fields: [order_date, sales_document, customers_md.customer_name, sales_pending_delivery_per_order.is_order_delivery_completed, total_sales_order_org_currency]
   }
 
 }

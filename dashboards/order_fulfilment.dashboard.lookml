@@ -437,13 +437,13 @@
     model: sap_operational_reporting
     explore: sales_orders
     type: looker_grid
-    fields: [sales_orders.document_date, sales_orders.sales_document, sales_orders.material_number,
+    fields: [sales_orders.order_date, sales_orders.sales_document, sales_orders.material_number,
       material_md.material_text, customers_md.customer_name, uom_md.unit_of_measurement_text_maximum10_characters,
       sales_orders.total_sales_order_org_currency, sales_orders.total_cumulative_order_quantity,
       sales_pending_delivery_per_order_item.total_pending_delivery]
     filters:
       sales_pending_delivery_per_order_item.is_order_item_delivery_completed: 'No'
-    sorts: [sales_orders.document_date]
+    sorts: [sales_orders.order_date]
     limit: 500
     show_view_names: false
     show_row_numbers: true
