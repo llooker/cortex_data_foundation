@@ -34,8 +34,7 @@ explore: sales_orders {
   join: customers_md {
     type: left_outer
     sql_on: ${customers_md.customer_number}=${sales_orders.sold_to_party}
-            AND ${customers_md.client}=${sales_orders.client}
-            AND ${customers_md.language_key}=${language_map.language_key};;
+            AND ${customers_md.client}=${sales_orders.client};;
     relationship: many_to_one
   }
 
