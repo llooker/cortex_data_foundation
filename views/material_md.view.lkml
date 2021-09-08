@@ -777,6 +777,7 @@ view: material_md {
   }
 
   dimension: product_hierarchy {
+    hidden: yes
     type: string
     sql: ${TABLE}.ProductHierarchy_PRDHA ;;
   }

@@ -30,7 +30,7 @@ view: product_hierarchy_md {
   }
 
   dimension: hierarchy {
-    hidden: yes
+    # hidden: yes
     type: string
     sql: ${TABLE}.Hierarchy_PRODH ;;
   }
