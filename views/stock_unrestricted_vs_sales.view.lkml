@@ -143,6 +143,7 @@ view: stock_unrestricted_vs_sales {
   }
 
   measure: stock_vs_pending_deliveries {
+    label: "Stock vs Pending Deliveries Delta"
     description: "This is the current snapshot of the unrestricted stock available compared to all the pending orders. It is not assigned to a specific order."
     type: number
     sql: ${total_unrestricted_stock}-${total_pending_delivery} ;;
