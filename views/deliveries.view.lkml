@@ -1423,7 +1423,7 @@ view: deliveries {
 
   dimension: is_return {
     type: yesno
-    sql: ${TABLE}.IS_RETURN='x' ;;
+    sql: ${TABLE}.IS_RETURN='X' ;;
   }
 
   dimension: iss_tax_law {
