@@ -27,6 +27,11 @@ view: product_hierarchy_md {
     # hidden: yes
     type: string
     sql: ${TABLE}.Description_VTEXT ;;
+    link: {
+      label: "Product Snapshot"
+      url: "/dashboards-next/42?Product+Category={{ filterable_value | url_encode }}"
+      icon_url: "http://www.looker.com/favicon.ico"
+    }
   }
 
   dimension: hierarchy {
