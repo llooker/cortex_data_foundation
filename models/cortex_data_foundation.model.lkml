@@ -4,12 +4,12 @@ connection: "@{CONNECTION_NAME}"
 include: "/views/**/*.view"
 include: "/dashboards/**/*.dashboard"
 
-datagroup: sap_operational_reporting_default_datagroup {
+datagroup: cortex_data_foundation_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
   max_cache_age: "1 hour"
 }
 
-persist_with: sap_operational_reporting_default_datagroup
+persist_with: cortex_data_foundation_default_datagroup
 
 explore: sales_orders {
 

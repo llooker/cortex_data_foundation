@@ -1,4 +1,4 @@
-project_name: "sap_operational_reporting"
+project_name: "cortex_data_foundation"
 
 # # Use local_dependency: To enable referencing of another project
 # # on this instance with include: statements

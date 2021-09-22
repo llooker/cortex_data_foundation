@@ -6,8 +6,8 @@
   - name: ''
     type: text
     title_text: ''
-    subtitle_text: <font color="#c1c1c1">To investigate an order,  click on the Sales
-      Document for further analysis in the Order Details dashboard</font>
+    subtitle_text: <font color="#c1c1c1">To investigate an order, click on the Sales
+      Document for further analysis in the Order Snapshot dashboard</font>
     body_text: ''
     row: 12
     col: 0
@@ -24,7 +24,7 @@
     height: 2
   - title: Navigation Bar
     name: Navigation Bar
-    model: sap_operational_reporting
+    model: cortex_data_foundation
     explore: sales_orders
     type: single_value
     fields: [sales_orders.dash_nav]
@@ -61,7 +61,7 @@
     height: 2
   - title: Name
     name: Name
-    model: sap_operational_reporting
+    model: cortex_data_foundation
     explore: sales_orders
     type: single_value
     fields: [customers_md.customer_name, customers_md.count]
@@ -105,7 +105,7 @@
     height: 2
   - title: Avg Lifetime Sale
     name: Avg Lifetime Sale
-    model: sap_operational_reporting
+    model: cortex_data_foundation
     explore: sales_orders
     type: single_value
     fields: [sales_orders.average_sales_order_org_currency]
@@ -133,7 +133,7 @@
     height: 2
   - title: Total Orders
     name: Total Orders
-    model: sap_operational_reporting
+    model: cortex_data_foundation
     explore: sales_orders
     type: single_value
     fields: [sales_orders.total_sales_orders]
@@ -160,7 +160,7 @@
     height: 2
   - title: Address
     name: Address
-    model: sap_operational_reporting
+    model: cortex_data_foundation
     explore: sales_orders
     type: looker_single_record
     fields: [customers_md.address, customers_md.city, customers_md.postal_code, countries_t005_customer.country_name]
@@ -225,7 +225,7 @@
     height: 4
   - title: Location
     name: Location
-    model: sap_operational_reporting
+    model: cortex_data_foundation
     explore: sales_orders
     type: looker_map
     fields: [countries_t005_customer.country_name]
@@ -310,7 +310,7 @@
     height: 6
   - title: Total Revenue
     name: Total Revenue
-    model: sap_operational_reporting
+    model: cortex_data_foundation
     explore: sales_orders
     type: single_value
     fields: [sales_orders.total_sales_order_org_currency]
@@ -336,7 +336,7 @@
     height: 2
   - title: Customer Number
     name: Customer Number
-    model: sap_operational_reporting
+    model: cortex_data_foundation
     explore: sales_orders
     type: single_value
     fields: [customers_md.customer_number, customers_md.count]
@@ -380,7 +380,7 @@
     height: 2
   - title: Completed Orders
     name: Completed Orders
-    model: sap_operational_reporting
+    model: cortex_data_foundation
     explore: sales_orders
     type: looker_grid
     fields: [sales_orders.order_date, sales_orders.sales_document, material_md.material_number,
@@ -454,7 +454,7 @@
     height: 7
   - title: Orders in Progress
     name: Orders in Progress
-    model: sap_operational_reporting
+    model: cortex_data_foundation
     explore: sales_orders
     type: looker_grid
     fields: [sales_orders.order_date, sales_orders.sales_document, material_md.material_number,
@@ -528,7 +528,7 @@
     height: 7
   - title: Avg Sale This Year
     name: Avg Sale This Year
-    model: sap_operational_reporting
+    model: cortex_data_foundation
     explore: sales_orders
     type: single_value
     fields: [sales_orders.average_sales_order_org_currency]
@@ -561,7 +561,7 @@
     height: 2
   - title: Orders
     name: Orders
-    model: sap_operational_reporting
+    model: cortex_data_foundation
     explore: sales_orders
     type: single_value
     fields: [sales_orders.total_sales_orders, sales_orders.order_year]
@@ -598,7 +598,7 @@
     height: 2
   - title: Revenue
     name: Revenue
-    model: sap_operational_reporting
+    model: cortex_data_foundation
     explore: sales_orders
     type: single_value
     fields: [sales_orders.total_sales_order_org_currency, sales_orders.order_year]
@@ -638,7 +638,7 @@
     height: 2
   - title: Returns Rate
     name: Returns Rate
-    model: sap_operational_reporting
+    model: cortex_data_foundation
     explore: sales_orders
     type: single_value
     fields: [deliveries.delivery_return_percentage]
@@ -703,7 +703,7 @@
       type: advanced
       display: popover
       options: []
-    model: sap_operational_reporting
+    model: cortex_data_foundation
     explore: sales_orders
     listens_to_filters: []
     field: customers_md.customer_name
@@ -717,7 +717,7 @@
       type: advanced
       display: popover
       options: []
-    model: sap_operational_reporting
+    model: cortex_data_foundation
     explore: sales_orders
     listens_to_filters: []
     field: customers_md.customer_number

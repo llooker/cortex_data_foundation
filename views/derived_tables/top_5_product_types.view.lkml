@@ -1,4 +1,4 @@
-include: "/models/sap_operational_reporting.model.lkml"
+include: "/models/cortex_data_foundation.model.lkml"
 
 view: top_5_product_category {
 
@@ -34,7 +34,7 @@ view: top_5_product_category {
     sql: ${TABLE}.product_category ;;
     link: {
       label: "Product Snapshot"
-      url: "/dashboards-next/sap_operational_reporting::product_snapshot?Product+Category={{ filterable_value | url_encode }}"
+      url: "/dashboards-next/cortex_data_foundation::product_snapshot?Product+Category={{ filterable_value | url_encode }}"
       icon_url: "http://www.looker.com/favicon.ico"
     }
   }

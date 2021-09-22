@@ -564,7 +564,7 @@ view: material_md {
     sql: ${TABLE}.MaterialNumber_MATNR ;;
     link: {
       label: "Product Snapshot"
-      url: "/dashboards-next/sap_operational_reporting::product_snapshot?Product%20Number={{ filterable_value | url_encode }}"
+      url: "/dashboards-next/cortex_data_foundation::product_snapshot?Product%20Number={{ filterable_value | url_encode }}"
       icon_url: "http://www.looker.com/favicon.ico"
     }
   }
@@ -587,7 +587,7 @@ view: material_md {
     sql: ${TABLE}.MaterialText_MAKTX ;;
     link: {
       label: "Product Snapshot"
-      url: "/dashboards-next/sap_operational_reporting::product_snapshot?Product+Text={{ filterable_value | url_encode }}"
+      url: "/dashboards-next/cortex_data_foundation::product_snapshot?Product+Text={{ filterable_value | url_encode }}"
       icon_url: "http://www.looker.com/favicon.ico"
     }
   }

@@ -38,8 +38,8 @@
   - name: ''
     type: text
     title_text: ''
-    subtitle_text: <font color="#c1c1c1">If a material is out of stock, click on the
-      name for further analysis in the Material Details dashboard</font>
+    subtitle_text: <font color="#c1c1c1">If a product is out of stock, click on the
+      name for further analysis in the Product Snapshot dashboard</font>
     body_text: ''
     row: 40
     col: 0
@@ -47,7 +47,7 @@
     height: 2
   - title: Total Sales Orders
     name: Total Sales Orders
-    model: sap_operational_reporting
+    model: cortex_data_foundation
     explore: sales_orders
     type: single_value
     fields: [sales_orders.total_sales_orders]
@@ -77,7 +77,7 @@
     height: 2
   - title: Total Customers
     name: Total Customers
-    model: sap_operational_reporting
+    model: cortex_data_foundation
     explore: sales_orders
     type: single_value
     fields: [customers_md.count]
@@ -106,7 +106,7 @@
     height: 2
   - title: Avg Sale Amount
     name: Avg Sale Amount
-    model: sap_operational_reporting
+    model: cortex_data_foundation
     explore: sales_orders
     type: single_value
     fields: [sales_orders.average_sales_order_org_currency]
@@ -137,7 +137,7 @@
     height: 2
   - title: Weekly Orders by Product Category (Top 5)
     name: Weekly Orders by Product Category (Top 5)
-    model: sap_operational_reporting
+    model: cortex_data_foundation
     explore: sales_orders
     type: looker_line
     fields: [sales_orders.total_sales_orders, sales_orders.order_week, top_5_product_category.product_category]
@@ -191,7 +191,7 @@
     height: 7
   - title: Sales Orders by Organization
     name: Sales Orders by Organization
-    model: sap_operational_reporting
+    model: cortex_data_foundation
     explore: sales_orders
     type: looker_grid
     fields: [sales_orders.sales_organization, sales_organizations.sales_org_name,
@@ -241,7 +241,7 @@
     height: 7
   - title: Total Sales YoY
     name: Total Sales YoY
-    model: sap_operational_reporting
+    model: cortex_data_foundation
     explore: sales_orders
     type: looker_line
     fields: [sales_orders.total_sales_order_org_currency, sales_orders.order_year,
@@ -331,7 +331,7 @@
     height: 7
   - title: Navigation Bar
     name: Navigation Bar
-    model: sap_operational_reporting
+    model: cortex_data_foundation
     explore: sales_orders
     type: single_value
     fields: [sales_orders.dash_nav]
@@ -368,7 +368,7 @@
     height: 2
   - title: Customers by Location
     name: Customers by Location
-    model: sap_operational_reporting
+    model: cortex_data_foundation
     explore: sales_orders
     type: looker_map
     fields: [customers_md.count, countries_t005_customer.country_name]
@@ -439,7 +439,7 @@
     height: 7
   - title: High Value Customers (Top 25)
     name: High Value Customers (Top 25)
-    model: sap_operational_reporting
+    model: cortex_data_foundation
     explore: sales_orders
     type: looker_grid
     fields: [customers_md.customer_number, customers_md.customer_name, sales_orders.total_sales_order_org_currency,
@@ -522,7 +522,7 @@
     height: 7
   - title: Deliveries by Location
     name: Deliveries by Location
-    model: sap_operational_reporting
+    model: cortex_data_foundation
     explore: sales_orders
     type: looker_map
     fields: [sales_orders.total_sales_orders, countries_t005_delivery.country_name]
@@ -593,7 +593,7 @@
     height: 7
   - title: Total Sales
     name: Total Sales
-    model: sap_operational_reporting
+    model: cortex_data_foundation
     explore: sales_orders
     type: single_value
     fields: [sales_orders.total_sales_order_org_currency]
@@ -622,7 +622,7 @@
     height: 2
   - title: Delivery Returns
     name: Delivery Returns
-    model: sap_operational_reporting
+    model: cortex_data_foundation
     explore: sales_orders
     type: single_value
     fields: [deliveries.delivery_return_percentage]
@@ -682,7 +682,7 @@
     height: 2
   - title: Product Performance (Top 5)
     name: Product Performance (Top 5)
-    model: sap_operational_reporting
+    model: cortex_data_foundation
     explore: sales_orders
     type: looker_column
     fields: [material_md.material_text, uom_md.unit_of_measurement_text_maximum10_characters,
@@ -758,7 +758,7 @@
     height: 9
   - title: Product Return Rate (Top 5)
     name: Product Return Rate (Top 5)
-    model: sap_operational_reporting
+    model: cortex_data_foundation
     explore: sales_orders
     type: looker_column
     fields: [material_md.material_text, uom_md.unit_of_measurement_text_maximum10_characters,
@@ -832,7 +832,7 @@
     height: 9
   - title: Product Stock vs Pending Deliveries
     name: Product Stock vs Pending Deliveries
-    model: sap_operational_reporting
+    model: cortex_data_foundation
     explore: sales_orders
     type: looker_grid
     fields: [material_md.material_text, sales_pending_delivery_per_order_item.total_pending_delivery,
@@ -931,7 +931,7 @@
       type: advanced
       display: popover
       options: []
-    model: sap_operational_reporting
+    model: cortex_data_foundation
     explore: sales_orders
     listens_to_filters: []
     field: sales_orders.order_date
@@ -945,7 +945,7 @@
       type: checkboxes
       display: popover
       options: []
-    model: sap_operational_reporting
+    model: cortex_data_foundation
     explore: sales_orders
     listens_to_filters: []
     field: customers_md.customer_name
@@ -959,7 +959,7 @@
       type: advanced
       display: popover
       options: []
-    model: sap_operational_reporting
+    model: cortex_data_foundation
     explore: sales_orders
     listens_to_filters: []
     field: sales_organizations.sales_org_name
@@ -973,7 +973,7 @@
       type: checkboxes
       display: popover
       options: []
-    model: sap_operational_reporting
+    model: cortex_data_foundation
     explore: sales_orders
     listens_to_filters: []
     field: product_hierarchy_md.product_category
@@ -987,7 +987,7 @@
       type: tag_list
       display: popover
       options: []
-    model: sap_operational_reporting
+    model: cortex_data_foundation
     explore: sales_orders
     listens_to_filters: []
     field: material_md.material_text

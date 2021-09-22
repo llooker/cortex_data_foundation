@@ -5,7 +5,7 @@
   elements:
   - title: Late Deliveries
     name: Late Deliveries
-    model: sap_operational_reporting
+    model: cortex_data_foundation
     explore: sales_orders
     type: looker_grid
     fields: [sales_orders.order_date, customers_md.customer_name, sales_orders.sales_document,
@@ -101,7 +101,7 @@
     height: 2
   - title: Top 5 Delayed Products by Revenue
     name: Top 5 Delayed Products by Revenue
-    model: sap_operational_reporting
+    model: cortex_data_foundation
     explore: sales_orders
     type: looker_column
     fields: [material_md.material_text, sales_orders.total_sales_order_org_currency,
@@ -181,7 +181,7 @@
     height: 9
   - title: Navigation Bar
     name: Navigation Bar
-    model: sap_operational_reporting
+    model: cortex_data_foundation
     explore: sales_orders
     type: single_value
     fields: [sales_orders.dash_nav]
@@ -218,7 +218,7 @@
     height: 2
   - title: Pending Deliveries
     name: Pending Deliveries (2)
-    model: sap_operational_reporting
+    model: cortex_data_foundation
     explore: sales_orders
     type: looker_grid
     fields: [sales_orders.order_date, customers_md.customer_name, sales_orders.sales_document,
@@ -292,7 +292,7 @@
     height: 9
   - title: Top 5 Pending Deliveries by Revenue
     name: Top 5 Pending Deliveries by Revenue
-    model: sap_operational_reporting
+    model: cortex_data_foundation
     explore: sales_orders
     type: looker_column
     fields: [sales_pending_delivery_per_order_item.total_pending_delivery, sales_orders.total_cumulative_order_quantity,
@@ -372,7 +372,7 @@
     height: 9
   - title: Customers with Delayed Deliveries
     name: Customers with Delayed Deliveries
-    model: sap_operational_reporting
+    model: cortex_data_foundation
     explore: sales_orders
     type: looker_grid
     fields: [customers_md.customer_name, sales_pending_delivery_per_order_item.total_pending_delivery,
@@ -448,7 +448,7 @@
     height: 9
   - title: Plants with Delayed Deliveries
     name: Plants with Delayed Deliveries
-    model: sap_operational_reporting
+    model: cortex_data_foundation
     explore: sales_orders
     type: looker_grid
     fields: [sales_pending_delivery_per_order_item.total_pending_delivery, sales_orders.total_sales_order_org_currency,
@@ -533,7 +533,7 @@
       type: advanced
       display: popover
       options: []
-    model: sap_operational_reporting
+    model: cortex_data_foundation
     explore: sales_orders
     listens_to_filters: []
     field: customers_md.customer_name
@@ -547,7 +547,7 @@
       type: tag_list
       display: popover
       options: []
-    model: sap_operational_reporting
+    model: cortex_data_foundation
     explore: sales_orders
     listens_to_filters: []
     field: stock_unrestricted_vs_sales.plant_region

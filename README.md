@@ -1,5 +1,11 @@
 <h1><span style="color:#2d7eea">README - NEEDS TO BE COMPLETELY RE-WRITTEN</span></h1>
 
+user attribute
+connection
+anything that is not included and worth mentioning?
+who to reach out to
+
+
 
 <h2><span style="color:#2d7eea">LookML Overview</span></h2>
 

@@ -1,5 +1,5 @@
 # If necessary, uncomment the line below to include explore_source.
-# include: "sap_operational_reporting.model.lkml"
+# include: "cortex_data_foundation.model.lkml"
 
 view: sales_pending_delivery_per_order {
   derived_table: {
