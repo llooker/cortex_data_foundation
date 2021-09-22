@@ -7,6 +7,10 @@ project_name: "sap_operational_reporting"
 #   project: "name_of_other_project"
 # }
 
+constant: CONNECTION_NAME {
+  value: "lucias-sap-bq"
+}
+
 constant: BigNumbers_format {
   value: "
   {% if value < 0 %}

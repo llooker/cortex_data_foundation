@@ -1,4 +1,4 @@
-connection: "lucias-sap-bq"
+connection: "@{CONNECTION_NAME}"
 
 # include all the views
 include: "/views/**/*.view"
