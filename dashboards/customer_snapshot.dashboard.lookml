@@ -1,5 +1,5 @@
-- dashboard: customer_deep_dive
-  title: Customer Deep Dive
+- dashboard: customer_snapshot
+  title: Customer Snapshot
   layout: newspaper
   preferred_viewer: dashboards-next
   elements:
@@ -21,6 +21,142 @@
     row: 2
     col: 0
     width: 24
+    height: 2
+  - title: Navigation Bar
+    name: Navigation Bar
+    model: sap_operational_reporting
+    explore: sales_orders
+    type: single_value
+    fields: [sales_orders.dash_nav]
+    limit: 500
+    custom_color_enabled: true
+    show_single_value_title: true
+    show_comparison: false
+    comparison_type: value
+    comparison_reverse_colors: false
+    show_comparison_label: true
+    enable_conditional_formatting: false
+    conditional_formatting_include_totals: false
+    conditional_formatting_include_nulls: false
+    show_view_names: false
+    show_row_numbers: true
+    transpose: false
+    truncate_text: true
+    hide_totals: false
+    hide_row_totals: false
+    size_to_fit: true
+    table_theme: white
+    limit_displayed_rows: false
+    header_text_alignment: left
+    header_font_size: 12
+    rows_font_size: 12
+    defaults_version: 1
+    series_types: {}
+    hidden_fields: []
+    y_axes: []
+    listen: {}
+    row: 0
+    col: 0
+    width: 24
+    height: 2
+  - title: Name
+    name: Name
+    model: sap_operational_reporting
+    explore: sales_orders
+    type: single_value
+    fields: [customers_md.customer_name, customers_md.count]
+    sorts: [customers_md.customer_name]
+    limit: 500
+    dynamic_fields: [{category: table_calculation, expression: 'if(${customers_md.count}=0
+          OR ${customers_md.count}>1,"Multiple Customers",${customers_md.customer_name})',
+        label: Customer Name, value_format: !!null '', value_format_name: !!null '',
+        _kind_hint: measure, table_calculation: customer_name, _type_hint: string}]
+    custom_color_enabled: true
+    show_single_value_title: true
+    show_comparison: false
+    comparison_type: value
+    comparison_reverse_colors: false
+    show_comparison_label: true
+    enable_conditional_formatting: false
+    conditional_formatting_include_totals: false
+    conditional_formatting_include_nulls: false
+    show_view_names: false
+    show_row_numbers: true
+    transpose: false
+    truncate_text: true
+    hide_totals: false
+    hide_row_totals: false
+    size_to_fit: true
+    table_theme: white
+    limit_displayed_rows: false
+    header_text_alignment: left
+    header_font_size: 12
+    rows_font_size: 12
+    defaults_version: 1
+    series_types: {}
+    hidden_fields: [customers_md.customer_name, customers_md.count]
+    y_axes: []
+    listen:
+      Customer Name: customers_md.customer_name
+      Customer Number: customers_md.customer_number
+    row: 4
+    col: 0
+    width: 12
+    height: 2
+  - title: Avg Lifetime Sale
+    name: Avg Lifetime Sale
+    model: sap_operational_reporting
+    explore: sales_orders
+    type: single_value
+    fields: [sales_orders.average_sales_order_org_currency]
+    limit: 500
+    custom_color_enabled: true
+    show_single_value_title: true
+    show_comparison: false
+    comparison_type: value
+    comparison_reverse_colors: false
+    show_comparison_label: true
+    enable_conditional_formatting: false
+    conditional_formatting_include_totals: false
+    conditional_formatting_include_nulls: false
+    value_format: ''
+    series_types: {}
+    defaults_version: 1
+    hidden_fields: []
+    y_axes: []
+    listen:
+      Customer Name: customers_md.customer_name
+      Customer Number: customers_md.customer_number
+    row: 10
+    col: 0
+    width: 6
+    height: 2
+  - title: Total Orders
+    name: Total Orders
+    model: sap_operational_reporting
+    explore: sales_orders
+    type: single_value
+    fields: [sales_orders.total_sales_orders]
+    limit: 500
+    custom_color_enabled: true
+    show_single_value_title: true
+    show_comparison: false
+    comparison_type: value
+    comparison_reverse_colors: false
+    show_comparison_label: true
+    enable_conditional_formatting: false
+    conditional_formatting_include_totals: false
+    conditional_formatting_include_nulls: false
+    series_types: {}
+    defaults_version: 1
+    hidden_fields: []
+    y_axes: []
+    listen:
+      Customer Name: customers_md.customer_name
+      Customer Number: customers_md.customer_number
+    row: 8
+    col: 0
+    width: 6
     height: 2
   - title: Address
     name: Address
@@ -78,141 +214,15 @@
     comparison_type: value
     comparison_reverse_colors: false
     show_comparison_label: true
+    hidden_fields: []
+    y_axes: []
     listen:
       Customer Name: customers_md.customer_name
       Customer Number: customers_md.customer_number
-    row: 4
+    row: 8
     col: 18
     width: 6
-    height: 8
-  - title: Name
-    name: Name
-    model: sap_operational_reporting
-    explore: sales_orders
-    type: single_value
-    fields: [customers_md.customer_name]
-    sorts: [customers_md.customer_name]
-    limit: 500
-    custom_color_enabled: true
-    show_single_value_title: true
-    show_comparison: false
-    comparison_type: value
-    comparison_reverse_colors: false
-    show_comparison_label: true
-    enable_conditional_formatting: false
-    conditional_formatting_include_totals: false
-    conditional_formatting_include_nulls: false
-    show_view_names: false
-    show_row_numbers: true
-    transpose: false
-    truncate_text: true
-    hide_totals: false
-    hide_row_totals: false
-    size_to_fit: true
-    table_theme: white
-    limit_displayed_rows: false
-    header_text_alignment: left
-    header_font_size: 12
-    rows_font_size: 12
-    defaults_version: 1
-    series_types: {}
-    listen:
-      Customer Name: customers_md.customer_name
-      Customer Number: customers_md.customer_number
-    row: 4
-    col: 0
-    width: 6
-    height: 2
-  - title: Navigation Bar
-    name: Navigation Bar
-    model: sap_operational_reporting
-    explore: sales_orders
-    type: single_value
-    fields: [sales_orders.dash_nav]
-    limit: 500
-    custom_color_enabled: true
-    show_single_value_title: true
-    show_comparison: false
-    comparison_type: value
-    comparison_reverse_colors: false
-    show_comparison_label: true
-    enable_conditional_formatting: false
-    conditional_formatting_include_totals: false
-    conditional_formatting_include_nulls: false
-    show_view_names: false
-    show_row_numbers: true
-    transpose: false
-    truncate_text: true
-    hide_totals: false
-    hide_row_totals: false
-    size_to_fit: true
-    table_theme: white
-    limit_displayed_rows: false
-    header_text_alignment: left
-    header_font_size: 12
-    rows_font_size: 12
-    defaults_version: 1
-    series_types: {}
-    listen: {}
-    row: 0
-    col: 0
-    width: 24
-    height: 2
-  - title: Orders
-    name: Orders
-    model: sap_operational_reporting
-    explore: sales_orders
-    type: single_value
-    fields: [sales_orders.total_sales_orders]
-    limit: 500
-    custom_color_enabled: true
-    show_single_value_title: true
-    show_comparison: false
-    comparison_type: value
-    comparison_reverse_colors: false
-    show_comparison_label: true
-    enable_conditional_formatting: false
-    conditional_formatting_include_totals: false
-    conditional_formatting_include_nulls: false
-    series_types: {}
-    defaults_version: 1
-    hidden_fields: []
-    y_axes: []
-    listen:
-      Customer Name: customers_md.customer_name
-      Customer Number: customers_md.customer_number
-    row: 8
-    col: 6
-    width: 6
-    height: 2
-  - title: Average Sale
-    name: Average Sale
-    model: sap_operational_reporting
-    explore: sales_orders
-    type: single_value
-    fields: [sales_orders.average_sales_order_org_currency]
-    limit: 500
-    custom_color_enabled: true
-    show_single_value_title: true
-    show_comparison: false
-    comparison_type: value
-    comparison_reverse_colors: false
-    show_comparison_label: true
-    enable_conditional_formatting: false
-    conditional_formatting_include_totals: false
-    conditional_formatting_include_nulls: false
-    value_format: ''
-    series_types: {}
-    defaults_version: 1
-    hidden_fields: []
-    y_axes: []
-    listen:
-      Customer Name: customers_md.customer_name
-      Customer Number: customers_md.customer_number
-    row: 8
-    col: 0
-    width: 6
-    height: 2
+    height: 4
   - title: Location
     name: Location
     model: sap_operational_reporting
@@ -289,15 +299,17 @@
     comparison_type: value
     comparison_reverse_colors: false
     show_comparison_label: true
+    hidden_fields: []
+    y_axes: []
     listen:
       Customer Name: customers_md.customer_name
       Customer Number: customers_md.customer_number
-    row: 4
+    row: 6
     col: 12
     width: 6
-    height: 8
-  - title: Sales
-    name: Sales
+    height: 6
+  - title: Total Revenue
+    name: Total Revenue
     model: sap_operational_reporting
     explore: sales_orders
     type: single_value
@@ -318,9 +330,53 @@
     listen:
       Customer Name: customers_md.customer_name
       Customer Number: customers_md.customer_number
-    row: 4
-    col: 6
+    row: 6
+    col: 0
     width: 6
+    height: 2
+  - title: Customer Number
+    name: Customer Number
+    model: sap_operational_reporting
+    explore: sales_orders
+    type: single_value
+    fields: [customers_md.customer_number, customers_md.count]
+    sorts: [customers_md.customer_number]
+    limit: 500
+    dynamic_fields: [{category: table_calculation, expression: 'if(${customers_md.count}=0
+          OR ${customers_md.count}>1,"Multiple Customers",${customers_md.customer_number})',
+        label: Customer Number, value_format: !!null '', value_format_name: !!null '',
+        _kind_hint: measure, table_calculation: customer_number, _type_hint: string}]
+    custom_color_enabled: true
+    show_single_value_title: true
+    show_comparison: false
+    comparison_type: value
+    comparison_reverse_colors: false
+    show_comparison_label: true
+    enable_conditional_formatting: false
+    conditional_formatting_include_totals: false
+    conditional_formatting_include_nulls: false
+    show_view_names: false
+    show_row_numbers: true
+    transpose: false
+    truncate_text: true
+    hide_totals: false
+    hide_row_totals: false
+    size_to_fit: true
+    table_theme: white
+    limit_displayed_rows: false
+    header_text_alignment: left
+    header_font_size: 12
+    rows_font_size: 12
+    defaults_version: 1
+    series_types: {}
+    hidden_fields: [customers_md.customer_number, customers_md.count]
+    y_axes: []
+    listen:
+      Customer Name: customers_md.customer_name
+      Customer Number: customers_md.customer_number
+    row: 4
+    col: 12
+    width: 12
     height: 2
   - title: Completed Orders
     name: Completed Orders
@@ -329,7 +385,7 @@
     type: looker_grid
     fields: [sales_orders.order_date, sales_orders.sales_document, material_md.material_number,
       material_md.material_text, customers_md.customer_name, uom_md.unit_of_measurement_text_maximum10_characters,
-      sales_orders.total_sales_order_org_currency, sales_orders.total_cumulative_order_quantity]
+      sales_orders.total_cumulative_order_quantity, sales_orders.total_sales_order_org_currency]
     filters:
       sales_pending_delivery_per_order.is_order_delivery_completed: 'Yes'
     sorts: [sales_orders.order_date desc]
@@ -403,7 +459,7 @@
     type: looker_grid
     fields: [sales_orders.order_date, sales_orders.sales_document, material_md.material_number,
       material_md.material_text, customers_md.customer_name, uom_md.unit_of_measurement_text_maximum10_characters,
-      sales_orders.total_sales_order_org_currency, sales_orders.total_cumulative_order_quantity]
+      sales_orders.total_cumulative_order_quantity, sales_orders.total_sales_order_org_currency]
     filters:
       sales_pending_delivery_per_order.is_order_delivery_completed: 'No'
     sorts: [sales_orders.order_date desc]
@@ -470,24 +526,94 @@
     col: 0
     width: 24
     height: 7
-  - title: Sales This Year
-    name: Sales This Year
+  - title: Avg Sale This Year
+    name: Avg Sale This Year
+    model: sap_operational_reporting
+    explore: sales_orders
+    type: single_value
+    fields: [sales_orders.average_sales_order_org_currency]
+    filters:
+      material_group_md.material_group_name: ''
+      sales_organizations.sales_org_name: ''
+      sales_orders.order_date: this year
+    limit: 500
+    column_limit: 50
+    custom_color_enabled: true
+    show_single_value_title: true
+    show_comparison: false
+    comparison_type: value
+    comparison_reverse_colors: false
+    show_comparison_label: true
+    enable_conditional_formatting: false
+    conditional_formatting_include_totals: false
+    conditional_formatting_include_nulls: false
+    value_format: ''
+    series_types: {}
+    defaults_version: 1
+    hidden_fields: []
+    y_axes: []
+    listen:
+      Customer Name: customers_md.customer_name
+      Customer Number: customers_md.customer_number
+    row: 10
+    col: 6
+    width: 6
+    height: 2
+  - title: Orders
+    name: Orders
+    model: sap_operational_reporting
+    explore: sales_orders
+    type: single_value
+    fields: [sales_orders.total_sales_orders, sales_orders.order_year]
+    fill_fields: [sales_orders.order_year]
+    filters:
+      sales_organizations.sales_org_name: ''
+      material_group_md.material_group_name: ''
+      sales_orders.is_before_ytd: 'Yes'
+      sales_orders.order_date: 2 years
+    sorts: [sales_orders.order_year desc]
+    limit: 500
+    dynamic_fields: [{category: table_calculation, expression: "(${sales_orders.total_sales_orders}-offset(${sales_orders.total_sales_orders},1))/offset(${sales_orders.total_sales_orders},1)",
+        label: YoY, value_format: !!null '', value_format_name: percent_0, _kind_hint: measure,
+        table_calculation: yoy, _type_hint: number}]
+    custom_color_enabled: true
+    show_single_value_title: true
+    show_comparison: true
+    comparison_type: change
+    comparison_reverse_colors: false
+    show_comparison_label: true
+    enable_conditional_formatting: false
+    conditional_formatting_include_totals: false
+    conditional_formatting_include_nulls: false
+    series_types: {}
+    defaults_version: 1
+    hidden_fields: []
+    y_axes: []
+    listen:
+      Customer Name: customers_md.customer_name
+      Customer Number: customers_md.customer_number
+    row: 8
+    col: 6
+    width: 6
+    height: 2
+  - title: Revenue
+    name: Revenue
     model: sap_operational_reporting
     explore: sales_orders
     type: single_value
     fields: [sales_orders.total_sales_order_org_currency, sales_orders.order_year]
     fill_fields: [sales_orders.order_year]
     filters:
-      sales_orders.order_date: 2 years
       material_group_md.material_group_name: ''
       sales_organizations.sales_org_name: ''
       sales_orders.is_before_ytd: 'Yes'
+      sales_orders.order_date: 2 years
     sorts: [sales_orders.order_year desc]
     limit: 500
     column_limit: 50
     dynamic_fields: [{category: table_calculation, expression: "(${sales_orders.total_sales_order_org_currency}-offset(${sales_orders.total_sales_order_org_currency},1))/offset(${sales_orders.total_sales_order_org_currency},1)",
-        label: vs last year, value_format: !!null '', value_format_name: decimal_0,
-        _kind_hint: measure, table_calculation: vs_last_year, _type_hint: number}]
+        label: YoY, value_format: !!null '', value_format_name: percent_0, _kind_hint: measure,
+        table_calculation: yoy, _type_hint: number}]
     custom_color_enabled: true
     show_single_value_title: true
     show_comparison: true
@@ -510,49 +636,12 @@
     col: 6
     width: 6
     height: 2
-  - title: Orders This Year
-    name: Orders This Year
+  - title: Returns Rate
+    name: Returns Rate
     model: sap_operational_reporting
     explore: sales_orders
     type: single_value
-    fields: [sales_orders.total_sales_orders, sales_orders.order_year]
-    fill_fields: [sales_orders.order_year]
-    filters:
-      sales_organizations.sales_org_name: ''
-      material_group_md.material_group_name: ''
-      sales_orders.order_date: 2 years
-      sales_orders.is_before_ytd: 'Yes'
-    sorts: [sales_orders.order_year desc]
-    limit: 500
-    dynamic_fields: [{category: table_calculation, expression: "(${sales_orders.total_sales_orders}-offset(${sales_orders.total_sales_orders},1))/offset(${sales_orders.total_sales_orders},1)",
-        label: vs last year, value_format: !!null '', value_format_name: !!null '',
-        _kind_hint: measure, table_calculation: vs_last_year, _type_hint: number}]
-    custom_color_enabled: true
-    show_single_value_title: true
-    show_comparison: true
-    comparison_type: change
-    comparison_reverse_colors: false
-    show_comparison_label: true
-    enable_conditional_formatting: false
-    conditional_formatting_include_totals: false
-    conditional_formatting_include_nulls: false
-    series_types: {}
-    defaults_version: 1
-    hidden_fields: []
-    y_axes: []
-    listen:
-      Customer Name: customers_md.customer_name
-      Customer Number: customers_md.customer_number
-    row: 10
-    col: 6
-    width: 6
-    height: 2
-  - title: Customer Number
-    name: Customer Number
-    model: sap_operational_reporting
-    explore: sales_orders
-    type: single_value
-    fields: [customers_md.customer_number]
+    fields: [deliveries.delivery_return_percentage]
     limit: 500
     custom_color_enabled: true
     show_single_value_title: true
@@ -560,61 +649,47 @@
     comparison_type: value
     comparison_reverse_colors: false
     show_comparison_label: true
-    enable_conditional_formatting: false
+    enable_conditional_formatting: true
     conditional_formatting_include_totals: false
     conditional_formatting_include_nulls: false
+    conditional_formatting: [{type: greater than, value: 0, background_color: '',
+        font_color: "#B31412", color_application: {collection_id: google, palette_id: google-sequential-0},
+        bold: false, italic: false, strikethrough: false, fields: !!null ''}]
+    x_axis_gridlines: false
+    y_axis_gridlines: true
     show_view_names: false
-    show_row_numbers: true
-    transpose: false
-    truncate_text: true
-    hide_totals: false
-    hide_row_totals: false
-    size_to_fit: true
-    table_theme: white
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
+    show_x_axis_label: true
+    show_x_axis_ticks: true
+    y_axis_scale_mode: linear
+    x_axis_reversed: false
+    y_axis_reversed: false
+    plot_size_by_field: false
+    trellis: ''
+    stacking: ''
     limit_displayed_rows: false
-    header_text_alignment: left
-    header_font_size: 12
-    rows_font_size: 12
+    legend_position: center
+    point_style: none
+    show_value_labels: false
+    label_density: 25
+    x_axis_scale: auto
+    y_axis_combined: true
+    ordering: none
+    show_null_labels: false
+    show_totals_labels: false
+    show_silhouette: false
+    totals_color: "#808080"
     defaults_version: 1
     series_types: {}
+    hidden_fields: []
+    y_axes: []
     listen:
-      Customer Name: customers_md.customer_name
       Customer Number: customers_md.customer_number
     row: 6
-    col: 0
-    width: 6
-    height: 2
-  - title: Average Sale This Year
-    name: Average Sale This Year
-    model: sap_operational_reporting
-    explore: sales_orders
-    type: single_value
-    fields: [sales_orders.average_sales_order_org_currency]
-    filters:
-      sales_orders.order_date: this year
-      material_group_md.material_group_name: ''
-      sales_organizations.sales_org_name: ''
-    limit: 500
-    column_limit: 50
-    custom_color_enabled: true
-    show_single_value_title: true
-    show_comparison: false
-    comparison_type: value
-    comparison_reverse_colors: false
-    show_comparison_label: true
-    enable_conditional_formatting: false
-    conditional_formatting_include_totals: false
-    conditional_formatting_include_nulls: false
-    value_format: ''
-    series_types: {}
-    defaults_version: 1
-    hidden_fields: []
-    y_axes: []
-    listen:
-      Customer Name: customers_md.customer_name
-      Customer Number: customers_md.customer_number
-    row: 10
-    col: 0
+    col: 18
     width: 6
     height: 2
   filters:

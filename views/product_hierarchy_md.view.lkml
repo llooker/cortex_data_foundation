@@ -29,7 +29,7 @@ view: product_hierarchy_md {
     sql: ${TABLE}.Description_VTEXT ;;
     link: {
       label: "Product Snapshot"
-      url: "/dashboards-next/42?Product+Category={{ filterable_value | url_encode }}"
+      url: "/dashboards-next/sap_operational_reporting::product_snapshot?Product+Category={{ filterable_value | url_encode }}"
       icon_url: "http://www.looker.com/favicon.ico"
     }
   }

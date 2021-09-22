@@ -1,20 +1,15 @@
-- dashboard: order_deep_dive
-  title: Order Deep Dive
+- dashboard: order_snapshot
+  title: Order Snapshot
   layout: newspaper
   preferred_viewer: dashboards-next
   elements:
-  - title: Customer Number
-    name: Customer Number
+  - title: Navigation Bar
+    name: Navigation Bar
     model: sap_operational_reporting
     explore: sales_orders
     type: single_value
-    fields: [customers_md.customer_number]
-    filters:
-      customers_md.customer_name: ''
-      customers_md.customer_number: ''
-    sorts: [customers_md.customer_number]
+    fields: [sales_orders.dash_nav]
     limit: 500
-    column_limit: 50
     custom_color_enabled: true
     show_single_value_title: true
     show_comparison: false
@@ -38,11 +33,12 @@
     rows_font_size: 12
     defaults_version: 1
     series_types: {}
-    listen:
-      Sales Document: sales_orders.sales_document
-    row: 4
+    hidden_fields: []
+    y_axes: []
+    listen: {}
+    row: 0
     col: 0
-    width: 8
+    width: 24
     height: 2
   - title: Customer Name
     name: Customer Name
@@ -79,125 +75,36 @@
     rows_font_size: 12
     defaults_version: 1
     series_types: {}
+    hidden_fields: []
+    y_axes: []
     listen:
-      Sales Document: sales_orders.sales_document
-    row: 6
+      Sales Order: sales_orders.sales_document
+    row: 4
     col: 0
-    width: 8
-    height: 4
-  - title: Navigation Bar
-    name: Navigation Bar
+    width: 13
+    height: 2
+  - title: Customer Number
+    name: Customer Number
     model: sap_operational_reporting
     explore: sales_orders
     type: single_value
-    fields: [sales_orders.dash_nav]
-    limit: 500
-    custom_color_enabled: true
-    show_single_value_title: true
-    show_comparison: false
-    comparison_type: value
-    comparison_reverse_colors: false
-    show_comparison_label: true
-    enable_conditional_formatting: false
-    conditional_formatting_include_totals: false
-    conditional_formatting_include_nulls: false
-    show_view_names: false
-    show_row_numbers: true
-    transpose: false
-    truncate_text: true
-    hide_totals: false
-    hide_row_totals: false
-    size_to_fit: true
-    table_theme: white
-    limit_displayed_rows: false
-    header_text_alignment: left
-    header_font_size: 12
-    rows_font_size: 12
-    defaults_version: 1
-    series_types: {}
-    listen: {}
-    row: 0
-    col: 0
-    width: 24
-    height: 2
-  - title: Order Items Details
-    name: Order Items Details
-    model: sap_operational_reporting
-    explore: sales_orders
-    type: looker_grid
-    fields: [sales_orders.client, sales_orders.sales_document, sales_orders.item,
-      sales_orders.order_date, deliveries.planned_goods_movement_date, deliveries.actual_goods_movement_date,
-      material_md.material_number, material_md.material_text, sales_pending_delivery_per_order_item.is_order_item_delivery_completed,
-      stock_unrestricted_vs_sales.total_pending_delivery, sales_orders.total_cumulative_order_quantity]
-    filters:
-      deliveries.is_return: 'No'
-    sorts: [sales_orders.sales_document desc]
-    limit: 500
-    column_limit: 50
-    show_view_names: false
-    show_row_numbers: true
-    transpose: false
-    truncate_text: true
-    hide_totals: false
-    hide_row_totals: false
-    size_to_fit: true
-    table_theme: white
-    limit_displayed_rows: false
-    enable_conditional_formatting: false
-    header_text_alignment: left
-    header_font_size: 12
-    rows_font_size: 12
-    conditional_formatting_include_totals: false
-    conditional_formatting_include_nulls: false
-    defaults_version: 1
-    listen:
-      Sales Document: sales_orders.sales_document
-    row: 12
-    col: 0
-    width: 24
-    height: 10
-  - title: Delivery Address
-    name: Delivery Address
-    model: sap_operational_reporting
-    explore: sales_orders
-    type: looker_single_record
-    fields: [customers_md_ship_to.address, customers_md_ship_to.city, customers_md_ship_to.postal_code,
-      countries_t005_delivery.country_name]
+    fields: [customers_md.customer_number]
     filters:
       customers_md.customer_name: ''
       customers_md.customer_number: ''
-    sorts: [customers_md_ship_to.address]
+    sorts: [customers_md.customer_number]
     limit: 500
     column_limit: 50
+    custom_color_enabled: true
+    show_single_value_title: true
+    show_comparison: false
+    comparison_type: value
+    comparison_reverse_colors: false
+    show_comparison_label: true
+    enable_conditional_formatting: false
+    conditional_formatting_include_totals: false
+    conditional_formatting_include_nulls: false
     show_view_names: false
-    x_axis_gridlines: false
-    y_axis_gridlines: true
-    show_y_axis_labels: true
-    show_y_axis_ticks: true
-    y_axis_tick_density: default
-    y_axis_tick_density_custom: 5
-    show_x_axis_label: true
-    show_x_axis_ticks: true
-    y_axis_scale_mode: linear
-    x_axis_reversed: false
-    y_axis_reversed: false
-    plot_size_by_field: false
-    trellis: ''
-    stacking: ''
-    limit_displayed_rows: false
-    legend_position: center
-    point_style: none
-    show_value_labels: false
-    label_density: 25
-    x_axis_scale: auto
-    y_axis_combined: true
-    ordering: none
-    show_null_labels: false
-    show_totals_labels: false
-    show_silhouette: false
-    totals_color: "#808080"
-    defaults_version: 1
-    series_types: {}
     show_row_numbers: true
     transpose: false
     truncate_text: true
@@ -205,85 +112,20 @@
     hide_row_totals: false
     size_to_fit: true
     table_theme: white
-    enable_conditional_formatting: false
+    limit_displayed_rows: false
     header_text_alignment: left
     header_font_size: 12
     rows_font_size: 12
-    conditional_formatting_include_totals: false
-    conditional_formatting_include_nulls: false
-    custom_color_enabled: true
-    show_single_value_title: true
-    show_comparison: false
-    comparison_type: value
-    comparison_reverse_colors: false
-    show_comparison_label: true
+    defaults_version: 1
+    series_types: {}
+    hidden_fields: []
+    y_axes: []
     listen:
-      Sales Document: sales_orders.sales_document
+      Sales Order: sales_orders.sales_document
     row: 6
-    col: 16
-    width: 8
-    height: 4
-  - title: Order Delivery Completed?
-    name: Order Delivery Completed?
-    model: sap_operational_reporting
-    explore: sales_orders
-    type: single_value
-    fields: [sales_pending_delivery_per_order.is_order_delivery_completed]
-    fill_fields: [sales_pending_delivery_per_order.is_order_delivery_completed]
-    limit: 500
-    custom_color_enabled: true
-    show_single_value_title: true
-    show_comparison: false
-    comparison_type: value
-    comparison_reverse_colors: false
-    show_comparison_label: true
-    enable_conditional_formatting: false
-    conditional_formatting_include_totals: false
-    conditional_formatting_include_nulls: false
-    series_types: {}
-    defaults_version: 1
-    listen:
-      Sales Document: sales_orders.sales_document
-    row: 4
-    col: 16
-    width: 8
-    height: 2
-  - title: Returned Items Details
-    name: Returned Items Details
-    model: sap_operational_reporting
-    explore: sales_orders
-    type: looker_grid
-    fields: [sales_orders.client, sales_orders.sales_document, sales_orders.item,
-      sales_orders.order_date, deliveries.planned_goods_movement_date, deliveries.actual_goods_movement_date,
-      material_md.material_number, material_md.material_text, sales_pending_delivery_per_order_item.is_order_item_delivery_completed,
-      stock_unrestricted_vs_sales.total_pending_delivery, sales_orders.total_cumulative_order_quantity]
-    filters:
-      deliveries.is_return: 'Yes'
-    sorts: [sales_orders.sales_document desc]
-    limit: 500
-    column_limit: 50
-    show_view_names: false
-    show_row_numbers: true
-    transpose: false
-    truncate_text: true
-    hide_totals: false
-    hide_row_totals: false
-    size_to_fit: true
-    table_theme: white
-    limit_displayed_rows: false
-    enable_conditional_formatting: false
-    header_text_alignment: left
-    header_font_size: 12
-    rows_font_size: 12
-    conditional_formatting_include_totals: false
-    conditional_formatting_include_nulls: false
-    defaults_version: 1
-    listen:
-      Sales Document: sales_orders.sales_document
-    row: 22
     col: 0
-    width: 24
-    height: 7
+    width: 13
+    height: 2
   - title: Country
     name: Country
     model: sap_operational_reporting
@@ -363,12 +205,137 @@
     comparison_type: value
     comparison_reverse_colors: false
     show_comparison_label: true
+    hidden_fields: []
+    y_axes: []
     listen:
-      Sales Document: sales_orders.sales_document
+      Sales Order: sales_orders.sales_document
+    row: 6
+    col: 13
+    width: 10
+    height: 7
+  - title: Order Items Details
+    name: Order Items Details
+    model: sap_operational_reporting
+    explore: sales_orders
+    type: looker_grid
+    fields: [sales_orders.sales_document, sales_orders.item, sales_orders.order_date,
+      deliveries.planned_goods_movement_date, deliveries.actual_goods_movement_date,
+      material_md.material_number, material_md.material_text, sales_pending_delivery_per_order_item.is_order_item_delivery_completed,
+      stock_unrestricted_vs_sales.total_pending_delivery, sales_orders.total_cumulative_order_quantity]
+    filters:
+      deliveries.is_return: 'No'
+    sorts: [sales_orders.sales_document desc]
+    limit: 500
+    column_limit: 50
+    show_view_names: false
+    show_row_numbers: true
+    transpose: false
+    truncate_text: true
+    hide_totals: false
+    hide_row_totals: false
+    size_to_fit: true
+    table_theme: white
+    limit_displayed_rows: false
+    enable_conditional_formatting: false
+    header_text_alignment: left
+    header_font_size: '12'
+    rows_font_size: '12'
+    conditional_formatting_include_totals: false
+    conditional_formatting_include_nulls: false
+    show_sql_query_menu_options: false
+    show_totals: true
+    show_row_totals: true
+    series_labels:
+      sales_pending_delivery_per_order_item.is_order_item_delivery_completed: Delivery
+        Completed?
+    series_cell_visualizations:
+      stock_unrestricted_vs_sales.total_pending_delivery:
+        is_active: true
+    defaults_version: 1
+    hidden_fields: []
+    y_axes: []
+    listen:
+      Sales Order: sales_orders.sales_document
+    row: 15
+    col: 0
+    width: 24
+    height: 10
+  - title: All Deliveries Completed?
+    name: All Deliveries Completed?
+    model: sap_operational_reporting
+    explore: sales_orders
+    type: single_value
+    fields: [sales_pending_delivery_per_order.is_order_delivery_completed]
+    fill_fields: [sales_pending_delivery_per_order.is_order_delivery_completed]
+    sorts: [sales_pending_delivery_per_order.is_order_delivery_completed]
+    limit: 500
+    dynamic_fields: [{category: table_calculation, expression: 'if(${sales_pending_delivery_per_order.is_order_delivery_completed}=yes,1,0)',
+        label: Delivered 0/1, value_format: !!null '', value_format_name: !!null '',
+        _kind_hint: dimension, table_calculation: delivered_01, _type_hint: number}]
+    custom_color_enabled: true
+    show_single_value_title: true
+    show_comparison: false
+    comparison_type: value
+    comparison_reverse_colors: false
+    show_comparison_label: true
+    enable_conditional_formatting: true
+    conditional_formatting_include_totals: false
+    conditional_formatting_include_nulls: false
+    value_format: '"Yes";-;"No"'
+    conditional_formatting: [{type: equal to, value: 0, background_color: "#EA4335",
+        font_color: !!null '', color_application: {collection_id: google, palette_id: google-sequential-0},
+        bold: false, italic: false, strikethrough: false, fields: !!null ''}, {type: equal
+          to, value: 1, background_color: "#34A853", font_color: !!null '', color_application: {
+          collection_id: google, palette_id: google-sequential-0}, bold: false, italic: false,
+        strikethrough: false, fields: !!null ''}]
+    series_types: {}
+    defaults_version: 1
+    hidden_fields: [sales_pending_delivery_per_order.is_order_delivery_completed]
+    y_axes: []
+    listen:
+      Sales Order: sales_orders.sales_document
     row: 4
-    col: 8
-    width: 8
-    height: 6
+    col: 13
+    width: 10
+    height: 2
+  - title: Returned Items Details
+    name: Returned Items Details
+    model: sap_operational_reporting
+    explore: sales_orders
+    type: looker_grid
+    fields: [sales_orders.sales_document, sales_orders.item, sales_orders.order_date,
+      deliveries.planned_goods_movement_date, deliveries.actual_goods_movement_date,
+      material_md.material_number, material_md.material_text, stock_unrestricted_vs_sales.total_pending_delivery,
+      sales_orders.total_cumulative_order_quantity]
+    filters:
+      deliveries.is_return: 'Yes'
+    sorts: [sales_orders.sales_document desc]
+    limit: 500
+    column_limit: 50
+    show_view_names: false
+    show_row_numbers: true
+    transpose: false
+    truncate_text: true
+    hide_totals: false
+    hide_row_totals: false
+    size_to_fit: true
+    table_theme: white
+    limit_displayed_rows: false
+    enable_conditional_formatting: false
+    header_text_alignment: left
+    header_font_size: 12
+    rows_font_size: 12
+    conditional_formatting_include_totals: false
+    conditional_formatting_include_nulls: false
+    defaults_version: 1
+    hidden_fields: []
+    y_axes: []
+    listen:
+      Sales Order: sales_orders.sales_document
+    row: 25
+    col: 0
+    width: 24
+    height: 7
   - name: Delivery Information
     type: text
     title_text: Delivery Information
@@ -384,13 +351,82 @@
     subtitle_text: <font color="#c1c1c1">Lists the individual item sand deliveries
       making up the order</font>
     body_text: ''
-    row: 10
+    row: 13
     col: 0
     width: 24
     height: 2
+  - title: Delivery Address
+    name: Delivery Address
+    model: sap_operational_reporting
+    explore: sales_orders
+    type: looker_single_record
+    fields: [customers_md_ship_to.address, customers_md_ship_to.city, customers_md_ship_to.postal_code,
+      countries_t005_delivery.country_name]
+    filters:
+      customers_md.customer_name: ''
+      customers_md.customer_number: ''
+    sorts: [customers_md_ship_to.address desc]
+    limit: 500
+    column_limit: 50
+    show_view_names: false
+    x_axis_gridlines: false
+    y_axis_gridlines: true
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
+    show_x_axis_label: true
+    show_x_axis_ticks: true
+    y_axis_scale_mode: linear
+    x_axis_reversed: false
+    y_axis_reversed: false
+    plot_size_by_field: false
+    trellis: ''
+    stacking: ''
+    limit_displayed_rows: false
+    legend_position: center
+    point_style: none
+    show_value_labels: false
+    label_density: 25
+    x_axis_scale: auto
+    y_axis_combined: true
+    ordering: none
+    show_null_labels: false
+    show_totals_labels: false
+    show_silhouette: false
+    totals_color: "#808080"
+    defaults_version: 1
+    series_types: {}
+    show_row_numbers: true
+    transpose: false
+    truncate_text: true
+    hide_totals: false
+    hide_row_totals: false
+    size_to_fit: true
+    table_theme: white
+    enable_conditional_formatting: false
+    header_text_alignment: left
+    header_font_size: 12
+    rows_font_size: 12
+    conditional_formatting_include_totals: false
+    conditional_formatting_include_nulls: false
+    custom_color_enabled: true
+    show_single_value_title: true
+    show_comparison: false
+    comparison_type: value
+    comparison_reverse_colors: false
+    show_comparison_label: true
+    hidden_fields: []
+    y_axes: []
+    listen:
+      Sales Order: sales_orders.sales_document
+    row: 8
+    col: 0
+    width: 13
+    height: 5
   filters:
-  - name: Sales Document
-    title: Sales Document
+  - name: Sales Order
+    title: Sales Order
     type: field_filter
     default_value: ''
     allow_multiple_values: true

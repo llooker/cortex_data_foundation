@@ -1,20 +1,17 @@
-# The name of this view in Looker is "Material Types Md"
-view: material_types_md {
+# The name of this view in Looker is "Regions T005 S"
+view: regions_t005 {
   # The sql_table_name parameter indicates the underlying database table
   # to be used for all fields in this view.
-  sql_table_name: `lucias-rabia.SAP_REPORTING.MaterialTypesMD`
+  sql_table_name: `lucias-rabia.SAP_REPORTING.Regions_T005S`
     ;;
 
   # Here's what a typical dimension looks like in LookML.
   # A dimension is a groupable field that can be used to filter query results.
-  # This dimension will be called "Client Mandt" in Explore.
 
-
-  dimension: material_types_md_pk {
-    primary_key: yes
+  dimension: regions_t005_pk {
     hidden: yes
-    type: string
-    sql: CONCAT(${client}, " - ", ${material_type}, " - ", ${language_key});;
+    primary_key: yes
+    sql: concat(${client}, ' - ', ) ;;
   }
 
   dimension: client {
@@ -23,44 +20,38 @@ view: material_types_md {
     sql: ${TABLE}.Client_MANDT ;;
   }
 
-  dimension: material_type_description {
-    type: string
-    sql: ${TABLE}.DescriptionOfMaterialType_MTBEZ ;;
-  }
-
-  dimension: language_key {
+  dimension: country_key {
     hidden: yes
     type: string
-    sql: ${TABLE}.LanguageKey_SPRAS ;;
+    sql: ${TABLE}.CountryKey_LAND1 ;;
   }
 
-  dimension: material_type {
+  dimension: provincial_tax_code {
     hidden: yes
     type: string
-    sql: ${TABLE}.MaterialType_MTART ;;
+    sql: ${TABLE}.ProvincialTaxCode_FPRCD ;;
   }
 
-  dimension: reference_material_type {
+  dimension: region {
     hidden: yes
     type: string
-    sql: ${TABLE}.ReferenceMaterialType_MTREF ;;
+    sql: ${TABLE}.Region_BLAND ;;
   }
 
-  dimension: screen_reference_depending_on_the_material_type {
+  dimension: state_of_manufacture {
     hidden: yes
     type: string
-    sql: ${TABLE}.ScreenReferenceDependingOnTheMaterialType_MBREF ;;
+    sql: ${TABLE}.StateOfManufacture_HERBL ;;
   }
 
   # A measure is a field that uses a SQL aggregate function. Here are count, sum, and average
   # measures for numeric dimensions, but you can also add measures of many different types.
   # Click on the type parameter to see all the options in the Quick Help panel on the right.
 
-  measure: count {
-    hidden: yes
-    type: count
-    drill_fields: []
-  }
+  # measure: count {
+  #   type: count
+  #   drill_fields: []
+  # }
 }
 
 # These sum and average measures are hidden by default.

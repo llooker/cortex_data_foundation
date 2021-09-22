@@ -1646,8 +1646,7 @@ view: deliveries {
     sql: ${TABLE}.MaterialNumber_MATNR ;;
     link: {
       label: "Product Snapshot"
-      # url: "/dashboards-next/sap_operational_reporting::2_material_details?Material%20Number%20Matnr={{ filterable_value }}"
-      url: "/dashboards-next/42?Product%20Number={{ filterable_value | url_encode }}"
+      url: "/dashboards-next/sap_operational_reporting::product_snapshot?Product%20Number={{ filterable_value | url_encode }}"
       icon_url: "http://www.looker.com/favicon.ico"
     }
   }

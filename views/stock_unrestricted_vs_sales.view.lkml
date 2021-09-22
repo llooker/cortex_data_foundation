@@ -71,8 +71,7 @@ view: stock_unrestricted_vs_sales {
     sql: ${TABLE}.Plant_Region ;;
     link: {
       label: "Order Fulfilment for Plant"
-      # url: "/dashboards-next/sap_operational_reporting::3_customer_details?Customer%20Details={{ filterable_value }}"
-      url: "/dashboards-next/41?Plant%20Region={{ filterable_value }}"
+      url: "/dashboards-next/sap_operational_reporting::order_fulfillment?Plant%20Region={{ filterable_value | url_encode }}"
       icon_url: "http://www.looker.com/favicon.ico"
     }
   }

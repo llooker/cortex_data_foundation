@@ -34,7 +34,7 @@ view: top_5_product_category {
     sql: ${TABLE}.product_category ;;
     link: {
       label: "Product Snapshot"
-      url: "/dashboards-next/42?Product+Category={{ filterable_value | url_encode }}"
+      url: "/dashboards-next/sap_operational_reporting::product_snapshot?Product+Category={{ filterable_value | url_encode }}"
       icon_url: "http://www.looker.com/favicon.ico"
     }
   }
