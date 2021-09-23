@@ -1,5 +1,5 @@
 view: material_group_md {
-  sql_table_name: `SAP_REPORTING.MaterialGroupMD`
+  sql_table_name: `@{DATASET}.MaterialGroupMD`
     ;;
 
   dimension: asset_class {

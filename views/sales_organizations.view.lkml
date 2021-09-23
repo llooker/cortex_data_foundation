@@ -1,5 +1,5 @@
 view: sales_organizations {
-  sql_table_name: `SAP_REPORTING.SalesOrganizations`
+  sql_table_name: `@{DATASET}.SalesOrganizations`
     ;;
 
   dimension: client {

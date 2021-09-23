@@ -5,7 +5,6 @@ include: "/views/**/*.view"
 include: "/dashboards/**/*.dashboard"
 
 datagroup: cortex_data_foundation_default_datagroup {
-  # sql_trigger: SELECT MAX(id) FROM etl_log;;
   max_cache_age: "1 hour"
 }
 
@@ -18,7 +17,7 @@ explore: sales_orders {
   join: language_map {
     fields: []
     type: left_outer
-    sql_on: ${language_map.looker_locale}='{{ _user_attributes['locale'] }}' ;;
+    sql_on: ${language_map.looker_locale}='@{LANGUAGE}' ;;
     relationship: many_to_one
   }
 

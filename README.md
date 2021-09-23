@@ -1,59 +1,45 @@
-<h1><span style="color:#2d7eea">README - NEEDS TO BE COMPLETELY RE-WRITTEN</span></h1>
+<h1><center><span style="color:#2d7eea">Google Cloud Cortex Framework for SAP<br><br>
 
-user attribute
-connection
-anything that is not included and worth mentioning?
-who to reach out to
+- Data Foundation -</span></center></h1><br>
+
+<h2><span style="color:#2d7eea">What does this Looker Block do for me?</span></h2>
+
+**(1) Sales Analytics Dashboard** - Monitor sales and delivery performance and highlight customers and products that need attention to improve business performance.
+
+**(2) Orders Fulfillment Dashboard** - Monitor current delivery status, highlight late deliveries and compare pending deliveries with current stock.
+
+**(3) Product Snapshot Dashboard** - Review performance and availability of a specific product.
+
+**(4) Customer Snapshot Dashboard** - Find all the information about your customer in one place.
+
+**(5) Order Snapshot Dashboard** - Find all the information about your order in one place.
+
+**(6) Sales Order Explore** - Explore your data, ask new questions and create/save new reports and dashboards based on your specific requirements.
+<br>
+
+<h2><span style="color:#2d7eea">Required Customizations</span></h2>
 
 
+* **Connection**: In the `manifest.lkml` file, update the value of the `CONNECTION_NAME` constant.
 
-<h2><span style="color:#2d7eea">LookML Overview</span></h2>
+* **Dataset/Schema**: In the `manifest.lkml` file, if you are not using the default `SAP_REPORTING` dataset, please update the value of the `DATASET` constant.
 
-LookML is a data modeling language for describing dimensions, fields, aggregates and relationships based on SQL.
+* **User Attribute**: Create a user attribute called ``sap_client_mandt`` to controls which SAP Client(s) (MANDT) data each user is able to access.
 
-LookML is powerful because it:
+* **(Optional) Unhide additional dimensions and measure**: Most dimensions and measures have been hidden to simplify reporting and data understanding. However should you find anything valuable missing, simply update the `hidden` parameters to `No` in the relevant views.
 
-- **Is all about reusability**: Most data analysis requires the same work to be done over and over again. You extract
-raw data, prepare it, deliver an analysis... and then are never able touse any of that work again. This is hugely
-inefficient, since the next analysis often involves many of the same steps. With LookML, once you define a
-dimension or a measure, you continue to build on it, rather than having to rewrite it again and again.
-- **Empowers end users**:  The data model that data analysts and developers create in LookML condenses and
-encapsulates the complexity of SQL, it and lets analysts get the knowledge about what their data means out of
-their heads so others can use it. This enables non-technical users to do their jobs &mdash; building dashboards, drilling
-to row-level detail, and accessing complex metrics &mdash; without having to worry about what’s behind the curtain.
-- **Allows for data governance**: By defining business metrics in LookML, you can ensure that Looker is always a
-credible single source of truth.
+* **(Optional) Language**: The SAP language (SPRAS) is tied to the Locale of the Looker user by default. This can be modified in the `manifest.lkml` file by updating the value of the `LANGUAGE` constant.
 
-The Looker application uses a model written in LookML to construct SQL queries against a particular database that
-business analysts can [Explore](https://docs.looker.com/r/exploring-data) on. For an overview on the basics of LookML, see [What is LookML?](https://docs.looker.com/r/what-is-lookml)
-
-<h2><span style="color:#2d7eea">Learn to Speak Looker</span></h2>
-
-A LookML project is a collection of LookML files that describes a set of related [views](https://docs.looker.com/r/terms/view-file),
-[models](https://docs.looker.com/r/terms/model-file), and [Explores](https://docs.looker.com/r/terms/explore).
-- A [view](https://docs.looker.com/r/terms/view-file) (.view files) contains information about how to access or calculate information from each table (or across
-multiple joined tables). Here you’ll typically define the view, its dimensions and measures, and its field sets.
-- A [model](https://docs.looker.com/r/terms/model-file) (.model file) contains information about which tables to use and how they should be joined together.
-Here you’ll typically define the model, its Explores, and its joins.
-- An [Explore](https://docs.looker.com/r/terms/explore) is the starting point for business users to query data, and it is the end result of the LookML you are
-writing. To see the Explores in this project, select an Explore from the Explore menu.
-
-<h2><span style="color:#2d7eea">Exploring Data</span></h2>
-
-Ad-hoc data discovery is one of Looker’s most powerful and unique features. As you evaluate use cases for your trial,
-consider what business areas you would like to explore. Open the Explore menu in the main navigation to see the
-Explores you are building.
-
-<h2><span style="color:#2d7eea">The Development Workflow</span></h2>
-
-To support a multi-developer environment, Looker is integrated with Git for version control. Follow [these directions](https://docs.looker.com/r/develop/git-setup) to
-set up Git for your project. To edit LookML, expand the Develop drop-down and toggle on [Development Mode](https://docs.looker.com/r/terms/dev-mode). In
-Development Mode, changes you make to the LookML model exist only in your account until you commit the changes
-and push them to your production model.
 
 <h2><span style="color:#2d7eea">Additional Resources</span></h2>
 
-To learn more about LookML and how to develop visit:
-- [Looker User Guide](https://looker.com/guide)
-- [Looker Help Center](https://help.looker.com)
-- [Looker University](https://training.looker.com/)
+To learn more about LookML and how to develop visit <a href="https://connect.looker.com/" target="_blank">Looker Connect</a> and <a href="https://help.looker.com/" target="_blank">Looker Help Center</a>
+
+
+To learn more about the Google Cloud Cortex Framework for SAP, visit [our Solution Webpage](https://cloud.google.com/solutions/cortex) or contact us at [cortex-framework@google.com](mailto:cortex-framework@google.com)
+<br>
+
+<h2><span style="color:#2d7eea">Notes and Other Known Issues</span></h2>
+
+
+* **Currencies** - Currently, the currency conversion is either embedded in the reporting views or not incorporated. Please incorporate and customize the currency conversion according to your business needs. You will find functions and views to add to your LookML model in the SAP_REPORTING dataset by searching for "Currency".

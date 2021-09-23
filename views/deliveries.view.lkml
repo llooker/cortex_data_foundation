@@ -1,5 +1,5 @@
 view: deliveries {
-  sql_table_name: `SAP_REPORTING.Deliveries`
+  sql_table_name: `@{DATASET}.Deliveries`
     ;;
 
   dimension: deliveries_pk {
@@ -32,6 +32,7 @@ view: deliveries {
   }
 
   dimension: actual_quantity_delivered_in_sales_units{
+    hidden: yes
     type: number
     sql: ${TABLE}.ActualQuantityDelivered__inSalesUnits___LFIMG ;;
   }
@@ -115,6 +116,7 @@ view: deliveries {
   }
 
   dimension: batch_number {
+    hidden: yes
     type: string
     sql: ${TABLE}.BatchNumber_CHARG ;;
   }
@@ -216,6 +218,7 @@ view: deliveries {
   }
 
   dimension: business_area {
+    hidden: yes
     type: string
     sql: ${TABLE}.BusinessArea_GSBER ;;
   }
@@ -305,6 +308,7 @@ view: deliveries {
   }
 
   dimension: company_id {
+    hidden: yes
     type: string
     sql: ${TABLE}.CompanyId_VBUND ;;
   }
@@ -555,6 +559,7 @@ view: deliveries {
   }
 
   dimension: customer_group4 {
+    hidden: yes
     type: string
     sql: ${TABLE}.CustomerGroup4_KVGR4 ;;
   }
@@ -791,6 +796,7 @@ view: deliveries {
   }
 
   dimension: delivery_item_category {
+    hidden: yes
     type: string
     sql: ${TABLE}.DeliveryItemCategory_PSTYV ;;
   }
@@ -802,6 +808,7 @@ view: deliveries {
   }
 
   dimension: delivery_item {
+    hidden: yes
     type: string
     sql: ${TABLE}.DeliveryItem_POSNR ;;
   }
@@ -818,11 +825,13 @@ view: deliveries {
   }
 
   dimension: delivery_type_folar {
+    hidden: yes
     type: string
     sql: ${TABLE}.DeliveryType_FOLAR ;;
   }
 
   dimension: delivery_type_lfart {
+    hidden: yes
     type: string
     sql: ${TABLE}.DeliveryType_LFART ;;
   }
@@ -863,6 +872,7 @@ view: deliveries {
   }
 
   dimension: department_number {
+    hidden: yes
     type: string
     sql: ${TABLE}.DepartmentNumber_ABTNR ;;
   }
@@ -934,6 +944,7 @@ view: deliveries {
   }
 
   dimension: distribution_status {
+    hidden: yes
     type: string
     sql: ${TABLE}.DistributionStatus_VLSTK ;;
   }
@@ -945,6 +956,7 @@ view: deliveries {
   }
 
   dimension: division {
+    hidden: yes
     type: string
     sql: ${TABLE}.Division_SPART ;;
   }
@@ -1077,6 +1089,7 @@ view: deliveries {
   }
 
   dimension: externally_entered_sales_value_in_local_currency {
+    hidden: yes
     type: number
     sql: ${TABLE}.ExternallyEnteredSalesValueInLocalCurrency_EXVKW ;;
   }
@@ -1439,11 +1452,13 @@ view: deliveries {
   }
 
   dimension: item_group {
+    hidden: yes
     type: string
     sql: ${TABLE}.ItemGroup_FSH_ITEM_GROUP ;;
   }
 
   dimension: item_number {
+    hidden: yes
     type: string
     sql: ${TABLE}.ItemNumber_FSH_ITEM ;;
   }
@@ -1479,6 +1494,7 @@ view: deliveries {
   }
 
   dimension: item_type {
+    hidden: yes
     type: string
     sql: ${TABLE}.ItemType_POSAR ;;
   }
@@ -1524,11 +1540,13 @@ view: deliveries {
   }
 
   dimension: loading_group {
+    hidden: yes
     type: string
     sql: ${TABLE}.LoadingGroup_LADGR ;;
   }
 
   dimension: loading_point {
+    hidden: yes
     type: string
     sql: ${TABLE}.LoadingPoint_LSTEL ;;
   }
@@ -1549,6 +1567,7 @@ view: deliveries {
   }
 
   dimension: location_for_aphysical_handover_of_goods {
+    hidden: yes
     type: string
     sql: ${TABLE}.LocationForAPhysicalHandoverOfGoods_HANDOVERLOC ;;
   }
@@ -1642,6 +1661,7 @@ view: deliveries {
   }
 
   dimension: material_number {
+    hidden: yes
     type: string
     sql: ${TABLE}.MaterialNumber_MATNR ;;
     link: {
@@ -1673,6 +1693,7 @@ view: deliveries {
   }
 
   dimension: material_type {
+    hidden: yes
     type: string
     sql: ${TABLE}.MaterialType_MTART ;;
   }
@@ -1684,21 +1705,25 @@ view: deliveries {
   }
 
   dimension: means_of_transport_id {
+    hidden: yes
     type: string
     sql: ${TABLE}.MeansOfTransportId_TRAID ;;
   }
 
   dimension: means_of_transport_spe_ttype {
+    hidden: yes
     type: string
     sql: ${TABLE}.MeansOfTransport_SPE_TTYPE ;;
   }
 
   dimension: means_of_transport_trmtyp {
+    hidden: yes
     type: string
     sql: ${TABLE}.MeansOfTransport_TRMTYP ;;
   }
 
   dimension: means_of_transport_type {
+    hidden: yes
     type: string
     sql: ${TABLE}.MeansOfTransportType_TRATY ;;
   }
@@ -1894,16 +1919,19 @@ view: deliveries {
   }
 
   dimension: order_item_number {
+    hidden: yes
     type: string
     sql: ${TABLE}.OrderItemNumber_POSNR_PP ;;
   }
 
   dimension: order_number_aufnr {
+    hidden: yes
     type: string
     sql: ${TABLE}.OrderNumber_AUFNR ;;
   }
 
   dimension: order_number_ternr {
+    hidden: yes
     type: string
     sql: ${TABLE}.OrderNumber_TERNR ;;
   }
@@ -2064,7 +2092,7 @@ view: deliveries {
   }
 
   dimension: plant {
-    hidden: yes
+    hidden: no
     type: string
     sql: ${TABLE}.Plant_WERKS ;;
   }
@@ -2214,6 +2242,7 @@ view: deliveries {
   }
 
   dimension: record_type {
+    hidden: yes
     type: string
     sql: ${TABLE}.RecordType_RSART ;;
   }
@@ -2384,6 +2413,7 @@ view: deliveries {
   }
 
   dimension: sales_order_item {
+    hidden: yes
     type: string
     sql: ${TABLE}.SalesOrderItem_VGPOS ;;
   }
@@ -2395,6 +2425,7 @@ view: deliveries {
   }
 
   dimension: sales_order_number {
+    hidden: yes
     type: string
     sql: ${TABLE}.SalesOrderNumber_VGBEL ;;
   }
@@ -2406,11 +2437,13 @@ view: deliveries {
   }
 
   dimension: sales_organization {
+    hidden: yes
     type: string
     sql: ${TABLE}.SalesOrganization_VKORG ;;
   }
 
   dimension: sales_unit {
+    hidden: yes
     type: string
     sql: ${TABLE}.SalesUnit_VRKME ;;
   }
@@ -2786,6 +2819,7 @@ view: deliveries {
   }
 
   dimension_group: time_of_delivery{
+    hidden: yes
     type: time
     timeframes: [
       raw,
@@ -2815,6 +2849,7 @@ view: deliveries {
   }
 
   dimension_group: goods_issue {
+    hidden: yes
     type: time
     timeframes: [
       raw,
@@ -2865,16 +2900,19 @@ view: deliveries {
   }
 
   dimension: transaction_code {
+    hidden: yes
     type: string
     sql: ${TABLE}.TransactionCode_TCODE ;;
   }
 
   dimension: transaction_number {
+    hidden: yes
     type: string
     sql: ${TABLE}.TransactionNumber_FSH_TRANSACTION ;;
   }
 
   dimension: transaction_number_hdr {
+    hidden: yes
     type: string
     sql: ${TABLE}.TransactionNumberHdr_FSH_TRANSACTION ;;
   }
@@ -2895,11 +2933,13 @@ view: deliveries {
   }
 
   dimension: transportation_group_hdr {
+    hidden: yes
     type: string
     sql: ${TABLE}.TransportationGroupHdr_TRAGR ;;
   }
 
   dimension: transportation_group {
+    hidden: yes
     type: string
     sql: ${TABLE}.TransportationGroup_TRAGR ;;
   }
@@ -3041,6 +3081,7 @@ view: deliveries {
   }
 
   dimension: volume_unit_hdr {
+    hidden: yes
     type: string
     sql: ${TABLE}.VolumeUnitHdr_VOLEH ;;
   }
@@ -3052,11 +3093,13 @@ view: deliveries {
   }
 
   dimension: volume_unit {
+    hidden: yes
     type: string
     sql: ${TABLE}.VolumeUnit_VOLEH ;;
   }
 
   dimension: volume {
+    hidden: yes
     type: number
     sql: ${TABLE}.Volume_VOLUM ;;
   }

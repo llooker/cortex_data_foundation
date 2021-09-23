@@ -1,13 +1,5 @@
-# The name of this view in Looker is "Uo Mmd"
 view: uom_md {
-  # The sql_table_name parameter indicates the underlying database table
-  # to be used for all fields in this view.
-  sql_table_name: `lucias-rabia.SAP_REPORTING.UoMMD`
-    ;;
-  # Here's what a typical dimension looks like in LookML.
-  # A dimension is a groupable field that can be used to filter query results.
-  # This dimension will be called "Client Mandt" in Explore.
-
+  sql_table_name: `@{DATASET}.UoMMD`;;
 
   dimension: uom_md_pk {
     primary_key: yes
@@ -88,10 +80,6 @@ view: uom_md {
     type: string
     sql: ${TABLE}.UnitOfPressure_PRESS_UNIT ;;
   }
-
-  # A measure is a field that uses a SQL aggregate function. Here are count, sum, and average
-  # measures for numeric dimensions, but you can also add measures of many different types.
-  # Click on the type parameter to see all the options in the Quick Help panel on the right.
 
   measure: count {
     hidden: yes

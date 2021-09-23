@@ -1,5 +1,5 @@
 view: customers_md {
-  sql_table_name: `SAP_REPORTING.CustomersMD`
+  sql_table_name: `@{DATASET}.CustomersMD`
     ;;
   view_label: "Customers"
 
@@ -22,6 +22,7 @@ view: customers_md {
   }
 
   dimension: address {
+    group_label: "Address"
     type: string
     sql: ${TABLE}.Address_ADRNR ;;
   }
@@ -189,21 +190,25 @@ view: customers_md {
   }
 
   dimension: city_code {
+    group_label: "Address"
     type: string
     sql: ${TABLE}.CityCode_CITYC ;;
   }
 
   dimension: city_coordinates {
+    hidden: yes
     type: string
     sql: ${TABLE}.CityCoordinates_LOCCO ;;
   }
 
   dimension: city {
+    group_label: "Address"
     type: string
     sql: ${TABLE}.City_ORT01 ;;
   }
 
   dimension: client {
+    hidden: yes
     type: string
     sql: ${TABLE}.Client_MANDT ;;
   }
@@ -269,6 +274,7 @@ view: customers_md {
   }
 
   dimension: county_code {
+    group_label: "Address"
     type: string
     sql: ${TABLE}.CountyCode_COUNC ;;
   }
@@ -780,6 +786,7 @@ view: customers_md {
   }
 
   dimension: postal_code {
+    group_label: "Address"
     type: string
     sql: ${TABLE}.PostalCode_PSTLZ ;;
   }
@@ -791,7 +798,7 @@ view: customers_md {
   }
 
   dimension: purchase_order_required {
-    # hidden: yes
+    hidden: yes
     type: string
     sql: ${TABLE}.PurchaseOrderRequired_POREQD ;;
   }
@@ -803,9 +810,10 @@ view: customers_md {
   }
 
   dimension: region {
+    group_label: "Address"
     type: string
     sql: ${TABLE}.Region_REGIO ;;
-    map_layer_name: us_states
+    # map_layer_name: us_states
   }
 
   dimension: regional_market {
@@ -895,6 +903,7 @@ view: customers_md {
   }
 
   dimension: state {
+    group_label: "Address"
     type: string
     sql: ${TABLE}.State_UF ;;
   }

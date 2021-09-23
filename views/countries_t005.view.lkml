@@ -1,15 +1,5 @@
-# The name of this view in Looker is "Countries T005"
 view: countries_t005 {
-  # The sql_table_name parameter indicates the underlying database table
-  # to be used for all fields in this view.
-  sql_table_name: `lucias-rabia.SAP_REPORTING.Countries_T005`
-    ;;
-  # No primary key is defined for this view. In order to join this view in an Explore,
-  # define primary_key: yes on a dimension that has no repeated values.
-
-  # Here's what a typical dimension looks like in LookML.
-  # A dimension is a groupable field that can be used to filter query results.
-  # This dimension will be called "Alternative Country Key Landa" in Explore.
+  sql_table_name: `@{DATASET}.Countries_T005`;;
 
   dimension: countries_t005_pk {
     primary_key: yes
@@ -17,7 +7,6 @@ view: countries_t005 {
     type: string
     sql: CONCAT(${client}, " - ", ${country_key}, " - ", ${rule_for_checking_postal_check_account_number_field});;
   }
-
 
   dimension: alternative_country_key {
     hidden: yes
@@ -74,6 +63,7 @@ view: countries_t005 {
   }
 
   dimension: country_name {
+    group_label: "Address"
     hidden: no
     type: string
     sql: ${TABLE}.CountryName_LANDX ;;
@@ -416,12 +406,7 @@ view: countries_t005 {
     sql: ${TABLE}.WithholdingTaxCertificateNumbering_Concepts_CTNCONCEPT ;;
   }
 
-  # A measure is a field that uses a SQL aggregate function. Here are count, sum, and average
-  # measures for numeric dimensions, but you can also add measures of many different types.
-  # Click on the type parameter to see all the options in the Quick Help panel on the right.
-
   measure: count {
-
     hidden: yes
     type: count
     drill_fields: []

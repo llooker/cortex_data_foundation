@@ -1,5 +1,5 @@
 view: material_md {
-  sql_table_name: `lucias-rabia.SAP_REPORTING.MaterialMD`
+  sql_table_name: `@{DATASET}.MaterialMD`
     ;;
     view_label: "Product"
 
@@ -53,11 +53,13 @@ view: material_md {
   }
 
   dimension: base_unit_of_measure {
+    hidden: yes
     type: string
     sql: ${TABLE}.BaseUnitOfMeasure_MEINS ;;
   }
 
   dimension: basic_material {
+    hidden: yes
     type: string
     sql: ${TABLE}.BasicMaterial_WRKST ;;
   }
@@ -99,6 +101,7 @@ view: material_md {
   }
 
   dimension: competitor {
+    hidden: yes
     type: string
     sql: ${TABLE}.Competitor_KUNNR ;;
   }
@@ -116,16 +119,19 @@ view: material_md {
   }
 
   dimension: content_unit {
+    hidden: yes
     type: string
     sql: ${TABLE}.ContentUnit_INHME ;;
   }
 
   dimension: country_of_origin_of_material {
+    hidden: yes
     type: string
     sql: ${TABLE}.CountryOfOriginOfMaterial_HERKL ;;
   }
 
   dimension_group: created_on {
+    hidden: yes
     type: time
     timeframes: [
       raw,
@@ -343,6 +349,7 @@ view: material_md {
   }
 
   dimension: general_item_category_group {
+    hidden: yes
     type: string
     sql: ${TABLE}.GeneralItemCategoryGroup_MTPOS_MARA ;;
   }
@@ -360,11 +367,13 @@ view: material_md {
   }
 
   dimension: gross_contents {
+    hidden: yes
     type: number
     sql: ${TABLE}.GrossContents_INHBR ;;
   }
 
   dimension: gross_weight {
+    hidden: yes
     type: number
     sql: ${TABLE}.GrossWeight_BRGEW ;;
   }
@@ -442,6 +451,7 @@ view: material_md {
   }
 
   dimension: industry_sector {
+    hidden: yes
     type: string
     sql: ${TABLE}.IndustrySector_MBRSH ;;
   }
@@ -465,11 +475,13 @@ view: material_md {
   }
 
   dimension: label_form {
+    hidden: yes
     type: string
     sql: ${TABLE}.LabelForm_ETIFO ;;
   }
 
   dimension: label_type {
+    hidden: yes
     type: string
     sql: ${TABLE}.LabelType_ETIAR ;;
   }
@@ -517,11 +529,13 @@ view: material_md {
   }
 
   dimension: manufacturer_number {
+    hidden: yes
     type: string
     sql: ${TABLE}.ManufacturerNumber_MFRNR ;;
   }
 
   dimension: manufacturer_part_number {
+    hidden: yes
     type: string
     sql: ${TABLE}.ManufacturerPartNumber_MFRPN ;;
   }
@@ -532,11 +546,13 @@ view: material_md {
   }
 
   dimension: material_completion_level {
+    hidden: yes
     type: string
     sql: ${TABLE}.MaterialCompletionLevel_COMPL ;;
   }
 
   dimension: material_freight_group {
+    hidden: yes
     type: string
     sql: ${TABLE}.MaterialFreightGroup_MFRGR ;;
   }
@@ -548,6 +564,7 @@ view: material_md {
   }
 
   dimension: material_group_packaging_materials {
+    hidden: yes
     type: string
     sql: ${TABLE}.MaterialGroup_PackagingMaterials_MAGRV ;;
   }
@@ -658,11 +675,13 @@ view: material_md {
   }
 
   dimension: net_contents {
+    hidden: yes
     type: number
     sql: ${TABLE}.NetContents_INHAL ;;
   }
 
   dimension: net_weight {
+    hidden: yes
     type: number
     sql: ${TABLE}.NetWeight_NTGEW ;;
   }
@@ -686,6 +705,7 @@ view: material_md {
   }
 
   dimension: order_unit {
+    hidden: yes
     type: string
     sql: ${TABLE}.OrderUnit_BSTME ;;
   }
@@ -781,6 +801,7 @@ view: material_md {
   }
 
   dimension: production_inspection_memo {
+    hidden: yes
     type: string
     sql: ${TABLE}.ProductioninspectionMemo_FERTH ;;
   }
@@ -972,6 +993,7 @@ view: material_md {
   }
 
   dimension_group: valid_from {
+    hidden: yes
     type: time
     timeframes: [
       raw,

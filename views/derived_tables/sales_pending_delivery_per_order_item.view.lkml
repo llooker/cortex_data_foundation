@@ -44,7 +44,7 @@ view: sales_pending_delivery_per_order_item {
   }
 
   dimension: pending_delivery {
-    # hidden: yes
+    hidden: yes
     type: number
     sql: ${TABLE}.pending_delivery ;;
   }

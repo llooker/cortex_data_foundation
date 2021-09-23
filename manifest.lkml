@@ -11,6 +11,14 @@ constant: CONNECTION_NAME {
   value: "lucias-sap-bq"
 }
 
+constant: DATASET {
+  value: "SAP_REPORTING"
+}
+
+constant: LANGUAGE {
+  value: "{{ _user_attributes['locale'] }}"
+}
+
 constant: BigNumbers_format {
   value: "
   {% if value < 0 %}
