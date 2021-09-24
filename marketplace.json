@@ -8,19 +8,18 @@
   },
 
   "constants": {
-    "CONNECTION": {
+    "CONNECTION_NAME": {
       "label": "Connection Name",
       "value_constraint": "connection"
     },
-    "APP_NAME": { "label": "App Name" },
-    "PLATFORM": { "label": "Platform" },
-    "PROJECT":  { "label": "Project" },
-    "SCHEMA_NAME": {"label": "Schema Name"}
+    "DATASET": { "label": "Dataset" },
+    "LANGUAGE": { "label": "Language" },
+    "BigNumbers_format": {"label": "Big Numbers Format"}
   },
   "models": [
     {
-      "name": "crashlytics",
-      "connection_constant": "CONNECTION"
+      "name": "cortex_data_foundation",
+      "connection_constant": "CONNECTION_NAME"
     }
   ]
 }
