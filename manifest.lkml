@@ -19,7 +19,6 @@ constant: DATASET {
 
 constant: LANGUAGE {
   value: "{{ _user_attributes['locale'] }}"
-  export: override_required
 }
 
 constant: BigNumbers_format {
@@ -43,6 +42,4 @@ constant: BigNumbers_format {
   {% endif %}
 
   "
-  export: override_optional
-  
 }
