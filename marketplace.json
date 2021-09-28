@@ -12,9 +12,7 @@
       "label": "Connection Name",
       "value_constraint": "connection"
     },
-    "DATASET": { "label": "Dataset" },
-    "LANGUAGE": { "label": "Language" },
-    "BigNumbers_format": {"label": "Big Numbers Format"}
+    "DATASET": { "label": "Dataset" }
   },
   "models": [
     {
