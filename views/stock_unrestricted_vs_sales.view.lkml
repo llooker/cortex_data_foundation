@@ -98,7 +98,26 @@ view: stock_unrestricted_vs_sales {
   measure: total_pending_delivery {
     type: sum
     sql: ${pending_delivery} ;;
-    html: <a href="#drillmenu" target="_self"> @{BigNumbers_format};;
+    # html: <a href="#drillmenu" target="_self"> @{BigNumbers_format};;
+    html: <a href="#drillmenu" target="_self">
+    {% if value < 0 %}
+    {% assign abs_value = value | times: -1.0 %}
+    {% assign pos_neg = '-' %}
+    {% else %}
+    {% assign abs_value = value | times: 1.0 %}
+    {% assign pos_neg = '' %}
+    {% endif %}
+
+    {% if abs_value >=1000000000 %}
+    {{pos_neg}}{{ abs_value | divided_by: 1000000000.0 | round: 2 }}B
+    {% elsif abs_value >=1000000 %}
+    {{pos_neg}}{{ abs_value | divided_by: 1000000.0 | round: 2 }}M
+    {% elsif abs_value >=1000 %}
+    {{pos_neg}}{{ abs_value | divided_by: 1000.0 | round: 2 }}K
+    {% else %}
+    {{pos_neg}}{{ abs_value }}
+    {% endif %}
+    ;;
   }
 
   measure: average_pending_delivery {
@@ -111,7 +130,26 @@ view: stock_unrestricted_vs_sales {
     description: "This is the current snapshot of the unrestricted stock available. It is not assigned to a specific order."
     type: sum
     sql: ${unrestricted_stock} ;;
-    html: <a href="#drillmenu" target="_self"> @{BigNumbers_format};;
+    # html: <a href="#drillmenu" target="_self"> @{BigNumbers_format};;
+    html: <a href="#drillmenu" target="_self">
+    {% if value < 0 %}
+    {% assign abs_value = value | times: -1.0 %}
+    {% assign pos_neg = '-' %}
+    {% else %}
+    {% assign abs_value = value | times: 1.0 %}
+    {% assign pos_neg = '' %}
+    {% endif %}
+
+    {% if abs_value >=1000000000 %}
+    {{pos_neg}}{{ abs_value | divided_by: 1000000000.0 | round: 2 }}B
+    {% elsif abs_value >=1000000 %}
+    {{pos_neg}}{{ abs_value | divided_by: 1000000.0 | round: 2 }}M
+    {% elsif abs_value >=1000 %}
+    {{pos_neg}}{{ abs_value | divided_by: 1000.0 | round: 2 }}K
+    {% else %}
+    {{pos_neg}}{{ abs_value }}
+    {% endif %}
+    ;;
     drill_fields: [material_md.material_number, material_md.material_text,total_unrestricted_stock]
   }
 
@@ -126,7 +164,26 @@ view: stock_unrestricted_vs_sales {
     description: "This is the current snapshot of the unrestricted stock available compared to all the pending orders. It is not assigned to a specific order."
     type: number
     sql: ${total_unrestricted_stock}-${total_pending_delivery} ;;
-    html: <a href="#drillmenu" target="_self"> @{BigNumbers_format};;
+    # html: <a href="#drillmenu" target="_self"> @{BigNumbers_format};;
+    html: <a href="#drillmenu" target="_self">
+    {% if value < 0 %}
+    {% assign abs_value = value | times: -1.0 %}
+    {% assign pos_neg = '-' %}
+    {% else %}
+    {% assign abs_value = value | times: 1.0 %}
+    {% assign pos_neg = '' %}
+    {% endif %}
+
+    {% if abs_value >=1000000000 %}
+    {{pos_neg}}{{ abs_value | divided_by: 1000000000.0 | round: 2 }}B
+    {% elsif abs_value >=1000000 %}
+    {{pos_neg}}{{ abs_value | divided_by: 1000000.0 | round: 2 }}M
+    {% elsif abs_value >=1000 %}
+    {{pos_neg}}{{ abs_value | divided_by: 1000.0 | round: 2 }}K
+    {% else %}
+    {{pos_neg}}{{ abs_value }}
+    {% endif %}
+    ;;
     drill_fields: [material_md.material_number, material_md.material_text,stock_vs_pending_deliveries]
   }
 }

@@ -17,7 +17,7 @@ explore: sales_orders {
   join: language_map {
     fields: []
     type: left_outer
-    sql_on: ${language_map.looker_locale}='@{LANGUAGE}' ;;
+    sql_on: ${language_map.looker_locale}='{{ _user_attributes['locale'] }}' ;;
     relationship: many_to_one
   }
 

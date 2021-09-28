@@ -28,7 +28,7 @@
 
 * **(Optional) Unhide additional dimensions and measure**: Most dimensions and measures have been hidden to simplify reporting and data understanding. However should you find anything valuable missing, simply update the `hidden` parameters to `No` in the relevant views.
 
-* **(Optional) Language**: The SAP language (SPRAS) is tied to the Locale of the Looker user by default. This can be modified in the `manifest.lkml` file by updating the value of the `LANGUAGE` constant.
+* **(Optional) Language**: The SAP language (SPRAS) is tied to the Locale of the Looker user by default. This can be modified in the `cortex_data_foundation.model` file by updating the join for the `language_map` view.
 
 
 <h2><span style="color:#2d7eea">Additional Resources</span></h2>

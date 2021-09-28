@@ -2075,7 +2075,26 @@ view: sales_orders {
     type: count_distinct
     sql: ${sales_document};;
     filters: [document_category: "C"]
-    html: <a href="#drillmenu" target="_self"> @{BigNumbers_format};;
+    # html: <a href="#drillmenu" target="_self"> @{BigNumbers_format};;
+    html: <a href="#drillmenu" target="_self">
+    {% if value < 0 %}
+    {% assign abs_value = value | times: -1.0 %}
+    {% assign pos_neg = '-' %}
+    {% else %}
+    {% assign abs_value = value | times: 1.0 %}
+    {% assign pos_neg = '' %}
+    {% endif %}
+
+    {% if abs_value >=1000000000 %}
+    {{pos_neg}}{{ abs_value | divided_by: 1000000000.0 | round: 2 }}B
+    {% elsif abs_value >=1000000 %}
+    {{pos_neg}}{{ abs_value | divided_by: 1000000.0 | round: 2 }}M
+    {% elsif abs_value >=1000 %}
+    {{pos_neg}}{{ abs_value | divided_by: 1000.0 | round: 2 }}K
+    {% else %}
+    {{pos_neg}}{{ abs_value }}
+    {% endif %}
+    ;;
     drill_fields: [sales_document_detail*]
   }
 
@@ -2083,7 +2102,26 @@ view: sales_orders {
     description: "Automatically includes Volume Unit in the request."
     type: sum
     sql: ${volume_of_the_item};;
-    html: <a href="#drillmenu" target="_self"> @{BigNumbers_format};;
+    # html: <a href="#drillmenu" target="_self"> @{BigNumbers_format};;
+    html: <a href="#drillmenu" target="_self">
+    {% if value < 0 %}
+    {% assign abs_value = value | times: -1.0 %}
+    {% assign pos_neg = '-' %}
+    {% else %}
+    {% assign abs_value = value | times: 1.0 %}
+    {% assign pos_neg = '' %}
+    {% endif %}
+
+    {% if abs_value >=1000000000 %}
+    {{pos_neg}}{{ abs_value | divided_by: 1000000000.0 | round: 2 }}B
+    {% elsif abs_value >=1000000 %}
+    {{pos_neg}}{{ abs_value | divided_by: 1000000.0 | round: 2 }}M
+    {% elsif abs_value >=1000 %}
+    {{pos_neg}}{{ abs_value | divided_by: 1000.0 | round: 2 }}K
+    {% else %}
+    {{pos_neg}}{{ abs_value }}
+    {% endif %}
+    ;;
     required_fields: [volume_unit]
   }
 
@@ -2091,7 +2129,26 @@ view: sales_orders {
     label: "Total Revenue"
     type: sum
     sql: ${net_value_of_the_sales_order_in_document_currency};;
-    html: <a href="#drillmenu" target="_self"> @{BigNumbers_format};;
+    # html: <a href="#drillmenu" target="_self"> @{BigNumbers_format};;
+    html: <a href="#drillmenu" target="_self">
+    {% if value < 0 %}
+    {% assign abs_value = value | times: -1.0 %}
+    {% assign pos_neg = '-' %}
+    {% else %}
+    {% assign abs_value = value | times: 1.0 %}
+    {% assign pos_neg = '' %}
+    {% endif %}
+
+    {% if abs_value >=1000000000 %}
+    {{pos_neg}}{{ abs_value | divided_by: 1000000000.0 | round: 2 }}B
+    {% elsif abs_value >=1000000 %}
+    {{pos_neg}}{{ abs_value | divided_by: 1000000.0 | round: 2 }}M
+    {% elsif abs_value >=1000 %}
+    {{pos_neg}}{{ abs_value | divided_by: 1000.0 | round: 2 }}K
+    {% else %}
+    {{pos_neg}}{{ abs_value }}
+    {% endif %}
+    ;;
     drill_fields: [sales_document_detail*]
   }
 
@@ -2099,7 +2156,26 @@ view: sales_orders {
     description: "Automatically includes Volume Unit in the request."
     type: average
     sql: ${volume_of_the_item};;
-    html: <a href="#drillmenu" target="_self"> @{BigNumbers_format};;
+    # html: <a href="#drillmenu" target="_self"> @{BigNumbers_format};;
+    html: <a href="#drillmenu" target="_self">
+    {% if value < 0 %}
+    {% assign abs_value = value | times: -1.0 %}
+    {% assign pos_neg = '-' %}
+    {% else %}
+    {% assign abs_value = value | times: 1.0 %}
+    {% assign pos_neg = '' %}
+    {% endif %}
+
+    {% if abs_value >=1000000000 %}
+    {{pos_neg}}{{ abs_value | divided_by: 1000000000.0 | round: 2 }}B
+    {% elsif abs_value >=1000000 %}
+    {{pos_neg}}{{ abs_value | divided_by: 1000000.0 | round: 2 }}M
+    {% elsif abs_value >=1000 %}
+    {{pos_neg}}{{ abs_value | divided_by: 1000.0 | round: 2 }}K
+    {% else %}
+    {{pos_neg}}{{ abs_value }}
+    {% endif %}
+    ;;
     required_fields: [volume_unit]
   }
 
@@ -2107,7 +2183,26 @@ view: sales_orders {
     label: "Average Revenue"
     type: average
     sql: ${net_value_of_the_sales_order_in_document_currency};;
-    html: <a href="#drillmenu" target="_self"> @{BigNumbers_format};;
+    # html: <a href="#drillmenu" target="_self"> @{BigNumbers_format};;
+    html: <a href="#drillmenu" target="_self">
+    {% if value < 0 %}
+    {% assign abs_value = value | times: -1.0 %}
+    {% assign pos_neg = '-' %}
+    {% else %}
+    {% assign abs_value = value | times: 1.0 %}
+    {% assign pos_neg = '' %}
+    {% endif %}
+
+    {% if abs_value >=1000000000 %}
+    {{pos_neg}}{{ abs_value | divided_by: 1000000000.0 | round: 2 }}B
+    {% elsif abs_value >=1000000 %}
+    {{pos_neg}}{{ abs_value | divided_by: 1000000.0 | round: 2 }}M
+    {% elsif abs_value >=1000 %}
+    {{pos_neg}}{{ abs_value | divided_by: 1000.0 | round: 2 }}K
+    {% else %}
+    {{pos_neg}}{{ abs_value }}
+    {% endif %}
+    ;;
     drill_fields: [sales_document_detail*]
   }
 
@@ -2115,7 +2210,26 @@ view: sales_orders {
     label: "Total Quantity"
     type: sum
     sql: ${cumulative_order_quantity} ;;
-    html: <a href="#drillmenu" target="_self"> @{BigNumbers_format};;
+    # html: <a href="#drillmenu" target="_self"> @{BigNumbers_format};;
+    html: <a href="#drillmenu" target="_self">
+    {% if value < 0 %}
+    {% assign abs_value = value | times: -1.0 %}
+    {% assign pos_neg = '-' %}
+    {% else %}
+    {% assign abs_value = value | times: 1.0 %}
+    {% assign pos_neg = '' %}
+    {% endif %}
+
+    {% if abs_value >=1000000000 %}
+    {{pos_neg}}{{ abs_value | divided_by: 1000000000.0 | round: 2 }}B
+    {% elsif abs_value >=1000000 %}
+    {{pos_neg}}{{ abs_value | divided_by: 1000000.0 | round: 2 }}M
+    {% elsif abs_value >=1000 %}
+    {{pos_neg}}{{ abs_value | divided_by: 1000.0 | round: 2 }}K
+    {% else %}
+    {{pos_neg}}{{ abs_value }}
+    {% endif %}
+    ;;
     drill_fields: [sales_document_detail*,total_cumulative_order_quantity]
   }
 
