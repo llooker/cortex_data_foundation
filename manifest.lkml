@@ -9,10 +9,12 @@ project_name: "cortex_data_foundation"
 
 constant: CONNECTION_NAME {
   value: "lucias-sap-bq"
+  export: override_required
 }
 
 constant: DATASET {
   value: "SAP_REPORTING"
+  export: override_required
 }
 
 # constant: LANGUAGE {

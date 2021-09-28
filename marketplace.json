@@ -1,0 +1,25 @@
+
+{
+  "label": "Google Cloud Cortex Framework for SAP - Data Foundation",
+  "category_label": "Models",
+  "branding": {
+    "image_uri": "https://marketplace-api.looker.com/block-icons/cortex.jpg",
+    "tagline": "Sales, Orders, Products and Customer analytics for data replicated from SAP ERP into BigQuery."
+  },
+
+  "constants": {
+    "CONNECTION_NAME": {
+      "label": "Connection Name",
+      "value_constraint": "connection"
+    },
+    "DATASET": { "label": "Dataset" },
+    "LANGUAGE": { "label": "Language" },
+    "BigNumbers_format": {"label": "Big Numbers Format"}
+  },
+  "models": [
+    {
+      "name": "cortex_data_foundation",
+      "connection_constant": "CONNECTION_NAME"
+    }
+  ]
+}
