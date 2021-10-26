@@ -1,5 +1,5 @@
 view: material_group_md {
-  sql_table_name: `@{DATASET}.MaterialGroupMD`
+  sql_table_name: `@{DATASET}.MaterialGroupsMD`
     ;;
 
   dimension: asset_class {
