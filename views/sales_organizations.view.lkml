@@ -1,5 +1,5 @@
 view: sales_organizations {
-  sql_table_name: `@{DATASET}.SalesOrganizations`
+  sql_table_name: `@{DATASET}.SalesOrganizationsMD`
     ;;
 
   dimension: client {

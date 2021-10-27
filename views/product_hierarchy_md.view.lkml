@@ -1,5 +1,5 @@
 view: product_hierarchy_md {
-  sql_table_name: `@{DATASET}.ProductHierarchyMD`;;
+  sql_table_name: `@{DATASET}.ProductHierarchiesMD`;;
 
   dimension: product_hierarchy_md_pk {
     primary_key: yes

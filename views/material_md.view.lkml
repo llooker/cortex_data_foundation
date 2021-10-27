@@ -1,5 +1,5 @@
 view: material_md {
-  sql_table_name: `@{DATASET}.MaterialMD`
+  sql_table_name: `@{DATASET}.MaterialsMD`
     ;;
     view_label: "Product"
 
