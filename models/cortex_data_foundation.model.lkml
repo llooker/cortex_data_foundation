@@ -152,5 +152,6 @@ explore: sales_orders {
 
 explore: sales_fulfillment_per_order {
   hidden: yes
-  sql_always_where: ${sales_fulfillment_per_order.client}='{{ _user_attributes['sap_client_mandt'] }}' ;;
+  sql_always_where: ${sales_fulfillment_per_order.client}='{{ _user_attributes['sap_client_mandt'] }}'
+                    AND ${sales_fulfillment_per_order.language}='{{ _user_attributes['locale'] }}';;
 }
