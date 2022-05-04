@@ -153,5 +153,11 @@ explore: sales_orders {
 explore: sales_fulfillment_per_order {
   hidden: yes
   sql_always_where: ${sales_fulfillment_per_order.client}='{{ _user_attributes['sap_client_mandt'] }}'
-                    AND ${sales_fulfillment_per_order.language}='{{ _user_attributes['locale'] }}';;
+                    AND ${sales_fulfillment_per_order.language}=${language_map.language_key};;
+  join: language_map {
+    fields: []
+    type: left_outer
+    sql_on: ${language_map.looker_locale}='{{ _user_attributes['locale'] }}' ;;
+    relationship: many_to_one
+  }
 }
