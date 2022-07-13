@@ -1,7 +1,4 @@
-<h2>This block has been replaced with the Cortex Data Foundation for SAP Operational Dashboards, please click <a href="https://connect.looker.com/](https://marketplace.looker.com/marketplace/detail/cortex-sap-operational" target="_blank">here</a> to install the latest version of the block.</h2>
-
-<hr>
-  
+<h2>This block has been replaced with the Cortex Data Foundation for SAP Operational Dashboards, please click <a href="https://marketplace.looker.com/marketplace/detail/cortex-sap-operational" target="_blank">here</a> to install the latest version of the block.</h2><hr>  
 <h2><span style="color:#2d7eea">What does this Looker Block do for me?</span></h2>
 
 **(1) Sales Analytics Dashboard** - Monitor sales and delivery performance and highlight customers and products that need attention to improve business performance.
