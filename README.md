@@ -1,4 +1,4 @@
-<h2><center><span style="color:#f44336">This block has been replaced with the Cortex Data Foundation for SAP Operational Dashboards, please click <a href="https://connect.looker.com/](https://marketplace.looker.com/marketplace/detail/cortex-sap-operational" target="_blank">here</a> to install the latest version of the block.</span></h2><br><br>
+<h2>This block has been replaced with the Cortex Data Foundation for SAP Operational Dashboards, please click <a href="https://connect.looker.com/](https://marketplace.looker.com/marketplace/detail/cortex-sap-operational" target="_blank">here</a> to install the latest version of the block.</h2>
 
 <hr>
   
