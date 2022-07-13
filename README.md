@@ -1,6 +1,4 @@
-<h1><center><span style="color:#2d7eea">Google Cloud Cortex Framework for SAP<br><br>
-
-- Data Foundation -</span></center></h1><br>
+<h2><center><span style="color:#f44336">This block has been replaced with the Cortex Data Foundation for SAP Operational Dashboards, please click <a href="https://connect.looker.com/](https://marketplace.looker.com/marketplace/detail/cortex-sap-operational" target="_blank">here</a> to install the latest version of the block.</span></h2><br><br>
 
 <h2><span style="color:#2d7eea">What does this Looker Block do for me?</span></h2>
 
@@ -19,7 +17,6 @@
 
 <h2><span style="color:#2d7eea">Required Customizations</span></h2>
 
-
 * **Connection**: In the `manifest.lkml` file, update the value of the `CONNECTION_NAME` constant.
 
 * **Dataset/Schema**: In the `manifest.lkml` file, if you are not using the default `SAP_REPORTING` dataset, please update the value of the `DATASET` constant.
@@ -36,10 +33,9 @@
 To learn more about LookML and how to develop visit <a href="https://connect.looker.com/" target="_blank">Looker Connect</a> and <a href="https://help.looker.com/" target="_blank">Looker Help Center</a>
 
 
-To learn more about the Google Cloud Cortex Framework for SAP, visit [our Solution Webpage](https://cloud.google.com/solutions/cortex) or contact us at [cortex-framework@google.com](mailto:cortex-framework@google.com)
+To learn more about the Google Cloud Cortex Framework for SAP, visit [our Solution Webpage](https://cloud.google.com/solutions/cortex) 
 <br>
 
 <h2><span style="color:#2d7eea">Notes and Other Known Issues</span></h2>
-
 
 * **Currencies** - Currently, the currency conversion is either embedded in the reporting views or not incorporated. Please incorporate and customize the currency conversion according to your business needs. You will find functions and views to add to your LookML model in the SAP_REPORTING dataset by searching for "Currency".
